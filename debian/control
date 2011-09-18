@@ -1,0 +1,24 @@
+Source: vdr-plugin-live
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.21),
+ libtntnet-dev (>= 1.6.0.1-1.1), libcxxtools-dev (>= 1.4.3.6-1.1),
+ libssl-dev, libboost-dev, gettext
+Standards-Version: 3.9.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-live/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-live/trunk/
+Homepage: http://live.vdr-developer.org
+
+Package: vdr-plugin-live
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Web administration plugin for VDR
+ Live, the "Live Interactive VDR Environment", is a plugin providing the
+ possibility to interactively control the Linux Video Disc Recorder VDR and
+ some of it's plugins from a web interface.
+ .
+ Unlike external programs, like the VDR web frontend "VDRAdmin-AM", that 
+ communicate  with VDR via its SVDRP socket interface, Live has direct
+ access to VDR's data structures and thus is very fast.
