@@ -1,3 +1,9 @@
+vdr-plugin-live (0.2.0-16) unstable; urgency=low
+
+  * Switched to GIT using pristine tar
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 29 Oct 2011 20:10:49 +0200
+
 vdr-plugin-live (0.2.0-15) unstable; urgency=low
 
   * Build-depend on vdr-dev (>= 1.7.21)
