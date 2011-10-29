@@ -1,0 +1,131 @@
+<%pre>
+#include <locale>
+#include <vdr/i18n.h>
+#include <vdr/keys.h>
+#include "grab.h"
+#include "setup.h"
+#include "tools.h"
+
+using namespace std;
+using namespace vdrlive;
+
+</%pre>
+<%session scope="global">
+bool logged_in(false);
+</%session>
+<%include>page_init.eh</%include>
+<{
+if (!logged_in && LiveSetup().UseAuth()) return reply.redirect("login.html");
+}>
+<%cpp>
+	pageTitle = tr("Remote Control");
+
+</%cpp>
+<& pageelems.doc_type &>
+<html>
+	<head>
+		<title>VDR-Live - <$ pageTitle $></title>
+		<& pageelems.stylesheets &>
+		<& pageelems.ajax_js &>
+		<script type="text/javascript"><!--
+		var newImg = new Image();
+		var imgsrc = "";
+		var interval = -1;
+
+		function StreamLoad()
+		{
+			uniq = new Date();
+			uniq = uniq.getTime();
+			document.images.vdrlive.src=newImg.src;
+			newImg.src=imgsrc+"?"+uniq;
+		}
+
+		function StreamInit()
+		{
+			imgsrc = document.images.vdrlive.src;
+			uniq = new Date();
+			uniq = uniq.getTime();
+			newImg.src=imgsrc+"?"+uniq;
+			interval = window.setInterval("StreamLoad()", 1000);
+		}
+
+		function ChangeInterval()
+		{
+			var element = document.getElementsByName('interval').item(0);
+			var timeout = element.value;
+			window.clearInterval(interval);
+			interval = window.setInterval("StreamLoad()", timeout);
+		}
+
+		function KeyPress(keycode)
+		{
+			LiveSimpleAjaxRequest('keypress.xml', 'keycode', keycode);
+		}
+
+		function FillIntervals()
+		{
+			var element = document.getElementsByName('interval').item(0);
+			var items = new Array(1000, 2000, 5000);
+			element.options.length = items.length;
+			for (i = 0; i < items.length; ++i) {
+				element.options[i].value = items[i];
+				element.options[i].text = (items[i] / 1000) + " s";
+				if (items[i] == <$ ConvertToString( LiveSetup().GetScreenshotInterval(), locale("C") ) $>)
+					element.selectedIndex = i;
+			}
+		}
+		//--></script>
+% reply.sout().imbue(locale());
+	</head>
+	<body onload="StreamInit(); FillIntervals();">
+		<& pageelems.logo &>
+		<& menu active="remote" component=("remote.remote_actions")>
+		<div class="inhalt">
+			<div class="screenshot">
+<{				if (!LiveGrabImageManager().CanGrab()) {	}>
+					bloek
+<{				} else {									}>
+					<img src="screenshot.jpg" name="vdrlive" /><br />
+<{				}											}>
+			</div>
+			<div>
+			<img src="<$ LiveSetup().GetThemedLink("img", "remotecontrol.jpg") $>" width="162" height="363" border="0" usemap="#remote" alt="" />
+			     <map name="remote">
+			     	  <area href="#" shape="circle" coords="37,36,10" alt="Power" onclick="KeyPress(<$ kPower $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="27,60,59,75" alt="1" onclick="KeyPress(<$ k1 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="64,59,98,75" alt="2" onclick="KeyPress(<$ k2 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="103,59,137,75" alt="3" onclick="KeyPress(<$ k3 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="25,82,60,98" alt="4" onclick="KeyPress(<$ k4 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="65,82,98,99" alt="5" onclick="KeyPress(<$ k5 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="103,83,137,99" alt="6" onclick="KeyPress(<$ k6 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="26,106,60,121" alt="7"  onclick="KeyPress(<$ k7 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="65,105,97,121" alt="8" onclick="KeyPress(<$ k8 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="104,106,137,122" alt="9" onclick="KeyPress(<$ k9 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="66,128,98,144" alt="0" onclick="KeyPress(<$ k0 $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="circle" coords="37,157,13" alt="Vol+" onclick="KeyPress(<$ kVolUp $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="circle" coords="37,190,13" alt="Vol-" onclick="KeyPress(<$ kVolDn $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="circle" coords="125,157,13" alt="P+" onclick="KeyPress(<$ kChanUp $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="circle" coords="125,190,13" alt="P-" onclick="KeyPress(<$ kChanDn $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="circle" coords="81,174,8" alt="Mute" onclick="KeyPress(<$ kMute $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="circle" coords="81,202,11" alt="Record" onclick="KeyPress(<$ kRecord $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="poly" coords="39,215,29,227,30,235,39,236,51,222,49,215,43,213" alt="Menu" onclick="KeyPress(<$ kMenu $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="poly" coords="119,213,127,219,135,230,132,235,127,236,119,231,114,223,113,215" alt="Exit" onclick="KeyPress(<$ kBack $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="poly" coords="58,230,70,223,82,223,91,223,105,231,96,240,87,237,78,236,69,240,66,241,58,232" alt="Up" onclick="KeyPress(<$ kUp $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="poly" coords="111,237,119,249,121,259,119,275,113,285,109,284,101,276,104,270,107,260,106,253,101,245" alt="Right" onclick="KeyPress(<$ kRight $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="poly" coords="66,281,75,285,86,285,95,281,106,291,100,295,87,300,73,300,58,291,57,289,58,289" alt="Down" onclick="KeyPress(<$ kDown $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="poly" coords="51,236,61,245,56,256,57,266,61,277,52,285,47,278,42,264,43,252,49,240" alt="Left" onclick="KeyPress(<$ kLeft $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="circle" coords="81,261,17" alt="Ok" onclick="KeyPress(<$ kOk $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="25,309,52,324" alt="Red" onclick="KeyPress(<$ kRed $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="53,309,81,324" alt="Green" onclick="KeyPress(<$ kGreen $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="83,309,109,324" alt="Yellow" onclick="KeyPress(<$ kYellow $>)" nohref="nohref" alt="" />
+				  <area href="#" shape="rect" coords="110,310,137,323" alt="Blue" onclick="KeyPress(<$ kBlue $>)" nohref="nohref" alt="" />
+			     </map>
+			</div>
+		</div>
+	</body>
+</html>
+<%include>page_exit.eh</%include>
+
+<%def remote_actions>
+<$ tr("Interval") $>: <select name="interval" onchange="ChangeInterval()"></select>
+</%def>
