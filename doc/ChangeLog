@@ -1,3 +1,20 @@
+2009-09-07  Christian Wieninger  <cwieninger at gmx dot de>
+	* new user management within setup that also handles different
+	  user rights
+
+2008-11-19  Christian Wieninger  <cwieninger at gmx dot de>
+	* new setup option to display channels without EPG
+	
+2008-10-21  Christian Wieninger  <cwieninger at gmx dot de>
+	* edit_timer.ecpp: new menu entry to select a recording directory.
+	  requires epgsearch plugin.
+	* epgsearch.h/cpp: read the directory list via epgsearch's
+	  service interface version 1.2
+	
+2008-08-04  Christian Wieninger  <cwieninger at gmx dot de>
+	
+	* italian translation update, thanks to Diego Pierotto
+	
 2008-02-07  Christian Wieninger  <cwieninger at gmx dot de>
 
 	* new menu with timer conflicts

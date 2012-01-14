@@ -4,6 +4,7 @@
 #include <vdr/epg.h>
 #include "exception.h"
 #include "livefeatures.h"
+#include "tntfeatures.h"
 #include "i18n.h"
 #include "setup.h"
 #include "timers.h"
@@ -62,7 +63,7 @@ int update_status(1);
 
 <%def hide_element>
 <%args>
-	bool hide = true;
+	int hide = 1;
 </%args>
 <%cpp> if (hide) { </%cpp>style="visibility: hidden"<%cpp> } </%cpp>
 </%def>
@@ -71,10 +72,16 @@ int update_status(1);
 
 <%def progressbar>
 <%args>
-	string progress = "0";
+	int progress = 0;
 	string id;
+	int duration = -1; // invalid duration as default
 </%args>
-<div class="__progress"><div class="__elapsed" <%cpp> if (!id.empty()) { </%cpp>id="<$ id $>"<%cpp> } </%cpp> style="width: <$ progress $>px"></div></div>
+<%cpp>
+	string cls("__progress");
+	if ((duration >= 0) && ((progress < 0) || (duration == 0)))
+		cls +="_invisible";
+</%cpp>
+<div class="<$ cls $>"><div class="__elapsed" <%cpp> if (!id.empty()) { </%cpp>id="<$ id $>"<%cpp> } </%cpp> style="width: <$ progress $>px"></div></div>
 </%def>
 
 <# ---------------------------------------------------------------------- #>
@@ -88,7 +95,7 @@ int update_status(1);
 	string alt;
 	string id;
 </%args>
-<%cpp> { </%cpp> <a <%cpp> if (!id.empty()) { </%cpp> id="<$ id $>" <%cpp> } </%cpp><& hide_element hide=(!id.empty()) &> href="vdr_request/<$ action $>?param=<$ param $>" <%cpp>if (!tip.empty()) { </%cpp><& tooltip.hint text=(tip) &> <%cpp> } </%cpp>><img src="<$ LiveSetup().GetThemedLink("img", image) $>" alt="<$ alt $>"></img></a> <%cpp> } </%cpp>
+<%cpp> { </%cpp> <a <%cpp> if (!id.empty()) { </%cpp> id="<$ id $>" <%cpp> } </%cpp><& hide_element hide=(id.empty()? 0 : 1) &> href="vdr_request/<$ action $>?param=<$ param $>" <%cpp>if (!tip.empty()) { </%cpp><& tooltip.hint text=(tip) &> <%cpp> } </%cpp>><img src="<$ LiveSetup().GetThemedLink("img", image) $>" alt="<$ alt $>"></img></a> <%cpp> } </%cpp>
 </%def>
 
 <# ---------------------------------------------------------------------- #>
@@ -105,9 +112,26 @@ int update_status(1);
 <%def vlc_stream_channel>
 <%args>
 	tChannelID channelId;
+</%args>
+<%cpp> if (LiveSetup().GetUseStreamdev() && LiveFeatures<features::streamdev_server>().Loaded()) { </%cpp><a href="vlc.html?channel=<$ channelId $>"><img src="<$ LiveSetup().GetThemedLink("img", "stream_button.png") $>" alt="" <& tooltip.hint text=(tr("Stream this channel into browser.")) &>></img></a><%cpp> } </%cpp>
+</%def>
+
+
+<# ---------------------------------------------------------------------- #>
+
+<%def vlc_stream_recording>
+<%args>
+	string recid;
 	string linkText;
 </%args>
-<%cpp> if (LiveSetup().GetUseStreamdev() && LiveFeatures<features::streamdev_server>().Loaded()) { </%cpp><a href="vlc.html?channel=<$ channelId $>"><img src="<$ LiveSetup().GetThemedLink("img", "stream_button.png") $>" alt="" <& tooltip.hint text=(tr("Stream this channel into browser.")) &>></img> <$ linkText $></a><%cpp> } </%cpp>
+<%cpp>
+#if TNT_WATCHDOG_SILENCE
+{
+</%cpp><a href="vlc.html?recid=<$ recid $>"><img src="<$ LiveSetup().GetThemedLink("img", "stream_button.png") $>" alt="" <& tooltip.hint text=(tr("Stream this recording into browser.")) &>></img> <$ linkText $></a>
+<%cpp>
+}
+#endif
+</%cpp>
 </%def>
 
 
@@ -124,14 +148,27 @@ int update_status(1);
 	const cTimer* timer = LiveTimerManager().GetTimer(eventid, channelid);
 	if (timer) {
 </%cpp>
-	<a href="edit_timer.html?timerid=<$ LiveTimerManager().GetTimers().GetTimerId(*timer) $>">
-		<img src="<$ LiveSetup().GetThemedLink("img", "record_timer.png") $>" alt="" <& tooltip.hint text=(tr("Edit this")) &> />
-<%cpp> } else { </%cpp>
-	<a href="edit_timer.html?epgid=<$ epgid $>">
-		<img src="<$ LiveSetup().GetThemedLink("img", "record.png") $>" alt="" <& tooltip.hint text=(tr("Record this")) &> />
-<%cpp> } </%cpp>
-	</a>
+		<& pageelems.edit_timer timerId=(LiveTimerManager().GetTimers().GetTimerId(*timer)) imgName=("record_timer.png") &>
+<%cpp>
+	}
+	else {
+</%cpp>
+		<a href="edit_timer.html?epgid=<$ epgid $>"><img src="<$ LiveSetup().GetThemedLink("img", "record.png") $>" alt="" <& tooltip.hint text=(tr("Record this")) &> /></a>
+<%cpp>
+	}
+</%cpp>
 </%def>
+
+<# ---------------------------------------------------------------------- #>
+
+<%def edit_timer>
+<%args>
+	string timerId;
+	string imgName = "edit.png";
+</%args>
+	<a href="edit_timer.html?timerid=<$ SortedTimers::EncodeDomId(timerId) $>"><img src="<$ LiveSetup().GetThemedLink("img", imgName) $>" alt="" <& tooltip.hint text=(tr("Edit timer")) &> /></a>
+</%def>
+
 
 <# ---------------------------------------------------------------------- #>
 
@@ -233,6 +270,7 @@ int update_status(1);
 	int lastCurrentChanel = int();
 </%args>
 <%cpp>
+	int duration = EpgEvents::Duration(startTime, endTime);
 	int elapsed = EpgEvents::ElapsedTime(startTime, endTime);
     tEventID eventId = tEventID();
 	tChannelID channelId = tChannelID();
@@ -241,33 +279,38 @@ int update_status(1);
 	if (detail) { // output for vertical toolbox
 </%cpp>
 	<& pageelems.event_timer epgid=(epgid) &>
-<%cpp>
-		if (elapsed > 0) {
-</%cpp>
 	<& pageelems.ajax_action_href action="switch_channel" tip=(tr("Switch to this channel.")) param=(channelId) image="zap.png" alt="" &>
 <%cpp>
-		}
-		if (LiveFeatures<features::epgsearch>().Recent()) {
+		if (LiveFeatures<features::epgsearch>().Recent() && eventId != 0) {
 </%cpp>
 	<a href="searchresults.html?searchplain=<$ StringEscapeAndBreak(title) $>"><img src="<$ LiveSetup().GetThemedLink("img", "search.png") $>" alt="" <& tooltip.hint text=(tr("Search for repeats.")) &>></img></a>
 <%cpp>
 		}
-		if (elapsed > 0) {
+		if ((duration == 0) || (elapsed >= 0)) {
 </%cpp>
 	<& pageelems.vlc_stream_channel channelId=(channelId) &>
 <%cpp>
 		}
+	if (eventId != 0) {
 </%cpp>
-	<& pageelems.imdb_info_href title=(title) &>
+		<& pageelems.imdb_info_href title=(title) &>
 <%cpp>
+		}
 	}
 	else { // table output
 </%cpp>
 		<td class="action leftcol <? lastCurrentChanel ? "bottomrow"?>"><& pageelems.event_timer epgid=(epgid) &></td>
-		<td class="action <? lastCurrentChanel ? "bottomrow"?>"><%cpp>if (elapsed > 0) { </%cpp><& pageelems.ajax_action_href action="switch_channel" tip=(tr("Switch to this channel.")) param=(channelId) image="zap.png" alt="" &><%cpp> } </%cpp></td>
-		<td class="action <? lastCurrentChanel ? "bottomrow"?>"><%cpp>if (LiveFeatures<features::epgsearch>().Recent()) { </%cpp><a href="searchresults.html?searchplain=<$ StringUrlEncode(title) $>"><img src="<$ LiveSetup().GetThemedLink("img", "search.png") $>" alt="" <& tooltip.hint text=(tr("Search for repeats.")) &>></img></a><%cpp> } else { </%cpp><img src="transparent.png" width="16" height="16"><%cpp> } </%cpp></td>
-		<td class="action <? lastCurrentChanel ? "bottomrow"?>"><%cpp>if (LiveSetup().GetUseStreamdev() && elapsed > 0 && LiveFeatures<features::streamdev_server>().Loaded()) { </%cpp><a href="vlc.html?channel=<$ channelId $>"><img src="<$ LiveSetup().GetThemedLink("img", "stream_button.png") $>" alt="" <& tooltip.hint text=(tr("Stream this channel into browser.")) &>></img></a><%cpp> } else { </%cpp><img src="transparent.png" width="16" height="16"><%cpp> } </%cpp></td>
-		<td class="action <? lastCurrentChanel ? "bottomrow"?>"><& pageelems.imdb_info_href title=(title) &></td>
+		<td class="action <? lastCurrentChanel ? "bottomrow"?>"><& pageelems.ajax_action_href action="switch_channel" tip=(tr("Switch to this channel.")) param=(channelId) image="zap.png" alt="" &></td>
+		<td class="action <? lastCurrentChanel ? "bottomrow"?>"><%cpp>if (LiveFeatures<features::epgsearch>().Recent() && eventId != 0) { </%cpp><a href="searchresults.html?searchplain=<$ StringUrlEncode(title) $>"><img src="<$ LiveSetup().GetThemedLink("img", "search.png") $>" alt="" <& tooltip.hint text=(tr("Search for repeats.")) &>></img></a><%cpp> } else { </%cpp><img src="img/transparent.png" width="16" height="16"><%cpp> } </%cpp></td>
+        <td class="action <? lastCurrentChanel ? "bottomrow"?>"><%cpp>if ((duration == 0)  || (elapsed > 0)) { </%cpp><& pageelems.vlc_stream_channel channelId=(channelId) &><%cpp> } else { </%cpp><img src="img/transparent.png" width="16" height="16"><%cpp> } </%cpp></td>
+		<td class="action <? lastCurrentChanel ? "bottomrow"?>">
+<%cpp>
+			if (eventId != 0) {
+</%cpp>
+			<& pageelems.imdb_info_href title=(title) &>
+<%cpp>
+			}
+</%cpp>		</td>
 <%cpp>
 	}
 </%cpp>
@@ -296,7 +339,7 @@ int update_status(1);
 				<& (tools_comp) id=(boxId) archived=(archived) detail=(1) title=(title) &>
 			</div>
 		 	<div class="epg_info">
-				<div class="info"><%cpp> if (!archived.empty()) { </%cpp><span class="bold"><$ (archived + " ") $></span><%cpp> } </%cpp><$ (time) $></div>
+				<div class="info nowrap"><%cpp> if (!archived.empty()) { </%cpp><span class="bold"><$ (archived + " ") $></span><%cpp> } </%cpp><$ (time) $></div>
 <%cpp>
 	if (elapsed >= 0) {
 </%cpp>

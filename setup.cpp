@@ -10,6 +10,10 @@
 #include <stdint.h>
 #include <unistd.h>
 #include <string>
+#ifdef __FreeBSD__
+#include <sys/socket.h>
+#include <netinet/in.h>
+#endif
 #include <arpa/inet.h>
 #include <vdr/tools.h>
 #include <vdr/menuitems.h>
@@ -23,24 +27,29 @@ using namespace std;
 
 Setup::Setup():
 		m_serverPort( 8008 ),
-#ifdef TNTVERS7
+#if TNT_SSL_SUPPORT
 		m_serverSslPort( 8443 ),
 		m_serverSslCert(),
+		m_serverSslKey(),
 #endif
 		m_lastChannel( 0 ),
 		m_screenshotInterval( 1000 ),
 		m_useAuth( 1 ),
 		m_adminLogin("admin"),
+		m_channelGroups( "" ),
+		m_scheduleDuration( "8" ),
 		m_theme("marine"),
 		m_lastwhatsonlistmode("detail"),
-		m_tntnetloglevel("INFO"),
+		m_lastsortingmode("nameasc"),
+		m_tntnetloglevel("WARN"),
 		m_showLogo(1),
 		m_useAjax(1),
 		m_showInfoBox(1),
 		m_useStreamdev(1),
 		m_streamdevPort(3000),
 		m_streamdevType(),
-		m_showIMDb(1)
+		m_showIMDb(1),
+		m_showChannelsWithoutEPG(0)
 {
 	m_adminPasswordMD5 = "4:" + MD5Hash("live");
 	liveplugin = cPluginManager::GetPlugin("live");
@@ -53,9 +62,10 @@ bool Setup::ParseCommandLine( int argc, char* argv[] )
 			{ "ip",   required_argument, NULL, 'i' },
 			{ "log",  required_argument, NULL, 'l' },
 			{ "epgimages",  required_argument, NULL, 'e' },
-#ifdef TNTVERS7
+#if TNT_SSL_SUPPORT
 			{ "sslport", required_argument, NULL, 's' },
 			{ "cert", required_argument, NULL, 'c' },
+			{ "key", required_argument, NULL, 'k' },
 #endif
 			{ 0 }
 	};
@@ -67,16 +77,17 @@ bool Setup::ParseCommandLine( int argc, char* argv[] )
 		case 'i': m_serverIps.push_back( optarg ); break;
 		case 'l': m_tntnetloglevel = optarg; break;
 		case 'e': m_epgimagedir = optarg; break;
-#ifdef TNTVERS7
+#if TNT_SSL_SUPPORT
 		case 's': m_serverSslPort = atoi( optarg ); break;
 		case 'c': m_serverSslCert = optarg; break;
+		case 'k': m_serverSslKey = optarg; break;
 #endif
 		default:  return false;
 		}
 	}
 
 	return CheckServerPort() &&
-#ifdef TNTVERS7
+#if TNT_SSL_SUPPORT
 		   CheckServerSslPort() &&
 #endif
 		   CheckServerIps();
@@ -91,12 +102,13 @@ char const* Setup::CommandLineHelp() const
 				<< "  -i IP,    --ip=IP            bind server only to specified IP, may appear\n"
 				   "                               multiple times\n"
 				   "                               (default: 0.0.0.0)\n"
-#ifdef TNTVERS7
+#if TNT_SSL_SUPPORT
 				<< "  -s PORT,  --sslport=PORT     use PORT to listen for incoming ssl connections\n"
 				   "                               (default: " << m_serverSslPort << ")\n"
 				<< "  -c CERT,  --cert=CERT        full path to a custom ssl certificate file\n"
+				<< "  -k KEY,  --key=KEY           full path to a custom ssl certificate key file\n"
 #endif
-				<< "  -l level, --log=level        log level for tntnet (values: INFO, DEBUG,...)\n"
+				<< "  -l level, --log=level        log level for tntnet (values: WARN, ERROR, INFO, DEBUG, TRACE)\n"
 				<< "  -e <dir>, --epgimages=<dir>  directory for epgimages\n";
 		m_helpString = builder.str();
 	}
@@ -111,10 +123,13 @@ bool Setup::ParseSetupEntry( char const* name, char const* value )
 	else if ( strcmp( name, "AdminLogin" ) == 0 ) m_adminLogin = value;
 	else if ( strcmp( name, "AdminPasswordMD5" ) == 0 ) m_adminPasswordMD5 = value;
 	else if ( strcmp( name, "UserdefTimes" ) == 0 ) m_times = value;
+	else if ( strcmp( name, "ChannelGroups" ) == 0 ) m_channelGroups = value;
+	else if ( strcmp( name, "ScheduleDuration" ) == 0 ) m_scheduleDuration = value;
 	else if ( strcmp( name, "StartPage" ) == 0 ) m_startscreen = value;
 	else if ( strcmp( name, "Theme" ) == 0 ) m_theme = value;
 	else if ( strcmp( name, "LocalNetMask" ) == 0 ) { m_localnetmask = value; }
 	else if ( strcmp( name, "LastWhatsOnListMode" ) == 0 ) { m_lastwhatsonlistmode = value; }
+	else if ( strcmp( name, "LastSortingMode" ) == 0 ) { m_lastsortingmode = value; }
 	else if ( strcmp( name, "ShowLogo" ) == 0 ) { m_showLogo = atoi(value); }
 	else if ( strcmp( name, "UseAjax" ) == 0 ) { m_useAjax = atoi(value); }
 	else if ( strcmp( name, "ShowInfoBox" ) == 0 ) { m_showInfoBox = atoi(value); }
@@ -123,6 +138,7 @@ bool Setup::ParseSetupEntry( char const* name, char const* value )
 	else if ( strcmp( name, "StreamdevType" ) == 0 ) { m_streamdevType = value; }
 	else if ( strcmp( name, "ScreenShotInterval" ) == 0 ) { m_screenshotInterval = atoi(value); }
 	else if ( strcmp( name, "ShowIMDb" ) == 0 ) { m_showIMDb = atoi(value); }
+	else if ( strcmp( name, "ShowChannelsWithoutEPG" ) == 0 ) { m_showChannelsWithoutEPG = atoi(value); }
 	else return false;
 	return true;
 }
@@ -130,18 +146,18 @@ bool Setup::ParseSetupEntry( char const* name, char const* value )
 bool Setup::CheckServerPort()
 {
 	if ( m_serverPort <= 0 || m_serverPort > numeric_limits< uint16_t >::max() ) {
-		esyslog( "ERROR: live server port %d is not a valid port number", m_serverPort );
+		esyslog( "[live] ERROR: server port %d is not a valid port number", m_serverPort );
 		cerr << "ERROR: live server port " << m_serverPort << " is not a valid port number" << endl;
 		return false;
 	}
 	return true;
 }
 
-#ifdef TNTVERS7
+#if TNT_SSL_SUPPORT
 bool Setup::CheckServerSslPort()
 {
 	if ( m_serverSslPort <= 0 || m_serverSslPort > numeric_limits< uint16_t >::max() ) {
-		esyslog( "ERROR: live server ssl  port %d is not a valid port number", m_serverSslPort );
+		esyslog( "[live] ERROR: server ssl port %d is not a valid port number", m_serverSslPort );
 		cerr << "ERROR: live server ssl port " << m_serverSslPort << " is not a valid port number" << endl;
 		return false;
 	}
@@ -149,21 +165,56 @@ bool Setup::CheckServerSslPort()
 }
 #endif
 
+namespace {
+	struct IpValidator
+	{
+		bool operator() (string const & ip)
+		{
+			struct in6_addr buf;
+			struct in_addr buf4;
+
+			esyslog( "[live] INFO: validating server ip '%s'", ip.c_str());
+			cerr << "INFO: validating live server ip '" << ip << "'" << endl;
+			bool valid = inet_aton(ip.c_str(), &buf4) || inet_pton(AF_INET6, ip.c_str(), &buf);
+
+			if (!valid) {
+				esyslog( "[live] ERROR: server ip %s is not a valid ip address", ip.c_str());
+				cerr << "ERROR: live server ip '" << ip << "' is not a valid ip address" << endl;
+			}
+			return valid;
+		}
+	};
+}
+
 bool Setup::CheckServerIps()
 {
 	if ( m_serverIps.empty() ) {
+		FILE* f = fopen("/proc/sys/net/ipv6/bindv6only", "r");
+		if (f) {
+			bool bindv6only = false;
+			int c = fgetc(f);
+			if (c != EOF) {
+				bindv6only = c - '0';
+			}
+			fclose(f);
+			f = NULL;
+			esyslog( "[live] INFO: bindv6only=%d", bindv6only);
+			// add a default IPv6 listener address
+			m_serverIps.push_back( "::" );
+			// skip the default IPv4 listener address if IPv6 one will be binded also to v4
+			if (!bindv6only)
+				return true;
+		}
+		// add a default IPv4 listener address
 		m_serverIps.push_back( "0.0.0.0" );
+		// we assume these are ok :)
 		return true;
 	}
 
-	for ( IpList::const_iterator ip = m_serverIps.begin(); ip != m_serverIps.end(); ++ip ) {
-		if ( inet_addr( ip->c_str() ) == static_cast< in_addr_t >( -1 ) ) {
-			esyslog( "ERROR: live server ip %s is not a valid ip address", ip->c_str() );
-			cerr << "ERROR: live server ip " << *ip << " is not a valid ip address" << endl;
-			return false;
-		}
-	}
-	return true;
+	IpList::iterator i = partition(m_serverIps.begin(), m_serverIps.end(), IpValidator());
+	m_serverIps.erase(i, m_serverIps.end());
+
+	return !m_serverIps.empty();
 }
 
 std::string const Setup::GetMD5HashAdminPassword() const
@@ -194,6 +245,8 @@ std::string const Setup::GetStartScreenLink() const
 		return "whats_on.html?type=next";
 	else if (m_startscreen == "schedule")
 		return "schedule.html";
+	else if (m_startscreen == "multischedule")
+		return "multischedule.html";
 	else if (m_startscreen == "timers")
 		return "timers.html";
 	else if (m_startscreen == "recordings")
@@ -255,9 +308,12 @@ bool Setup::SaveSetup()
 		liveplugin->SetupStore("LocalNetMask",  m_localnetmask.c_str());
 	}
 	liveplugin->SetupStore("UserdefTimes",  m_times.c_str());
+	liveplugin->SetupStore("ChannelGroups",  m_channelGroups.c_str());
+	liveplugin->SetupStore("ScheduleDuration",  m_scheduleDuration.c_str());
 	liveplugin->SetupStore("StartPage",  m_startscreen.c_str());
 	liveplugin->SetupStore("Theme", m_theme.c_str());
 	liveplugin->SetupStore("LastWhatsOnListMode", m_lastwhatsonlistmode.c_str());
+	liveplugin->SetupStore("LastSortingMode", m_lastsortingmode.c_str());
 	liveplugin->SetupStore("ShowLogo", m_showLogo);
 	liveplugin->SetupStore("UseAjax", m_useAjax);
 	liveplugin->SetupStore("ShowInfoBox", m_showInfoBox);
@@ -266,6 +322,7 @@ bool Setup::SaveSetup()
 	liveplugin->SetupStore("StreamdevType", m_streamdevType.c_str());
 	liveplugin->SetupStore("ScreenShotInterval", m_screenshotInterval);
 	liveplugin->SetupStore("ShowIMDb", m_showIMDb);
+	liveplugin->SetupStore("ShowChannelsWithoutEPG", m_showChannelsWithoutEPG);
 
 	return true;
 }

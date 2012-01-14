@@ -11,7 +11,7 @@ namespace vdrlive {
 using namespace std;
 using namespace tnt;
 
-#ifndef TNTVERS7
+#if ! TNT_CONFIG_INTERNAL
 class ProtectedCString
 {
 public:
@@ -23,7 +23,7 @@ public:
 private:
 	char* m_string;
 };
-#endif // TNTVERS7
+#endif // ! TNT_CONFIG_INTERNAL
 
 ServerThread::ServerThread()
 {
@@ -45,24 +45,22 @@ void ServerThread::Stop()
 void ServerThread::Action()
 {
 	try {
-#ifdef TNTVERS7
-		tnt::Tntconfig tntconfig;
-		tntconfig.load(TntConfig::Get().GetConfigPath().c_str());
+#if TNT_CONFIG_INTERNAL
 		m_server.reset(new Tntnet());
-		m_server->init(tntconfig);
+		TntConfig::Get().Configure(*m_server);
 #else
-		ProtectedCString configPath( TntConfig::Get().GetConfigPath().c_str() );
+		ProtectedCString configPath(TntConfig::Get().GetConfigPath().c_str());
 
 		char* argv[] = { const_cast< char* >( "tntnet" ), const_cast< char* >( "-c" ), configPath };
 		int argc = sizeof( argv ) / sizeof( argv[0] );
 
-		m_server.reset( new Tntnet( argc, argv ) );
-#endif // TNTVERS7
+		m_server.reset(new Tntnet( argc, argv ));
+#endif // TNT_CONFIG_INTERNAL
 		m_server->run();
-		m_server.reset( 0 );
-	} catch ( exception const& ex ) {
+		m_server.reset(0);
+	} catch (exception const& ex) {
 		// XXX move initial error handling to live.cpp
-		esyslog( "ERROR: live httpd server crashed: %s", ex.what() );
+		esyslog("ERROR: live httpd server crashed: %s", ex.what());
 		cerr << "HTTPD FATAL ERROR: " << ex.what() << endl;
 		//cThread::EmergencyExit(true);
 	}

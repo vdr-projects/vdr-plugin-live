@@ -14,14 +14,14 @@ const tI18nPhrase Phrases[] = {
   { "Last channel to display",
     "EPG-Anzeige bis Kanal",
     "",
-    "Ultimo canale visualizzato",
+    "Ultimo canale da visualizzare",
     "",
     "",
     "Dernière chaîne affichée",
     "",
-    "Näytä viimeisenä kanava",
-    "",
-    "",
+    "NÃ¤ytÃ¤ viimeisenÃ¤ kanava",
+    "Ostatni kana³ na li¶cie",
+    "Último canal para mostrar",
     "",
     "",
     "",
@@ -40,7 +40,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PoslednÃ­ zobrazovanÃ½ kanÃ¡l",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -55,8 +55,8 @@ const tI18nPhrase Phrases[] = {
     "Afficher tout",
     "",
     "ei rajoitusta",
-    "",
-    "",
+    "Bez limitu",
+    "Sin límite",
     "",
     "",
     "",
@@ -75,7 +75,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Bez limitu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -89,9 +89,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Utiliser l'authentification",
     "",
-    "Käytä autentikointia",
-    "",
-    "",
+    "KÃ¤ytÃ¤ autentikointia",
+    "U¿yj autoryzacji",
+    "Usar autentificación",
     "",
     "",
     "",
@@ -110,7 +110,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾Ã­t autentifikaci",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -125,8 +125,8 @@ const tI18nPhrase Phrases[] = {
     "Non",
     "",
     "ei",
-    "",
-    "",
+    "Nie",
+    "No",
     "",
     "",
     "",
@@ -145,7 +145,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Ne",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -154,14 +154,14 @@ const tI18nPhrase Phrases[] = {
   { "Yes",
     "Ja",
     "",
-    "Sì",
+    "SÃ¬",
     "",
     "",
     "Oui",
     "",
-    "kyllä",
-    "",
-    "",
+    "kyllÃ¤",
+    "Tak",
+    "Si",
     "",
     "",
     "",
@@ -180,7 +180,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Ano",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -189,14 +189,14 @@ const tI18nPhrase Phrases[] = {
   { "Admin login",
     "Admin Login",
     "",
-    "Login amministratore",
+    "Nome amministratore",
     "",
     "",
     "Ouverture Admin",
     "",
-    "Ylläpidon käyttäjätunnus",
-    "",
-    "",
+    "YllÃ¤pidon kÃ¤yttÃ¤jÃ¤tunnus",
+    "Login Admina",
+    "Nombre del administrador",
     "",
     "",
     "",
@@ -229,9 +229,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Mot de passe de l'Admin",
     "",
-    "Ylläpidon salasana",
-    "",
-    "",
+    "YllÃ¤pidon salasana",
+    "Has³o Admina",
+    "Contraseña del administrador",
     "",
     "",
     "",
@@ -250,7 +250,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Admin heslo",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -264,9 +264,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "%A, %x",
     "",
+    "%A %x",
+    "",
     "%A, %x",
-    "",
-    "",
     "",
     "",
     "",
@@ -294,14 +294,14 @@ const tI18nPhrase Phrases[] = {
   { "Searchtimer",
     "Suchtimer",
     "",
-    "Cerca timer",
+    "Timer di ricerca",
     "Gebruik als zoek timer",
     "",
     "Recherche de programmation",
     "",
     "Hakuajastimet",
-    "",
-    "",
+    "Timer wyszukiwania",
+    "Buscador Programaciones",
     "",
     "",
     "",
@@ -320,7 +320,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -335,8 +335,8 @@ const tI18nPhrase Phrases[] = {
     "Erreur dans la configuration de programmation",
     "",
     "Ajastimen asetukset virheelliset",
-    "",
-    "",
+    "B³±d w ustawieniach timera",
+    "Error en la configuración de la programación",
     "",
     "",
     "",
@@ -355,7 +355,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Chyba v nastavenÃ­ nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -364,14 +364,14 @@ const tI18nPhrase Phrases[] = {
   { "Timer already defined",
     "Timer ist bereits vorhanden",
     "",
-    "Timer già definito",
+    "Timer giÃ  definito",
     "",
     "",
     "Programmation déjà définit",
     "",
-    "Ajastin jo määritelty",
-    "",
-    "",
+    "Ajastin jo mÃ¤Ã¤ritelty",
+    "Timer zosta³ ju¿ zdefiniowany",
+    "Programación ya definida",
     "",
     "",
     "",
@@ -390,23 +390,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vanÃ­ jiÅ¾ nastaveno",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Timers are being edited - try again later",
-    "Timer werden bearbeitet - später nochmal versuchen",
+    "Timer werden bearbeitet - spÃ¤ter nochmal versuchen",
     "",
-    "I sono stati modificati - prova più tardi",
+    "I timer sono stati modificati - riprova piÃ¹ tardi",
     "",
     "",
     "Programmation sont en cours d'édition - essayer plus tard",
     "",
-    "Ajastimia muokataan - yritä uudelleen myöhemmin",
-    "",
-    "",
+    "Ajastimia muokataan - yritÃ¤ uudelleen myÃ¶hemmin",
+    "Timery s± edytowane - spróbuj ponownie pó¼niej",
+    "Las programaciones están siendo editadas - inténtelo de nuevo más tarde",
     "",
     "",
     "",
@@ -425,7 +425,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vanÃ­ nÄ›kdo mÄ›nÃ­ - zkuste pozdÄ›ji",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -439,9 +439,44 @@ const tI18nPhrase Phrases[] = {
     "",
     "Programmation non définit",
     "",
-    "Ajastinta ei ole määritelty",
+    "Ajastinta ei ole mÃ¤Ã¤ritelty",
+    "Timer nie zdefiniowany",
+    "Programación no definida",
     "",
     "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "NahrÃ¡vanÃ­ nenÃ­ nastaveno",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "On archive DVD No.",
+    "Auf Archiv-DVD Nr.",
+    "",
+    "In archivio DVD No.",
+    "",
+    "",
+    "Sur le DVD archive no°",
+    "",
+    "Arkistointi-DVD:llÃ¤ numero",
+    "W archiwum DVD nr",
+    "En archivo DVD número",
     "",
     "",
     "",
@@ -466,17 +501,17 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
   },
-  { "On archive DVD No.",
-    "Auf Archiv-DVD Nr.",
+  { "On archive HDD No.",
+    "Auf Archiv-HDD Nr.",
     "",
-    "In archivio DVD No.",
-    "",
-    "",
-    "Sur le DVD archive no°",
-    "",
-    "Arkistointi-DVD:llä numero",
+    "In archivio HDD No.",
     "",
     "",
+    "Sur le HDD archive noÃ¤",
+    "",
+    "Arkistointi-HDD:llÃ¤ numero",
+    "W archiwum HDD nr",
+    "En archivo HDD número",
     "",
     "",
     "",
@@ -509,9 +544,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Impossible de trouver la chaîne ou pas de chaînes disponibles.",
     "",
-    "Kanavaa ei löydy tai yhtään kanavaa ei ole saatavilla.",
-    "",
-    "",
+    "Kanavaa ei lÃ¶ydy tai yhtÃ¤Ã¤n kanavaa ei ole saatavilla.",
+    "Nie mo¿na odnale¶æ kana³u lub kana³y nie s± dostêpne.",
+    "No se puede encontrar el canal o canales no disponibles",
     "",
     "",
     "",
@@ -530,7 +565,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "KanÃ¡l neexistuje, nebo je nedostupnÃ½.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -544,9 +579,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Impossible de passer à la chaîne.",
     "",
-    "Kanavan valinta epäonnistui.",
-    "",
-    "",
+    "Kanavan valinta epÃ¤onnistui.",
+    "Nie mo¿na prze³±czyæ kana³u.",
+    "No se puede cambiar al canal",
     "",
     "",
     "",
@@ -565,7 +600,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Nelze pÅ™epnout na kanÃ¡l.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -574,14 +609,14 @@ const tI18nPhrase Phrases[] = {
   { "Couldn't find recording or no recordings available.",
     "Kann die Aufnahme nicht finden oder keine Aufnahmen vorhanden.",
     "",
-    "Impossibile trovare registrazione o registrazioni non disponibili.",
+    "Impossibile trovare registrazione o registrazioni disponibili.",
     "",
     "",
     "Impossible de trouver l'enregistrement ou aucun enregistrements disponibles.",
     "",
-    "Tallennetta ei löydy tai yhtään tallennetta ei ole saatavilla.",
-    "",
-    "",
+    "Tallennetta ei lÃ¶ydy tai yhtÃ¤Ã¤n tallennetta ei ole saatavilla.",
+    "Nie mo¿na odnale¼æ nagrania lub nagranie nie jest dostêpne.",
+    "No se puede encontrar la grabación o grabaciones no disponibles",
     "",
     "",
     "",
@@ -600,7 +635,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Nelze nalÃ©zt nahrÃ¡vky, nebo Å¾Ã¡dnÃ© neexistujÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -609,14 +644,14 @@ const tI18nPhrase Phrases[] = {
   { "Cannot control playback!",
     "Kann die Wiedergabe nicht steuern.",
     "",
-    "Impossibile controllare riproduzione!",
+    "Impossibile controllare la riproduzione!",
     "",
     "",
     "Ne peut pas contrôler la lecture!",
     "",
-    "Toiston hallinta epäonnistui!",
-    "",
-    "",
+    "Toiston hallinta epÃ¤onnistui!",
+    "Nie mo¿na kontrolowaæ odtwarzania!",
+    "No se puede controlar la reproducción",
     "",
     "",
     "",
@@ -635,7 +670,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™ehrÃ¡vanÃ­ nelze ovlÃ¡dat!",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -650,8 +685,8 @@ const tI18nPhrase Phrases[] = {
     "Ne joue pas l'enregistrement.",
     "",
     "Tallennetta ei toisteta.",
-    "",
-    "",
+    "Nie mo¿na odtworzyæ nagrania.",
+    "No se está reproduciendo una grabación",
     "",
     "",
     "",
@@ -670,7 +705,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NepÅ™ehrÃ¡vÃ¡ se nahrÃ¡vka.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -684,9 +719,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "",
     "",
-    "Pyydettyä tallennetta ei toisteta.",
-    "",
-    "",
+    "PyydettyÃ¤ tallennetta ei toisteta.",
+    "Nie mo¿na odtworzyæ ¿±danego nagrania.",
+    "No se está reproduciendo la misma grabación que la solicitada",
     "",
     "",
     "",
@@ -705,23 +740,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NepÅ™ehrÃ¡vÃ¡ se poÅ¾adovanÃ¡ nahrÃ¡vka.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Attempt to delete recording currently in playback.",
-    "Versuch die gerade abgepielte Aufnahme zu löschen.",
+    "Versuch die gerade abgepielte Aufnahme zu lÃ¶schen.",
     "",
-    "",
+    "Tentativo di eliminare una registrazione in corso.",
     "",
     "",
     "Tentative d'effacer l'enregistrement en cours de lecture.",
     "",
-    "Yritetään poistaa toistettavaa tallennetta.",
-    "",
-    "",
+    "YritetÃ¤Ã¤n poistaa toistettavaa tallennetta.",
+    "Próba usuniêcia aktualnie odtwarzanego nagrania.",
+    "Intentar borrar la grabación que se está reproduciendo",
     "",
     "",
     "",
@@ -740,7 +775,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Pokus o smazÃ¡nÃ­ sledovanÃ© nahrÃ¡vky",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -755,8 +790,8 @@ const tI18nPhrase Phrases[] = {
     "Erreur EPG",
     "",
     "Ohjelmaoppaan virhe",
-    "",
-    "",
+    "B³±d EPG",
+    "Error en EPG",
     "",
     "",
     "",
@@ -775,7 +810,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Chyba EPG",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -789,9 +824,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Faux ID de chaîne",
     "",
-    "Väärä kanavan tunniste",
-    "",
-    "",
+    "VÃ¤Ã¤rÃ¤ kanavan tunniste",
+    "B³êdny id kana³u",
+    "Id de canal erróneo",
     "",
     "",
     "",
@@ -810,7 +845,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Å patnÃ© ÄÃ­slo kanÃ¡lu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -819,14 +854,14 @@ const tI18nPhrase Phrases[] = {
   { "Channel has no schedule",
     "Kanal hat keine Programminfos",
     "",
-    "Il canale non ha programmi",
+    "Il canale non ha programmazione",
     "",
     "",
     "La chaîne n'a pas de programmation",
     "",
     "Kanavalla ei ole ohjelmatietoja",
-    "",
-    "",
+    "Brak programu dla wybranego kana³u",
+    "El canal no tiene programación",
     "",
     "",
     "",
@@ -845,7 +880,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "KanÃ¡l nemÃ¡ Å¾Ã¡dnÃ½ program",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -859,9 +894,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Faux ID d'événement",
     "",
-    "Väärä tapahtuman tunniste",
-    "",
-    "",
+    "VÃ¤Ã¤rÃ¤ tapahtuman tunniste",
+    "B³êdny id audycji",
+    "Id de evento erróneo",
     "",
     "",
     "",
@@ -880,23 +915,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ChybnÃ© id poÅ™adu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Required minimum version of epgsearch: ",
-    "Benötigte Mindestversion von epgsearch: ",
+    "BenÃ¶tigte Mindestversion von epgsearch: ",
     "",
-    "Versione minima richiesta di epgsearch:",
+    "Versione minima richiesta di EPGSearch:",
     "",
     "",
     "Version minimum requise d'epgsearch: ",
     "",
     "Vaadittava versio EPGSearch-laajennoksesta: ",
-    "",
-    "",
+    "Wymagana wersja epgsearch (minimum):",
+    "Versión mínima de epgsearch requerida: ",
     "",
     "",
     "",
@@ -915,7 +950,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PotÅ™ebnÃ¡ minimÃ¡lnÃ­ verze epgsearch: ",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -930,8 +965,8 @@ const tI18nPhrase Phrases[] = {
     "Tout",
     "",
     "Kaikki",
-    "",
-    "",
+    "Wszystkie",
+    "Todo",
     "",
     "",
     "",
@@ -950,7 +985,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VÅ¡e",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -959,14 +994,14 @@ const tI18nPhrase Phrases[] = {
   { "FTA",
     "FTA",
     "",
-    "gratuiti",
+    "Gratuiti",
     "",
     "",
     "FTA",
     "",
     "Vapaat",
-    "",
-    "",
+    "Niekodowane - FTA",
+    "FTA",
     "",
     "",
     "",
@@ -985,14 +1020,14 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "FTA",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "%I:%M %p",
-    "%H:%M Uhr",
+    "%H:%M",
     "",
     "%I:%M %p",
     "",
@@ -1000,8 +1035,8 @@ const tI18nPhrase Phrases[] = {
     "%H:%M",
     "",
     "%H:%M",
-    "",
-    "",
+    "%H:%M",
+    "%H:%M",
     "",
     "",
     "",
@@ -1020,7 +1055,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "%H:%M",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1029,14 +1064,14 @@ const tI18nPhrase Phrases[] = {
   { "EPGSearch version outdated! Please update.",
     "EPGSearch-Version zu alt, bitte updaten!",
     "",
-    "Versione di EPGSearch troppo vecchia! Per favore aggiornarla.",
+    "Versione di EPGSearch troppo vecchia! Devi aggiornarla.",
     "",
     "",
     "Version EPGSearch périmée! Mettre à jour Svp.",
     "",
-    "EPGSearch-laajennos pitäisi päivittää!",
-    "",
-    "",
+    "EPGSearch-laajennos pitÃ¤isi pÃ¤ivittÃ¤Ã¤!",
+    "Plugin EPGSearch jest nieaktualny! Proszê zaktualizowaæ.",
+    "¡Versión de EPGSearch antigua!. Por favor actualice",
     "",
     "",
     "",
@@ -1055,23 +1090,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Verze EPGSearch je zastaralÃ¡! PouÅ¾ijte novÄ›jÅ¡Ã­.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Couldn't aquire primary device",
+    "Konnte auf das 'primary device' nicht zugreifen",
     "",
-    "",
-    "Impossibile identificare scheda primaria",
+    "Impossibile identificare la scheda primaria",
     "",
     "",
     "Impossible d'acquérir périphérique primaire",
     "",
-    "Ensisijaisen DVB-sovittimen käyttäminen epäonnistui!",
-    "",
-    "",
+    "Ensisijaisen DVB-sovittimen kÃ¤yttÃ¤minen epÃ¤onnistui!",
+    "Nie mozna uzyskaæ dostêpu do pierwszego interfejsu DVB",
+    "No se puede capturar el sintonizador principal",
     "",
     "",
     "",
@@ -1090,23 +1125,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Nelze otevÅ™Ã­t primÃ¡rnÃ­ zarÃ­zenÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Couldn't grab image from primary device",
+    "Konnte kein Bild vom 'primary device' bekommen",
     "",
-    "",
-    "Impossibile ottenere immagine da scheda primaria",
+    "Impossibile ottenere immagini dalla scheda primaria",
     "",
     "",
     "Impossible de récupérer l'image du périphérique primaire",
     "",
-    "Kuvan kaappaus ensisijaiselta DVB-sovittimelta epäonnistui!",
-    "",
-    "",
+    "Kuvan kaappaus ensisijaiselta DVB-sovittimelta epÃ¤onnistui!",
+    "Nie mo¿na pobraæ obrazu z pierwszego interfejsu DVB",
+    "No se puede capturar la imagen con el sintonizador principal",
     "",
     "",
     "",
@@ -1125,23 +1160,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Nelze zÃ­skat obrÃ¡zek z primÃ¡rnÃ­ho zaÅ™Ã­zenÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Timer conflict check detected ",
-    "Die Timer Konflikt Überprüfung hat ",
+    "Die Timer Konflikt ÃœberprÃ¼fung hat ",
     "",
-    "Timer attivo.",
+    "Verifica conflitti timer rilevati",
     "Serie's opnemen",
     "",
     "Programmation est active.",
     "",
-    "Tarkistuksessa löydettiin ",
-    "",
-    "",
+    "Tarkistuksessa lÃ¶ydettiin ",
+    "Wykryto kolizje timerów ",
+    "Detectados conflictos de programaciones",
     "",
     "",
     "",
@@ -1169,14 +1204,14 @@ const tI18nPhrase Phrases[] = {
   { "conflict",
     "Timerkonflikt entdeckt",
     "",
-    "Timer attivo.",
+    "conflitto",
     "Serie's opnemen",
     "",
     "Programmation est active.",
     "",
-    "päällekkäinen ajastin",
-    "",
-    "",
+    "pÃ¤Ã¤llekkÃ¤inen ajastin",
+    "kolizjê",
+    "conflicto",
     "",
     "",
     "",
@@ -1195,7 +1230,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vÃ¡nÃ­ bez kolize",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1204,14 +1239,14 @@ const tI18nPhrase Phrases[] = {
   { "conflicts",
     "Timerkonflikte entdeckt",
     "",
-    "Timer attivo.",
+    "conflitti",
     "Serie's opnemen",
     "",
     "Programmation est active.",
     "",
-    "päällekkäistä ajastinta",
-    "",
-    "",
+    "pÃ¤Ã¤llekkÃ¤istÃ¤ ajastinta",
+    "kolizje",
+    "conflictos",
     "",
     "",
     "",
@@ -1230,23 +1265,163 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vÃ¡nÃ­ bez kolize",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Couldn't aquire access to channels, please try again later.",
-    "Zugriff auf die Kanäle wurde verweigert. Bitte später versuchen.",
+    "Zugriff auf die KanÃ¤le wurde verweigert. Bitte spÃ¤ter versuchen.",
     "",
-    "Impossibile avere accesso ai canali, per favore riprova più tardi.",
+    "Impossibile avere accesso ai canali, riprova piÃ¹ tardi.",
     "",
     "",
     "Impossible d'avoir accès à des chaînes, réessayer ultérieurement.",
     "",
-    "Kanavien käyttäminen epäonnistui! Yritä myöhemmin uudelleen.",
+    "Kanavien kÃ¤yttÃ¤minen epÃ¤onnistui! YritÃ¤ myÃ¶hemmin uudelleen.",
+    "Nie mo¿na uzyskaæ dostêpu do kana³ów, spróbój pó¼niej.",
+    "No se puede tener acceso a los canales, por favor inténtelo más tarde",
     "",
     "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Nelze zÃ­skat pÅ™Ã­stup k programÅ¯m, zkuste pozdÄ›ji.",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Sorry, no permission. Please contact your administrator!",
+    "Leider nicht erlaubt. Bitte kontaktieren Sie Ihren Administrator!",
+    "",
+    "Spiacenti, senza permessi. Per favore contatta l'amministratore!",
+    "",
+    "",
+    "",
+    "",
+    "Ei kÃ¤yttÃ¶oikeutta. Ota yhteyttÃ¤ yllÃ¤pitÃ¤jÃ¤Ã¤n!",
+    "Brak uprawenieñ. Skontaktuj siê ze swoim administratorem!",
+    "Lo siento, no tiene permiso. ¡Por favor contacte con su administrador!",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "BohuÅ¾el chybÄ›jÃ­cÃ­ oprÃ¡vnÄ›nÃ­. Zeptejte se svÃ©ho administrÃ¡tora!",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Couldn't find recording. Maybe you mistyped your request?",
+    "Konnte die Aufnahme nicht finden.  MÃ¶glicherweise ein Tippfehler in der Anfrage?",
+    "",
+    "Impossibile trovare la registrazione. Hai digitato correttamente la richiesta?",
+    "",
+    "",
+    "",
+    "",
+    "Tallennetta ei lÃ¶ydy. Kirjoititko varmasti oikein?",
+    "Nie mo¿na odnale¼æ nagrania.",
+    "No se puede encontrar la grabación. ¿Puede haberla escrito erróneamente?",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Nelze nalÃ©zt zadanÃ©ho uÅ¾ivatele. Byl zadÃ¡n sprÃ¡vnÄ›?",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Please set a name for the recording!",
+    "Bitte einen Namen fÃ¼r die Aufnahme setzen!",
+    "",
+    "Imposta un nome alla registrazione!",
+    "",
+    "",
+    "",
+    "",
+    "Aseta nimi tallenteelle!",
+    "Proszê podaæ nazwê nagrania!",
+    "¡Por favor, introduzca un nombre para la grabación!",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "ProsÃ­m nastavte nÃ¡zev nahrÃ¡vÃ¡nÃ­!",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Cannot copy, rename or move the recording.",
+    "Konnte die Aufnahme nicht umbenennen oder verschieben.",
+    "",
+    "Impossibile copiare, rinominare o spostare la registrazione.",
+    "",
+    "",
+    "",
+    "",
+    "Tallenteen kopioiminen, uudelleen nimeÃ¤minen tai siirto epÃ¤onnistui!",
+    "Nie mo¿na skopiowaæ, przenie¶æ ani zmieniæ nazwy nagrania.",
+    "No se puede copiar, renombre o mueva la grabación.",
     "",
     "",
     "",
@@ -1271,17 +1446,157 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
   },
-  { "Couldn't find searchtimer. Maybe you mistyped your request?",
-    "Keinen Suchtimer gefunden. Möglicherweise ein Tippfehler in der Anfrage?",
+  { "Edit recording",
+    "Aufnahme editieren",
     "",
-    "Impossibile trovare timer di ricerca. Hai digitato correttamente la richiesta?",
-    "",
-    "",
-    "Impossible de trouver la programmation de recherche. Peut-être que votre demande de fautes de frappe?",
-    "",
-    "Hakuajastimia ei löydetä! Onko pyyntö oikein kirjoitettu?",
+    "Modifica registrazione",
     "",
     "",
+    "",
+    "",
+    "Muokkaa tallennetta",
+    "Edycja nagrania",
+    "Editar grabación",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Seznam nahrÃ¡vek",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Name",
+    "Name",
+    "",
+    "Nome",
+    "",
+    "",
+    "",
+    "",
+    "Nimi",
+    "Nazwa",
+    "Nombre",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "JmÃ©no",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Directory",
+    "Verzeichnis",
+    "",
+    "Directory",
+    "Directory",
+    "",
+    "Dossier",
+    "",
+    "Hakemisto",
+    "Katalog",
+    "Directorio",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "SloÅ¾ka",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Delete resume information",
+    "Wiedergabeposition lÃ¶schen",
+    "",
+    "Elimina informazione ripristino",
+    "",
+    "",
+    "",
+    "",
+    "Poista paluutiedot",
+    "Usuñ informacjê o wznowieniu",
+    "Borrar marcador de continuación",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "ElektronickÃ½ prÅ¯vodce programem (EPG)",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Delete marks information",
+    "Schnittmarken lÃ¶schen",
+    "",
+    "Elimina informazione marcatori",
+    "",
+    "",
+    "",
+    "",
+    "Poista merkinnÃ¤t",
+    "Usuñ informacjê o znacznikach",
+    "Borrar información de marcadores",
     "",
     "",
     "",
@@ -1301,6 +1616,251 @@ const tI18nPhrase Phrases[] = {
 #endif
 #if VDRVERSNUM >= 10342
     "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Copy only",
+    "Nur kopieren",
+    "",
+    "Solo copia",
+    "",
+    "",
+    "",
+    "",
+    "Kopioi ainoastaan",
+    "Skopiuj do katalogu",
+    "Copia únicamente",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Short description",
+    "Kurzbeschreibung",
+    "",
+    "Descrizione breve",
+    "",
+    "",
+    "Description",
+    "",
+    "Lyhyt kuvaus",
+    "Krótki opis",
+    "Descripción corta",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Popis",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Description",
+    "Beschreibung",
+    "",
+    "Descrizione",
+    "",
+    "",
+    "Description",
+    "",
+    "Kuvaus",
+    "Opis",
+    "Descripción",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Popis",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Auxiliary info",
+    "ZusÃ¤tzliche Infos",
+    "",
+    "Informazioni ausiliarie",
+    "",
+    "",
+    "",
+    "",
+    "LisÃ¤tiedot",
+    "Dodatkowe informacje",
+    "Información auxiliar",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Save",
+    "Speichern",
+    "",
+    "Salva",
+    "",
+    "",
+    "Sauvegarde",
+    "",
+    "Tallenna",
+    "Zapisz",
+    "Grabar",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "UloÅ¾it",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Cancel",
+    "Abbrechen",
+    "",
+    "Annulla",
+    "",
+    "",
+    "Interrompre",
+    "",
+    "Peru",
+    "Anuluj",
+    "Cancelar",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "ZruÅ¡it",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Couldn't find searchtimer. Maybe you mistyped your request?",
+    "Keinen Suchtimer gefunden. MÃ¶glicherweise ein Tippfehler in der Anfrage?",
+    "",
+    "Impossibile trovare timer di ricerca. Hai digitato correttamente la richiesta?",
+    "",
+    "",
+    "Impossible de trouver la programmation de recherche. Peut-être que votre demande de fautes de frappe?",
+    "",
+    "Hakuajastimia ei lÃ¶ydetÃ¤! Onko pyyntÃ¶ oikein kirjoitettu?",
+    "Nie mo¿na odnale¼æ timera wyszukiwania.",
+    "No se puede encontrar la programación. ¿Puede que la haya escrito erróneamente?",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Nelze najÃ­t AutomatickÃ© nahrÃ¡vÃ¡nÃ­. Byl poÅ¾adavek sprÃ¡vnÄ› zadÃ¡n?",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1309,14 +1869,14 @@ const tI18nPhrase Phrases[] = {
   { "mm/dd/yyyy",
     "dd.mm.yyyy",
     "",
-    "mm/gg/aaaa",
+    "mm/dd/yyyy",
     "",
     "",
     "mm/dd/yyyy",
     "",
     "mm/dd/yyyy",
-    "",
-    "",
+    "dd/mm/yyyy",
+    "dd/mm/yyyy",
     "",
     "",
     "",
@@ -1335,7 +1895,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "dd.mm.yyyy",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1344,14 +1904,14 @@ const tI18nPhrase Phrases[] = {
   { "Edit search timer",
     "Suchtimer bearbeiten",
     "",
-    "Modifica ricerca timer",
+    "Modifica timer di ricerca",
     "",
     "",
     "Editer l'expression de recherche",
     "",
     "Muokkaa hakuajastinta",
-    "",
-    "",
+    "Edycja timera wyszukiwania",
+    "Editar la programación de búsqueda",
     "",
     "",
     "",
@@ -1370,7 +1930,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ZmÄ›na automatickÃ©ho nahrÃ¡vanÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1379,14 +1939,14 @@ const tI18nPhrase Phrases[] = {
   { "New search timer",
     "Neuen Suchtimer anlegen",
     "",
-    "Nuova ricerca timer",
+    "Nuovo timer di ricerca",
     "",
     "",
     "Créer nouvelle programmation de recherche",
     "",
     "Luo uusi hakuajastin",
-    "",
-    "",
+    "Nowy timer wyszukiwania",
+    "Nueva programación de búsqueda",
     "",
     "",
     "",
@@ -1405,7 +1965,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NovÃ© automatickÃ© nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1414,14 +1974,14 @@ const tI18nPhrase Phrases[] = {
   { "Search text too short - use anyway?",
     "Suchtext zu kurz - trotzdem verwenden?",
     "",
-    "Testo da cercare troppo corto - continuare lo stesso?",
+    "Testo da cercare troppo breve - continuare lo stesso?",
     "Zoek tekst tekort - toch gebruiken?",
     "",
     "Texte de recherche est trop court - l'utiliser quand même?",
     "",
-    "Liian suppea hakuehto - etsitäänkö silti?",
-    "",
-    "",
+    "Liian suppea hakuehto - etsitÃ¤Ã¤nkÃ¶ silti?",
+    "Wyszukiwany tekst jest za krótki - czy napewno kontynuowaæ?",
+    "Texto a buscar demasiado corto - ¿usar de todos modos?",
     "",
     "",
     "",
@@ -1440,7 +2000,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ZadanÃ½ text je krÃ¡tkÃ½ - opravdu pouÅ¾Ã­t?",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1449,14 +2009,14 @@ const tI18nPhrase Phrases[] = {
   { "Search term",
     "Suchbegriff",
     "",
-    "Cerca termine",
+    "Termine ricerca",
     "",
     "",
     "Mot clé",
     "",
     "Hakuehto",
-    "",
-    "",
+    "Szukany tekst",
+    "Término de búsqueda",
     "",
     "",
     "",
@@ -1475,7 +2035,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Vyhledej",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1484,14 +2044,14 @@ const tI18nPhrase Phrases[] = {
   { "Search mode",
     "Suchmodus",
     "",
-    "Mod. ricerca",
+    "ModalitÃ  ricerca",
     "",
     "",
     "Mode de recherche",
     "",
     "Hakutapa",
-    "",
-    "",
+    "Tryb wyszukiwania",
+    "Modo de búsqueda",
     "",
     "",
     "",
@@ -1510,7 +2070,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VyhledÃ¡vacÃ­ reÅ¾im",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1525,8 +2085,8 @@ const tI18nPhrase Phrases[] = {
     "Phrase",
     "",
     "fraasi",
-    "",
-    "",
+    "wyra¿enie",
+    "Frase",
     "",
     "",
     "",
@@ -1545,7 +2105,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "slovnÃ­ spojenÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1560,8 +2120,8 @@ const tI18nPhrase Phrases[] = {
     "tout les mots",
     "",
     "kaikki sanat",
-    "",
-    "",
+    "wszystkie s³owa",
+    "Todas las palabras",
     "",
     "",
     "",
@@ -1580,7 +2140,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "vÅ¡echna slova",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1595,8 +2155,8 @@ const tI18nPhrase Phrases[] = {
     "un mot",
     "",
     "yksi sana",
-    "",
-    "",
+    "dowolne s³owo",
+    "Al menos una palabra",
     "",
     "",
     "",
@@ -1615,7 +2175,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "alespoÅˆ jedno slovo",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1624,14 +2184,14 @@ const tI18nPhrase Phrases[] = {
   { "match exactly",
     "exakt",
     "",
-    "esatta corrispondenza",
+    "corrispondenza esatta",
     "precies passend",
     "",
     "correspond exactement",
     "",
-    "täsmällinen",
-    "",
-    "",
+    "tÃ¤smÃ¤llinen",
+    "dok³adnie ca³e wyra¿enie",
+    "Coincidencia exacta",
     "",
     "",
     "",
@@ -1650,23 +2210,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "pÅ™esnÃ½ vÃ½raz",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "regular expression",
-    "regulärer Ausdruck",
+    "regulÃ¤rer Ausdruck",
     "",
     "espressione regolare",
     "reguliere uitdruk  king",
     "",
     "expression réguliere",
     "",
-    "säännöllinen lauseke",
-    "",
-    "",
+    "sÃ¤Ã¤nnÃ¶llinen lauseke",
+    "wyra¿enie regularne",
+    "Expresión Regular",
     "",
     "",
     "",
@@ -1685,7 +2245,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "regulÃ¡rnÃ­ vÃ½raz",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1694,14 +2254,14 @@ const tI18nPhrase Phrases[] = {
   { "fuzzy",
     "unscharf",
     "",
-    "non definita",
+    "imprecisa",
     "",
     "",
     "imprécis",
     "",
     "sumea",
-    "",
-    "",
+    "niedoprecyzowane",
+    "aproximada",
     "",
     "",
     "",
@@ -1735,8 +2295,8 @@ const tI18nPhrase Phrases[] = {
     "Tolérance",
     "",
     "Toleranssi",
-    "",
-    "",
+    "Tolerancja",
+    "Tolerancia",
     "",
     "",
     "",
@@ -1755,14 +2315,14 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Tolerance",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Match case",
-    "Groß/klein",
+    "GroÃŸ/klein",
     "",
     "Maiuscolo/Minuscolo",
     "Idem case",
@@ -1770,8 +2330,8 @@ const tI18nPhrase Phrases[] = {
     "Maj/Minuscule",
     "",
     "Huomioi kirjainkoko",
-    "",
-    "",
+    "Uwzglêdnij wielko¶æ liter",
+    "Coincidir Mayúscula/Minúscula",
     "",
     "",
     "",
@@ -1790,7 +2350,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Velikost pÃ­smen",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1804,9 +2364,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Recherche dans",
     "",
-    "Hae kentistä",
-    "",
-    "",
+    "Hae kentistÃ¤",
+    "Szukaj w",
+    "Buscar en",
     "",
     "",
     "",
@@ -1825,7 +2385,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VyhledÃ¡vat v",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1840,8 +2400,8 @@ const tI18nPhrase Phrases[] = {
     "Titre",
     "",
     "Otsikko",
-    "",
-    "",
+    "Tytu³",
+    "Título",
     "",
     "",
     "",
@@ -1860,7 +2420,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NÃ¡zev",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1875,43 +2435,8 @@ const tI18nPhrase Phrases[] = {
     "Épisode",
     "",
     "Jakson nimi",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Description",
-    "Beschreibung",
-    "",
-    "Descrizione",
-    "",
-    "",
-    "Description",
-    "",
-    "Kuvaus",
-    "",
-    "",
+    "Epizod",
+    "Episodio",
     "",
     "",
     "",
@@ -1930,7 +2455,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Epizoda",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1944,9 +2469,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Utiliser les infos EPG avancées",
     "",
-    "Käytä laajennettua ohjelmaopasta",
-    "",
-    "",
+    "KÃ¤ytÃ¤ laajennettua ohjelmaopasta",
+    "U¿yj rozszerzonej informacji EPG",
+    "Usar información EPG ampliada",
     "",
     "",
     "",
@@ -1965,7 +2490,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾Ã­t rozÅ¡Ã­Å™enÃ© EPG",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -1979,9 +2504,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Ignorez EPG info manquante",
     "",
-    "Jätä puuttuvat ohjelmatiedot huomioimatta",
-    "",
-    "",
+    "JÃ¤tÃ¤ puuttuvat ohjelmatiedot huomioimatta",
+    "Ignoruj brakuj±ce informacje EPG",
+    "Ignorar EPG sin información",
     "",
     "",
     "",
@@ -2000,7 +2525,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Ignorovat chybÄ›jÃ­cÃ­ EPG",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2009,14 +2534,14 @@ const tI18nPhrase Phrases[] = {
   { "When active this can cause very many timers. So please always first test this search before using it as search timer!",
     "Diese Einstellung kann bei Aktivierung sehr viele Timer erzeugen. Also bitte immer zuerst die Suche testen, bevor sie als Suchtimer verwendet wird!",
     "",
-    "L'attivazione di questo può creare molti timer. Quindi per favore prova sempre questa ricerca prima di usarla come ricerca timer!",
+    "Attivare questa opzione puÃ² creare molti timer. Quindi prova sempre questa ricerca prima di usarla come timer di ricerca!",
     "",
     "",
     "Lorsqu'elle est active, cela peut provoquer de très nombreuses programmations. Donc s¿il vous plaît toujours d'abord tester cette recherche avant de l'utiliser comme progammation de recherche!",
     "",
-    "Asetuksen ottaminen käyttöön saattaa luoda lukemattomia ajastimia. Testaa haku ennenkuin teet siitä hakuajastimen!",
-    "",
-    "",
+    "Asetuksen ottaminen kÃ¤yttÃ¶Ã¶n saattaa luoda lukemattomia ajastimia. Testaa haku ennenkuin teet siitÃ¤ hakuajastimen!",
+    "Aktywacja timera wyszukiwania mo¿e spowodowaæ dodanie wielu niepotrzebnych timerów, wiêc przed zapisem najpiew przetestuj dzia³anie wyszukiwania!",
+    "Cuando se activa esta opción se pueden producir muchas programaciones. Por lo tanto, haga el favor de testear siempre la programación de búsqueda antes de usarla",
     "",
     "",
     "",
@@ -2035,7 +2560,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Toto nastavenÃ­ vytvoÅ™Ã­ mnoho poÅ¾adavkÅ¯ na nahrÃ¡vÃ¡nÃ­. PÅ™ed uloÅ¾enÃ­m oveÅ™te chovÃ¡nÃ­ pomocÃ­ Testu!",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2049,9 +2574,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Utiliser la chaîne",
     "",
-    "Käytä kanavaa",
-    "",
-    "",
+    "KÃ¤ytÃ¤ kanavaa",
+    "Kana³",
+    "Usar canal",
     "",
     "",
     "",
@@ -2070,7 +2595,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾ij kanÃ¡l",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2084,9 +2609,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "intervalle",
     "",
-    "kyllä",
-    "",
-    "",
+    "kyllÃ¤",
+    "zakres",
+    "intervalo",
     "",
     "",
     "",
@@ -2119,9 +2644,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Groupe de chaînes",
     "",
-    "kanavaryhmä",
-    "",
-    "",
+    "kanavaryhmÃ¤",
+    "grupa kana³ów",
+    "grupo de canales",
     "",
     "",
     "",
@@ -2140,7 +2665,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "skupina kanÃ¡lÅ¯",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2155,8 +2680,8 @@ const tI18nPhrase Phrases[] = {
     "sans TV-Payante",
     "",
     "vapaat kanavat",
-    "",
-    "",
+    "tylko niekodowane",
+    "Únicamente FTA",
     "",
     "",
     "",
@@ -2175,7 +2700,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Pouze FTA",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2190,8 +2715,8 @@ const tI18nPhrase Phrases[] = {
     "de la chaîne",
     "",
     "Kanavasta",
-    "",
-    "",
+    "od kana³u",
+    "del canal",
     "",
     "",
     "",
@@ -2210,7 +2735,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "od kanÃ¡lu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2225,8 +2750,8 @@ const tI18nPhrase Phrases[] = {
     "à la chaîne",
     "",
     "Kanavaan",
-    "",
-    "",
+    "do kana³u",
+    "al canal",
     "",
     "",
     "",
@@ -2245,7 +2770,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "do kanÃ¡lu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2254,14 +2779,14 @@ const tI18nPhrase Phrases[] = {
   { "Use time",
     "Verw. Uhrzeit",
     "",
-    "Utilizza orario",
+    "Utilizza ora",
     "Gebruik tijd",
     "",
     "Utiliser l'heure",
     "",
-    "Käytä aloitusaikaa",
-    "",
-    "",
+    "KÃ¤ytÃ¤ aloitusaikaa",
+    "Czas",
+    "Usar hora",
     "",
     "",
     "",
@@ -2280,7 +2805,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾ij Äas",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2289,14 +2814,14 @@ const tI18nPhrase Phrases[] = {
   { "Start after",
     "Start nach",
     "",
-    "Inizia dopo",
+    "Inizio dopo",
     "Start na",
     "",
     "Départ après",
     "",
     "Aloitusaika aikaisintaan",
-    "",
-    "",
+    "Rozpoczêcie po",
+    "Inicia después de",
     "",
     "",
     "",
@@ -2315,23 +2840,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ZaÄÃ­nÃ¡ po",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "The time the show may start at the earliest",
-    "Die Zeit, zu der die Sendung frühestens anfangen darf",
+    "Die Zeit, zu der die Sendung frÃ¼hestens anfangen darf",
     "",
-    "L'ora precedente più vicina per l'inizio evento",
+    "L'ora precedente piÃ¹ vicina per l'inizio evento",
     "",
     "",
     "L'heure lorsque l'émission doit commencer au plus tôt",
     "",
-    "Lähetyksen aloitusaika aikaisintaan",
-    "",
-    "",
+    "LÃ¤hetyksen aloitusaika aikaisintaan",
+    "Wyszukiwana audycja mo¿e rozpocz±æ siê najwcze¶niej o ...",
+    "La hora del programa puede comenzar antes de",
     "",
     "",
     "",
@@ -2350,7 +2875,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ÄŒas, kdy mÅ¯Å¾e zaÄÃ­t nejdÅ™Ã­ve.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2359,14 +2884,14 @@ const tI18nPhrase Phrases[] = {
   { "Start before",
     "Start vor",
     "",
-    "Inizia prima",
+    "Inizio prima",
     "Start voor",
     "",
     "Départ avant",
     "",
-    "Aloitusaika viimeistään",
-    "",
-    "",
+    "Aloitusaika viimeistÃ¤Ã¤n",
+    "Rozpoczêcie przed",
+    "Iniciar antes de",
     "",
     "",
     "",
@@ -2385,23 +2910,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ZaÄÃ­nÃ¡ pÅ™ed",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "The time the show may start at the latest",
-    "Die Zeit, zu der die Sendung spätestens angefangen haben muss",
+    "Die Zeit, zu der die Sendung spÃ¤testens angefangen haben muss",
     "",
-    "L'ora successiva più tardi per l'inizio evento",
+    "L'ora successiva piÃ¹ tardi per l'inizio evento",
     "",
     "",
     "L'heure lorsque l'émission doit commencer au plus tard",
     "",
-    "Lähetyksen aloitusaika viimeistään",
-    "",
-    "",
+    "LÃ¤hetyksen aloitusaika viimeistÃ¤Ã¤n",
+    "Wyszukiwana audycja mo¿e rozpocz±æ siê najpó¼niej o ...",
+    "La hora del programa puede comenzar después de",
     "",
     "",
     "",
@@ -2420,7 +2945,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ÄŒas, kdy mÅ¯Å¾e zaÄÃ­t nejpozdÄ›ji",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2434,9 +2959,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Durée d'utilisation",
     "",
-    "Käytä kestoaikaa",
-    "",
-    "",
+    "KÃ¤ytÃ¤ kestoaikaa",
+    "Czas trwania",
+    "Usar duración",
     "",
     "",
     "",
@@ -2455,7 +2980,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾ij dÃ©lku",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2464,14 +2989,14 @@ const tI18nPhrase Phrases[] = {
   { "Min. duration",
     "Min. Dauer",
     "",
-    "Durata minima",
+    "Durata Minima",
     "Min. duur",
     "",
     "Durée min.",
     "",
-    "Kestoaika vähintään",
-    "",
-    "",
+    "Kestoaika vÃ¤hintÃ¤Ã¤n",
+    "Min. czas trwania",
+    "Duración mínima",
     "",
     "",
     "",
@@ -2490,7 +3015,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "dÃ©lka min.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2504,9 +3029,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Durée max.",
     "",
-    "Kestoaika enintään",
-    "",
-    "",
+    "Kestoaika enintÃ¤Ã¤n",
+    "Max. czas trwania",
+    "Duración máxima",
     "",
     "",
     "",
@@ -2525,7 +3050,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "dÃ©lka max.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2539,9 +3064,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Utiliser les jours de la semaine",
     "",
-    "Käytä viikonpäivää",
-    "",
-    "",
+    "KÃ¤ytÃ¤ viikonpÃ¤ivÃ¤Ã¤",
+    "Dzieñ",
+    "Usar día de la semana",
     "",
     "",
     "",
@@ -2560,7 +3085,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾ij den v tÃ½dnu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2569,14 +3094,14 @@ const tI18nPhrase Phrases[] = {
   { "Monday",
     "Montag",
     "",
-    "Lunedì",
+    "LunedÃ¬",
     "",
     "",
     "Lundi",
     "",
     "Maanantai",
-    "",
-    "",
+    "Poniedzia³ek",
+    "Lunes",
     "",
     "",
     "",
@@ -2595,7 +3120,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PondÄ›lÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2604,14 +3129,14 @@ const tI18nPhrase Phrases[] = {
   { "Tuesday",
     "Dienstag",
     "",
-    "Martedì",
+    "MartedÃ¬",
     "",
     "",
     "Mardi",
     "",
     "Tiistai",
-    "",
-    "",
+    "Wtorek",
+    "Martes",
     "",
     "",
     "",
@@ -2630,7 +3155,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ÃšterÃ½",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2639,14 +3164,14 @@ const tI18nPhrase Phrases[] = {
   { "Wednesday",
     "Mittwoch",
     "",
-    "Mercoledì",
+    "MercoledÃ¬",
     "",
     "",
     "Mercredi",
     "",
     "Keskiviikko",
-    "",
-    "",
+    "¦roda",
+    "Miércoles",
     "",
     "",
     "",
@@ -2665,7 +3190,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "StÅ™eda",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2674,14 +3199,14 @@ const tI18nPhrase Phrases[] = {
   { "Thursday",
     "Donnerstag",
     "",
-    "Giovedì",
+    "GiovedÃ¬",
     "",
     "",
     "Jeudi",
     "",
     "Torstai",
-    "",
-    "",
+    "Czwartek",
+    "Jueves",
     "",
     "",
     "",
@@ -2700,7 +3225,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ÄŒtvrtek",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2709,14 +3234,14 @@ const tI18nPhrase Phrases[] = {
   { "Friday",
     "Freitag",
     "",
-    "Venerdì",
+    "VenerdÃ¬",
     "",
     "",
     "Vendredi",
     "",
     "Perjantai",
-    "",
-    "",
+    "Pi±tek",
+    "Viernes",
     "",
     "",
     "",
@@ -2735,7 +3260,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÃ¡tek",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2750,8 +3275,8 @@ const tI18nPhrase Phrases[] = {
     "Samedi",
     "",
     "Lauantai",
-    "",
-    "",
+    "Sobota",
+    "Sábado",
     "",
     "",
     "",
@@ -2770,7 +3295,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Sobota",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2785,8 +3310,8 @@ const tI18nPhrase Phrases[] = {
     "Dimanche",
     "",
     "Sunnuntai",
-    "",
-    "",
+    "Niedziela",
+    "Domingo",
     "",
     "",
     "",
@@ -2805,7 +3330,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NedÄ›le",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2814,14 +3339,14 @@ const tI18nPhrase Phrases[] = {
   { "Use blacklists",
     "Verw. Ausschlusslisten",
     "",
-    "Utilizza la lista esclusioni",
+    "Utilizza lista esclusioni",
     "",
     "",
     "Utiliser la liste des exclus",
     "",
-    "Käytä mustia listoja",
-    "",
-    "",
+    "KÃ¤ytÃ¤ mustia listoja",
+    "Czarna lista",
+    "Usar lista negra",
     "",
     "",
     "",
@@ -2840,7 +3365,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾Ã­t blacklist",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2855,8 +3380,8 @@ const tI18nPhrase Phrases[] = {
     "Selection",
     "",
     "valittu",
-    "",
-    "",
+    "wybrane",
+    "Selección",
     "",
     "",
     "",
@@ -2875,7 +3400,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "vÃ½bÄ›r",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2890,8 +3415,8 @@ const tI18nPhrase Phrases[] = {
     "tous",
     "",
     "kaikki",
-    "",
-    "",
+    "wszystkie",
+    "Todo",
     "",
     "",
     "",
@@ -2910,23 +3435,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "vÅ¡e",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Use in favorites menu",
-    "In Favoritenmenü verw.",
+    "In FavoritenmenÃ¼ verw.",
     "",
     "Utilizza nel menu Preferiti",
     "",
     "",
     "Utiliser dans le menu favoris",
     "",
-    "Käytä suosikkina",
-    "",
-    "",
+    "KÃ¤ytÃ¤ suosikkina",
+    "U¿yj ulubionych",
+    "Usar en menú de favoritos",
     "",
     "",
     "",
@@ -2945,7 +3470,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™idat do OblÃ­benÃ½ch",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2959,9 +3484,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Utiliser la recherche",
     "",
-    "Käytä hakuajastimena",
-    "",
-    "",
+    "KÃ¤ytÃ¤ hakuajastimena",
+    "Aktywuj timer",
+    "Usar como programador de búsqueda",
     "",
     "",
     "",
@@ -2980,7 +3505,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "DalÅ¡Ã­ podmÃ­nky vyhledÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -2994,9 +3519,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Définis par l'utilisateur",
     "",
-    "käyttäjän määrittelemä",
-    "",
-    "",
+    "kÃ¤yttÃ¤jÃ¤n mÃ¤Ã¤rittelemÃ¤",
+    "w wybranym okersie",
+    "definido por el usuario",
     "",
     "",
     "",
@@ -3015,7 +3540,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ano - doÄasnÃ½",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3030,8 +3555,8 @@ const tI18nPhrase Phrases[] = {
     "à partir de la date",
     "",
     "alkaen",
-    "",
-    "",
+    "od dnia",
+    "desde la fecha",
     "",
     "",
     "",
@@ -3050,7 +3575,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "od data",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3064,9 +3589,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "à ce jour",
     "",
-    "päättyen",
-    "",
-    "",
+    "pÃ¤Ã¤ttyen",
+    "do dnia",
+    "hasta la fecha",
     "",
     "",
     "",
@@ -3085,7 +3610,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "do data",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3120,14 +3645,14 @@ const tI18nPhrase Phrases[] = {
     "Optag",
 #endif
 #if VDRVERSNUM >= 10342
-    "Nahrát",
+    "NahrÃ¡t",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Announce only",
-    "Nur ankündigen",
+    "Nur ankÃ¼ndigen",
     "",
     "Solo annuncio",
     "Alleen aankondigen (geen timer)",
@@ -3135,8 +3660,8 @@ const tI18nPhrase Phrases[] = {
     "Annoncer seulement le début de l'émission",
     "",
     "Muistutus",
-    "",
-    "",
+    "Tylko powiadomienie",
+    "Únicamente avisar",
     "",
     "",
     "",
@@ -3155,7 +3680,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Pouze upozornit",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3170,8 +3695,8 @@ const tI18nPhrase Phrases[] = {
     "Seulement changer de chaine",
     "",
     "Kanavanvaihto",
-    "",
-    "",
+    "Tylko prze³±cz",
+    "Únicamente cambiar",
     "",
     "",
     "",
@@ -3190,7 +3715,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™epnout",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3199,49 +3724,14 @@ const tI18nPhrase Phrases[] = {
   { "Series recording",
     "Serienaufnahme",
     "",
-    "Registrazione serie",
+    "Registrazioni in serie",
     "Serie's opnemen",
     "",
     "Enregistrement de série",
     "",
     "Sarjatallennus",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Directory",
-    "Verzeichnis",
-    "",
-    "Directory",
-    "Directory",
-    "",
-    "Dossier",
-    "",
-    "Hakemisto",
-    "",
-    "",
+    "Nagrywanie serii",
+    "Grabación de series",
     "",
     "",
     "",
@@ -3260,23 +3750,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vÃ¡nÃ­ seriÃ¡lu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Delete recordings after ... days",
-    "Aufn. nach ... Tagen löschen",
+    "Aufn. nach ... Tagen lÃ¶schen",
     "",
-    "Cancella registrazione dopo ... giorni",
+    "Elimina registrazioni dopo ... giorni",
     "",
     "",
     "Effacer l'enregistrement après ... jours",
     "",
-    "Poista tallenteet ... päivän jälkeen",
-    "",
-    "",
+    "Poista tallenteet ... pÃ¤ivÃ¤n jÃ¤lkeen",
+    "Usuñ nagranie po ... dniach:",
+    "Borrar grabaciones después de ... días",
     "",
     "",
     "",
@@ -3295,7 +3785,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Vymazat nahrÃ¡vky po ... dnech",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3309,9 +3799,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Garder .... les enregistrements",
     "",
-    "Säilytä ... tallennetta",
-    "",
-    "",
+    "SÃ¤ilytÃ¤ ... tallennetta",
+    "Zatrzymaj ... nagrañ:",
+    "Mantener ... grabaciones",
     "",
     "",
     "",
@@ -3330,7 +3820,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Ponechat ... nahrÃ¡vek",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3339,14 +3829,14 @@ const tI18nPhrase Phrases[] = {
   { "Pause when ... recordings exist",
     "Pause, wenn ... Aufnahmen exist.",
     "",
-    "Pausa se ... registrazioni esistenti",
+    "Pausa, quando ... la registrazione esiste",
     "",
     "",
     "Pause, lorsque ... l'enregistrement existe.",
     "",
-    "Keskeytä ... tallenteen jälkeen",
-    "",
-    "",
+    "KeskeytÃ¤ ... tallenteen jÃ¤lkeen",
+    "Zatrzymaj gdy istnieje ... nagrañ",
+    "Pausar cuando existan ... grabaciones",
     "",
     "",
     "",
@@ -3365,7 +3855,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Vynechat pokud existuje ... nahrÃ¡vek",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3379,9 +3869,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Eviter les répétitions",
     "",
-    "Estä uusinnat",
-    "",
-    "",
+    "EstÃ¤ uusinnat",
+    "Opcje powtórek",
+    "Evitar repeticiones",
     "",
     "",
     "",
@@ -3400,7 +3890,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VynechÃ¡vat reprÃ­zy",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3409,14 +3899,14 @@ const tI18nPhrase Phrases[] = {
   { "Allowed repeats",
     "Erlaubte Wiederholungen",
     "",
-    "Repliche autorizzate",
+    "Repliche permesse",
     "",
     "",
     "Répétitions autorisées",
     "",
-    "Sallittujen uusintojen lukumäärä",
-    "",
-    "",
+    "Sallittujen uusintojen lukumÃ¤Ã¤rÃ¤",
+    "Liczba powtórek",
+    "Repeticiones permitidas",
     "",
     "",
     "",
@@ -3435,7 +3925,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Povolit reprÃ­zy",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3444,14 +3934,14 @@ const tI18nPhrase Phrases[] = {
   { "Only repeats within ... days",
     "Nur Wiederh. innerhalb ... Tagen",
     "",
-    "Solo repliche durante ... giorni",
+    "Ripeti solo entro ... giorni",
     "",
     "",
     "Que répétition, pendant ... jours",
     "",
-    "Vain uusinnat ... päivän sisällä",
-    "",
-    "",
+    "Vain uusinnat ... pÃ¤ivÃ¤n sisÃ¤llÃ¤",
+    "Nagrywaj powtórki przez ... dni",
+    "Únicamente repeticiones dentro de ... días",
     "",
     "",
     "",
@@ -3470,7 +3960,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ReprÃ­zy po ... dnech",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3484,9 +3974,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Comparer titres",
     "",
-    "Vertaa nimeä",
-    "",
-    "",
+    "Vertaa nimeÃ¤",
+    "Porównaj tytu³y",
+    "Comparar título",
     "",
     "",
     "",
@@ -3505,7 +3995,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PorovnÃ¡vat nÃ¡zev",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3519,9 +4009,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Comparer les sous-titres",
     "",
-    "Vertaa jakson nimeä",
-    "",
-    "",
+    "Vertaa jakson nimeÃ¤",
+    "Porównaj podtytu³y",
+    "Comparar subtítulo",
     "",
     "",
     "",
@@ -3540,7 +4030,42 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
+    "PorovnÃ¡vat popis",
+#endif
+#if VDRVERSNUM >= 10502
     "",
+#endif
+  },
+  { "if present",
+    "wenn vorhanden",
+    "",
+    "se presente",
+    "",
+    "",
+    "",
+    "",
+    "jos olemassa",
+    "je¿eli isteniej±",
+    "si está presente",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "pokud existuje",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3555,8 +4080,8 @@ const tI18nPhrase Phrases[] = {
     "Comparer les descriptions",
     "",
     "Vertaa kuvausta",
-    "",
-    "",
+    "Podsumowanie porównania",
+    "Comparar resumen",
     "",
     "",
     "",
@@ -3575,7 +4100,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PorovnÃ¡vat popis",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3590,8 +4115,8 @@ const tI18nPhrase Phrases[] = {
     "Comparer",
     "",
     "Vertaa",
-    "",
-    "",
+    "Porównaj",
+    "Comparar",
     "",
     "",
     "",
@@ -3610,7 +4135,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Porovnat",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3624,9 +4149,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Utiliser VPS",
     "",
-    "Käytä VPS-toimintoa",
-    "",
-    "",
+    "KÃ¤ytÃ¤ VPS-toimintoa",
+    "U¿yj VPS",
+    "Usar VPS",
     "",
     "",
     "",
@@ -3645,23 +4170,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾Ã­t VPS",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Auto-delete search timer",
-    "Suchtimer automatisch löschen",
+    "Suchtimer automatisch lÃ¶schen",
     "",
-    "Cancellazione automatica ricerca timer",
+    "Eliminazione automatica timer di ricerca",
     "",
     "",
     "Auto-suppression de programmation de recherche",
     "",
     "Poista automaattisesti hakuajastimet",
-    "",
-    "",
+    "Automatycznie usuñ timer",
+    "Borrado automático de la programación de búsqueda",
     "",
     "",
     "",
@@ -3680,7 +4205,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "SmazÃ¡nÃ­ automatickÃ©ho nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3694,9 +4219,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "après ... enregistrements",
     "",
-    "... tallenteen jälkeen",
-    "",
-    "",
+    "... tallenteen jÃ¤lkeen",
+    "po ... nagraniach",
+    "tras ... grabaciones",
     "",
     "",
     "",
@@ -3715,7 +4240,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "po ... nahrÃ¡vkÃ¡ch",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3724,14 +4249,14 @@ const tI18nPhrase Phrases[] = {
   { "after ... days after first rec.",
     "nach ... Tagen nach erster Aufnahme",
     "",
-    "dopo ... giorni dopo la prima reg.",
+    "dopo ... giorni dopo la prima registrazione",
     "",
     "",
     "après ... jours après le premier enregistrement",
     "",
-    "... päivän jälkeen ensimmäisestä",
-    "",
-    "",
+    "... pÃ¤ivÃ¤n jÃ¤lkeen ensimmÃ¤isestÃ¤",
+    "po ... dniach nagrywania",
+    "tras ... días después de la primera grabación",
     "",
     "",
     "",
@@ -3750,7 +4275,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "po ... dnech po prvnÃ­ nahrÃ¡vce",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3759,14 +4284,14 @@ const tI18nPhrase Phrases[] = {
   { "Switch ... minutes before start",
     "Umschalten ... Minuten vor Start",
     "",
-    "Cambia ... minuti prima dell'avvio",
+    "Cambia ... minuti prima dell'inizio",
     "",
     "",
     "Changer ... minutes avant le début",
     "",
     "Vaihda ... minuuttia ennen alkua",
-    "",
-    "",
+    "Prze³±cz na ... minut przed rozpoczêcziem",
+    "Cambia ... minutos antes de comenzar",
     "",
     "",
     "",
@@ -3785,7 +4310,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™epnout ... minut pÅ™ed zaÄÃ¡tkem",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3800,78 +4325,8 @@ const tI18nPhrase Phrases[] = {
     "Tester",
     "",
     "Testaa",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Save",
-    "Speichern",
-    "",
-    "Salva",
-    "",
-    "",
-    "Sauvegarde",
-    "",
-    "Tallenna",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Cancel",
-    "Abbrechen",
-    "",
-    "Annulla",
-    "",
-    "",
-    "Interrompre",
-    "",
-    "Peru",
-    "",
-    "",
+    "Testuj",
+    "Probar",
     "",
     "",
     "",
@@ -3899,14 +4354,14 @@ const tI18nPhrase Phrases[] = {
   { "Couldn't find timer. Maybe you mistyped your request?",
     "Konnte Timer nicht finden. Evtl. fehlerhafte Anforderung?",
     "",
-    "Impossibile trovare timer. Hai digitato correttamente la richiesta?",
+    "Impossibile trovare il timer. Hai digitato correttamente la richiesta?",
     "",
     "",
     "N'a pas pu trouver la programmation. Peut-être vous avez une erreur dans votre requête?",
     "",
-    "Ajastinta ei löydy. Kirjoititko varmasti oikein?",
-    "",
-    "",
+    "Ajastinta ei lÃ¶ydy. Kirjoititko varmasti oikein?",
+    "Nie mo¿na odnale¼æ timera.",
+    "No se puede encontrar la programación. ¿Puede que la haya escrito erróneamente?",
     "",
     "",
     "",
@@ -3925,23 +4380,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Nelze najÃ­t nahrÃ¡vanÃ­. Je sprÃ¡vnÄ› zadÃ¡no?",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Please set a title for the timer!",
-    "Bitte einen Titel fï¿½r den Timer angeben!",
+    "Bitte einen Titel fÃ¯Â¿Å“r den Timer angeben!",
     "",
-    "Per favore imposta il titolo del timer!",
+    "Imposta il titolo del timer!",
     "",
     "",
     "Veuillez indiquer un titre pour la programmation!",
     "",
     "Aseta nimi ajastimelle!",
-    "",
-    "",
+    "Proszê podaæ tytu³ dla timera!",
+    "¡Por favor introduzca un título para la programación!",
     "",
     "",
     "",
@@ -3960,7 +4415,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ProsÃ­m nastavte nÃ¡zev nahrÃ¡vÃ¡nÃ­!",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -3975,8 +4430,8 @@ const tI18nPhrase Phrases[] = {
     "Editer la programmation",
     "",
     "Muokkaa ajastinta",
-    "",
-    "",
+    "Edycja timera",
+    "Editar programación",
     "",
     "",
     "",
@@ -3995,7 +4450,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ZmÄ›na nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4010,8 +4465,8 @@ const tI18nPhrase Phrases[] = {
     "Nouvelle programmation",
     "",
     "Luo uusi ajastin",
-    "",
-    "",
+    "Nowy timer",
+    "Nueva programación",
     "",
     "",
     "",
@@ -4030,7 +4485,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NovÃ© nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4039,14 +4494,14 @@ const tI18nPhrase Phrases[] = {
   { "Weekday",
     "Wochentag",
     "",
-    "Giorno settimanale",
+    "Giorno della settimana",
     "",
     "",
     "Jour de la semaine",
     "",
-    "Viikonpäivä",
-    "",
-    "",
+    "ViikonpÃ¤ivÃ¤",
+    "Dzieñ",
+    "Día de la semana",
     "",
     "",
     "",
@@ -4065,7 +4520,567 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
+    "Den v tÃ½dnu",
+#endif
+#if VDRVERSNUM >= 10502
     "",
+#endif
+  },
+  { "Couldn't find user. Maybe you mistyped your request?",
+    "Konnte Benutzer nicht finden. Evtl. fehlerhafte Anforderung?",
+    "",
+    "Impossibile trovare l'utente. Hai digitato correttamente la richiesta?",
+    "",
+    "",
+    "N'a pas pu trouver la programmation. Peut-être vous avez une erreur dans votre requête?",
+    "",
+    "KÃ¤yttÃ¤jÃ¤Ã¤ ei lÃ¶ydy. Kirjoititko varmasti oikein?",
+    "Nie mo¿na odnale¼æ u¿ytkownika.",
+    "No se puede encontrar el usuario. ¿Puede que lo haya escrito erróneamente?",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Nelze nalÃ©zt zadanÃ©ho uÅ¾ivatele. Byl zadÃ¡n sprÃ¡vnÄ›?",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "This user name is already in use!",
+    "Dieser Benutzername wird bereits verwendet!",
+    "",
+    "Questo nome utente Ã¨ giÃ  in uso!",
+    "",
+    "",
+    "",
+    "",
+    "KÃ¤yttÃ¤jÃ¤nimi on jo kÃ¤ytÃ¶ssÃ¤!",
+    "Nazwa u¿ytkownika jest ju¿ u¿ywana!",
+    "¡Este nombre de usuario ya se está usando!",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Toto jmÃ©no jiÅ¾ pouÅ¾ito!",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Edit user",
+    "Benutzer bearbeiten",
+    "",
+    "Modifica utente",
+    "Serie's opnemen",
+    "",
+    "Editer la programmation",
+    "",
+    "Muokkaa kÃ¤yttÃ¤jÃ¤Ã¤",
+    "Edycja u¿ytkownia",
+    "Editar usuario",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "ZmÄ›na uÅ¾ivatele",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "New user",
+    "Neuen Benutzer anlegen",
+    "",
+    "Nuovo utente",
+    "",
+    "",
+    "Nouvelle programmation",
+    "",
+    "Luo uusi kÃ¤yttÃ¤jÃ¤",
+    "Nowy u¿ytkownik",
+    "Nuevo usuario",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "NovÃ½ uÅ¾ivatel",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Password",
+    "Passwort",
+    "",
+    "Password",
+    "",
+    "",
+    "Mot de passe",
+    "",
+    "Salasana",
+    "Has³o",
+    "Contraseña",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Heslo",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "User rights",
+    "Benutzerrechte",
+    "",
+    "Permessi utente",
+    "",
+    "",
+    "Utilisateur",
+    "",
+    "KÃ¤yttÃ¶oikeudet",
+    "Uprawnienia",
+    "Derechos de usuario",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "OprÃ¡vnÄ›nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Edit setup",
+    "Einstellungen bearbeiten",
+    "",
+    "Modifica opzioni",
+    "Serie's opnemen",
+    "",
+    "Editer la programmation",
+    "",
+    "Muokkaa asetuksia",
+    "Edycja ustawieñ",
+    "Editar configuración",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "MÄ›nit nastavenÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Add or edit timers",
+    "Timer hinzufÃ¼gen oder Ã¤ndern",
+    "",
+    "Aggiungi o modifica timer",
+    "Gebruik als zoek timer",
+    "",
+    "Editer la programmation",
+    "",
+    "LisÃ¤Ã¤/muokkaa ajastimia",
+    "Dodawanie i edycja timerów",
+    "Añadir o editar programaciones",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "NastavenÃ­ nahrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Delete timers",
+    "Timer lÃ¶schen",
+    "",
+    "Elimina timer",
+    "Serie's opnemen",
+    "",
+    "Effacer la programmation",
+    "",
+    "Poista ajastimia",
+    "Usuwanie timerów",
+    "Borrar programaciones",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "RuÅ¡enÃ­ nahrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Delete recordings",
+    "Aufnahmen lÃ¶schen",
+    "",
+    "Elimina registrazioni",
+    "Serie's opnemen",
+    "",
+    "Enregistrement de série",
+    "",
+    "Poista tallenteita",
+    "Usuwanie niagrañ",
+    "Borrar grabaciones",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "MazÃ¡nÃ­ nahrÃ¡vek",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Use remote menu",
+    "MenÃ¼ Fernbedienung nutzen",
+    "",
+    "Utilizza menu remoto",
+    "Gebruik tijd",
+    "",
+    "Utiliser dans le menu favoris",
+    "",
+    "KÃ¤ytÃ¤ kauko-ohjainta",
+    "U¿ywanie pilota",
+    "Usar menú remoto",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Menu dÃ¡lkovÃ©ho ovlÃ¡dÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Start replay",
+    "Wiedergabe starten",
+    "",
+    "Avvia riproduzione",
+    "Start voor",
+    "",
+    "Page de départ",
+    "",
+    "Aloita toisto",
+    "Startowane odtwarzania",
+    "Iniciar de nuevo la reproducción",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "PÅ™ehrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Switch channel",
+    "Zu diesem Kanal umschalten.",
+    "",
+    "Cambia canale",
+    "tot kanaal",
+    "",
+    "Changer vers cette chaîne. ",
+    "",
+    "Vaihda kanavaa",
+    "Prze³±czanie kana³ów",
+    "Cambiar canal",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "PÅ™epÃ­nÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Add or edit search timers",
+    "Suchtimer hinzufÃ¼gen oder Ã¤ndern",
+    "",
+    "Aggiungi o modifica timer di ricerca",
+    "Gebruik als zoek timer",
+    "",
+    "Editer l'expression de recherche",
+    "",
+    "LisÃ¤Ã¤/muokkaa hakuajastimia",
+    "Dodawanie i edycja timerów wyszukiwania",
+    "Añadir o editar programaciones de búsqueda",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "NastavenÃ­ aut. nahrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Delete search timers",
+    "Suchtimer lÃ¶schen",
+    "",
+    "Elimina timer di ricerca",
+    "Serie's opnemen",
+    "",
+    "Effacer la programmation de recherche",
+    "",
+    "Poista hakuajastimia",
+    "Usuwanie timerów wyszukiwania",
+    "Borrar programaciones de búsqueda",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "MazÃ¡nÃ­ aut. nahrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Edit recordings",
+    "Aufnahmen editieren",
+    "",
+    "Modifica registrazioni",
+    "",
+    "",
+    "",
+    "",
+    "Muokkaa tallenteita",
+    "Edycja nagrañ",
+    "Editar grabaciones",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Seznam nahrÃ¡vek",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4074,14 +5089,14 @@ const tI18nPhrase Phrases[] = {
   { "Electronic program guide information",
     "Elektronische Programminformation",
     "",
-    "Informazione Guida Elettronica Programmi (EPG)",
+    "Info Guida Elettronica Programmi (EPG)",
     "",
     "",
     "Guide électronique d'information des programmes EPG",
     "",
     "Ohjelmaoppaan tiedot",
-    "",
-    "",
+    "Informacje EPG",
+    "Información de la Guía Electrónica de Programación (EPG)",
     "",
     "",
     "",
@@ -4100,23 +5115,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ElektronickÃ½ prÅ¯vodce programem (EPG)",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Couldn't find recording or no recordings available",
-    "",
+    "Die Aufnahme nicht finden oder keine Aufnahmen vorhanden",
     "",
     "Impossibile trovare registrazioni o nessuna registrazione disponibile",
     "",
     "",
     "Impossible de trouver un enregistrement ou aucun enregistrements disponibles",
     "",
-    "Tallennetta ei löydy tai yhtään tallennetta ei ole saatavilla.",
-    "",
-    "",
+    "Tallennetta ei lÃ¶ydy tai yhtÃ¤Ã¤n tallennetta ei ole saatavilla.",
+    "Nie mo¿na odnale¼æ nagrania",
+    "No se puede encontrar la grabación o no hay programaciones disponibles",
     "",
     "",
     "",
@@ -4135,23 +5150,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Nelze nalÃ©zt nahrÃ¡vky, nebo Å¾Ã¡dnÃ© neexistujÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Error aquiring schedules lock",
-    "",
+    "Fehler beim Zugriffschutz fÃ¼r die Programminfos",
     "",
     "Errore acquisizione blocco programmi",
     "",
     "",
     "Erreur lors de l'acquisition du verrouillage de programmation de recherche",
     "",
-    "Ohjelmatietojen lukitus epäonnistui!",
-    "",
-    "",
+    "Ohjelmatietojen lukitus epÃ¤onnistui!",
+    "B³±d podczas próby blokady programu",
+    "Error adquiriendo el bloqueo de las programaciones",
     "",
     "",
     "",
@@ -4170,23 +5185,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Chyba pÅ™i vytvÃ¡Å™enÃ­ zÃ¡mku pro nahrÃ¡vky",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Error aquiring schedules",
-    "",
+    "Fehler beim Zugriff auf Programinfos",
     "",
     "Errore acquisizione programmi",
     "",
     "",
     "Erreur lors de l'acquisition de programmation",
     "",
-    "Ohjelmatietojen haku epäonnistui!",
-    "",
-    "",
+    "Ohjelmatietojen haku epÃ¤onnistui!",
+    "B³±d podczas ¶ci±gania programu",
+    "Error adquiriendo programaciones",
     "",
     "",
     "",
@@ -4205,7 +5220,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Chyba pÅ™i plÃ¡novÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4221,7 +5236,7 @@ const tI18nPhrase Phrases[] = {
     "",
     "%d.%m.%y",
     "",
-    "",
+    "%b %d %y",
     "",
     "",
     "",
@@ -4240,7 +5255,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "%d.%m.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4255,8 +5270,8 @@ const tI18nPhrase Phrases[] = {
     "Erreur de paging",
     "",
     "Sivuvirhe",
-    "",
-    "",
+    "B³±d strony",
+    "Error en la página",
     "",
     "",
     "",
@@ -4275,7 +5290,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Chyba strÃ¡nky",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4284,14 +5299,14 @@ const tI18nPhrase Phrases[] = {
   { "playing recording",
     "Wiedergabe",
     "",
-    "riproduzione registrazione",
+    "Riproduzione registrazione",
     "",
     "",
     "Lire l'enregistrement",
     "",
     "Toistetaan tallennetta",
-    "",
-    "",
+    "Odtwarzanie nagrania",
+    "reproduciendo grabación",
     "",
     "",
     "",
@@ -4310,7 +5325,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "sledovÃ¡nÃ­ nahrÃ¡vky",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4319,14 +5334,14 @@ const tI18nPhrase Phrases[] = {
   { "no epg info for current event!",
     "Keine Infos zur Sendung!",
     "",
-    "Nessuna informazione sull'evento!",
+    "Evento attuale senza info EPG!",
     "",
     "",
     "Pas d'infos pour l'émission!",
     "",
-    "Lähetyksellä ei ole ohjelmatietoja!",
-    "",
-    "",
+    "LÃ¤hetyksellÃ¤ ei ole ohjelmatietoja!",
+    "brak informacji o audycji!",
+    "¡No hay información de epg para este programa!",
     "",
     "",
     "",
@@ -4345,7 +5360,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "chybÃ­ detaily pro tento poÅ™ad",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4354,14 +5369,14 @@ const tI18nPhrase Phrases[] = {
   { "no epg info for current channel!",
     "Dieser Kanal hat kein EPG!",
     "",
-    "Questo canale non trasmette info EPG!",
+    "Canale attuale senza info EPG!",
     "",
     "",
     "Cette chaîne n'a pas d'EPG!",
     "",
     "Kanavalla ei ole ohjelmatietoja!",
-    "",
-    "",
+    "brak informacji epg dla kana³u!",
+    "¡no hay información de epg para el canal actual!",
     "",
     "",
     "",
@@ -4380,7 +5395,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "chybÃ­ program pro tento kanÃ¡l",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4394,9 +5409,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "pas de chaîne trouvé!",
     "",
-    "Kanavaa ei löydy!",
-    "",
-    "",
+    "Kanavaa ei lÃ¶ydy!",
+    "brak informacji o kanale!",
+    "¡no canal actual!",
     "",
     "",
     "",
@@ -4415,14 +5430,14 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "nenÃ­ zvolen Å¾Ã¡dnÃ½ kanÃ¡l",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "error retrieving status info!",
-    "Fehler: Status nicht verfügbar!",
+    "Fehler: Status nicht verfÃ¼gbar!",
     "",
     "Errore: stato non disponibile!",
     "",
@@ -4430,8 +5445,8 @@ const tI18nPhrase Phrases[] = {
     "erreur de récupération du statut d'info!",
     "",
     "Virhe: tilannetietoja ei saatavilla!",
-    "",
-    "",
+    "b³±d podczas odczytu stanu",
+    "error recibiendo la información de estado",
     "",
     "",
     "",
@@ -4450,14 +5465,14 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "chyba pÅ™i zjiÅ¡Å¥ovÃ¡nÃ­ statusu!",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "%I:%M:%S %p",
-    "%H:%M:%S Uhr",
+    "%H:%M:%S",
     "",
     "%I:%M:%S %p",
     "",
@@ -4465,8 +5480,8 @@ const tI18nPhrase Phrases[] = {
     "%H:%M:%S",
     "",
     "%H:%M:%S",
-    "",
-    "",
+    "%H:%M:%S",
+    "%H:%M:%S",
     "",
     "",
     "",
@@ -4485,7 +5500,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "%H:%M:%S",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4499,9 +5514,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Nom de l'utilisateur ou mot de passei sont erroné",
     "",
-    "Väärä käyttäjätunnus tai salasana",
-    "",
-    "",
+    "VÃ¤Ã¤rÃ¤ kÃ¤yttÃ¤jÃ¤tunnus tai salasana",
+    "B³êdna nazwa lub has³o u¿ytkownika",
+    "Usuario o contraseña erróneos",
     "",
     "",
     "",
@@ -4520,7 +5535,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ChybnÃ© jmÃ©no, nebo heslo",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4534,9 +5549,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Session",
     "",
-    "Kirjaudu sisään",
-    "",
-    "",
+    "Kirjaudu sisÃ¤Ã¤n",
+    "Nazwa",
+    "Entrar",
     "",
     "",
     "",
@@ -4555,7 +5570,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "pÅ™ihlÃ¡sit",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4564,14 +5579,14 @@ const tI18nPhrase Phrases[] = {
   { "VDR Live Login",
     "VDR Live Login",
     "",
-    "VDR Live Login",
+    "Accesso VDR Live",
     "",
     "",
     "Session VDR Live",
     "",
-    "VDR Live - sisäänkirjautuminen",
-    "",
-    "",
+    "VDR Live - sisÃ¤Ã¤nkirjautuminen",
+    "Login VDR Live",
+    "Acceso a VDR Live",
     "",
     "",
     "",
@@ -4590,7 +5605,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VDR Live autorizace",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4604,44 +5619,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Utilisateur",
     "",
-    "Käyttäjä",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Password",
-    "Passwort",
-    "",
-    "Password",
-    "",
-    "",
-    "Mot de passe",
-    "",
-    "Salasana",
-    "",
-    "",
+    "KÃ¤yttÃ¤jÃ¤",
+    "U¿ytkownik",
+    "Usuario",
     "",
     "",
     "",
@@ -4660,23 +5640,58 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "UÅ¾ivatel",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "What's on?",
-    "Was läuft?",
+    "Was lÃ¤uft?",
     "",
-    "Cosa c'è adesso?",
+    "In programmazione",
     "",
     "",
     "Actuellement?",
     "",
     "Menossa?",
+    "Teraz w TV",
+    "¿Qué se emite ahora?",
     "",
     "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "PrÃ¡vÄ› se vysÃ­lÃ¡",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "MultiSchedule",
+    "Zeitleiste",
+    "",
+    "Multi Programmazione",
+    "",
+    "",
+    "",
+    "",
+    "Ohjelmaopas",
+    "Multiprzewodnik",
+    "Multi programación",
     "",
     "",
     "",
@@ -4704,14 +5719,14 @@ const tI18nPhrase Phrases[] = {
   { "Search",
     "Suchen",
     "",
-    "Cerca",
+    "Ricerca",
     "",
     "",
     "Recherche",
     "",
     "Etsi",
-    "",
-    "",
+    "Szukaj",
+    "Buscar",
     "",
     "",
     "",
@@ -4730,7 +5745,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Vyhledej",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4739,14 +5754,14 @@ const tI18nPhrase Phrases[] = {
   { "Searchtimers",
     "Suchtimer",
     "",
-    "Cerca timer",
+    "Timer di ricerca",
     "",
     "",
     "Recherche de programmation",
     "",
     "Hakuajastimet",
-    "",
-    "",
+    "Timery wyszukiwania",
+    "Programadores de búsqueda",
     "",
     "",
     "",
@@ -4765,7 +5780,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "AutomatickÃ© nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4780,8 +5795,8 @@ const tI18nPhrase Phrases[] = {
     "Enregistrements",
     "",
     "Tallenteet",
-    "",
-    "",
+    "Nagrania",
+    "Grabaciones",
     "",
     "",
     "",
@@ -4800,7 +5815,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vky",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4815,8 +5830,8 @@ const tI18nPhrase Phrases[] = {
     "Télécommande du VDR",
     "",
     "Kauko-ohjain",
-    "",
-    "",
+    "Pilot",
+    "Mando a distancia",
     "",
     "",
     "",
@@ -4835,7 +5850,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "DÃ¡lkovÃ© ovlÃ¡dÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4850,8 +5865,8 @@ const tI18nPhrase Phrases[] = {
     "Fin de session",
     "",
     "Kirjaudu ulos",
-    "",
-    "",
+    "Wyloguj",
+    "Salir",
     "",
     "",
     "",
@@ -4870,7 +5885,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "OdhlÃ¡Å¡enÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4879,14 +5894,14 @@ const tI18nPhrase Phrases[] = {
   { "Your attention is required",
     "Ihre Aufmerksamkeit ist erforderlich",
     "",
-    "",
+    "ATTENZIONE",
     "",
     "",
     "",
     "",
     "Huomiotasi tarvitaan",
-    "",
-    "",
+    "Uwaga, co¶ nie gra  ",
+    "Se requiere su atención",
     "",
     "",
     "",
@@ -4905,7 +5920,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NutnÃ¡ reakce",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4914,14 +5929,14 @@ const tI18nPhrase Phrases[] = {
   { "React",
     "Reagieren",
     "",
-    "",
+    "Risolvi",
     "",
     "",
     "",
     "",
     "Reagoi",
-    "",
-    "",
+    "Sprawd¼",
+    "Resolver",
     "",
     "",
     "",
@@ -4940,7 +5955,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Å™eÅ¡it",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -4949,49 +5964,14 @@ const tI18nPhrase Phrases[] = {
   { "Dismiss",
     "Verwerfen",
     "",
-    "",
+    "Ignora",
     "",
     "",
     "",
     "",
     "Ohita",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Find more at the Internet Movie Database.",
-    "Weitere Informationen in der Internet Movie Database.",
-    "",
-    "Cerca ulteriori informazioni nel database internet (IMDB)",
-    "",
-    "",
-    "Trouver plus d'information du film dans la base de données film IMDB.",
-    "",
-    "Hae IMDB:stä",
-    "",
-    "",
+    "Anuluj",
+    "Ignorar",
     "",
     "",
     "",
@@ -5010,23 +5990,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "neÅ™eÅ¡it",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
-  { "Stream this channel into browser.",
-    "Sendung im Browser anzeigen.",
+  { "Now",
+    "Jetzt",
     "",
-    "Trasmetti questo canale nel browser.",
-    "",
-    "",
-    "Diffusez cette chaîne vers le navigateur.",
-    "",
-    "Aloita suoratoisto",
+    "Adesso",
     "",
     "",
+    "maintenant",
+    "",
+    "Nyt",
+    "Teraz",
+    "Ahora",
     "",
     "",
     "",
@@ -5045,23 +6025,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NynÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
-  { "Edit this",
-    "Timer editieren",
+  { "%A, %b %d %Y",
+    "%A, %d.%m.%Y",
     "",
-    "Modifica timer",
-    "",
-    "",
-    "Changer cette programmation",
-    "",
-    "Muokkaa ajastinta",
+    "%A, %b %d %Y",
     "",
     "",
+    "%A, %d.%m.%Y",
+    "",
+    "%A %d.%m.%Y",
+    "",
+    "%A, %b %d %Y",
     "",
     "",
     "",
@@ -5080,968 +6060,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "%a, %d.%m. ",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
-  { "Record this",
-    "Diese Sendung aufnehmen",
+  { "Time",
+    "Zeit",
     "",
-    "Registra questa trasmissione",
+    "Ora",
     "",
     "",
-    "Enregistrer cette émission",
     "",
-    "Tallenna ohjelma",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "loading data",
-    "Daten nachladen",
-    "",
-    "caricamento dati",
-    "",
-    "",
-    "Chargement des données",
-    "",
-    "ladataan tietoja",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "an error occured!",
-    "Es ist ein Fehler aufgetreten!",
-    "",
-    "errore rilevato!",
-    "",
-    "",
-    "Une erreur s'est produite!",
-    "",
-    "virhe havaittu!",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Request succeeded!",
-    "Aktion durchgeführt!",
-    "",
-    "Richiesta con successo!",
-    "",
-    "",
-    "Demande réussi!",
-    "",
-    "Pyyntö onnistui!",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Request failed!",
-    "Aktion fehlgeschlagen!",
-    "",
-    "Richiesta fallita!",
-    "",
-    "",
-    "Échec de la requête!",
-    "",
-    "Pyyntö epäonnistui!",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "January",
-    "Januar",
-    "",
-    "Gennaio",
-    "",
-    "",
-    "Janvier",
-    "",
-    "Tammikuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "February",
-    "Februar",
-    "",
-    "Febbraio",
-    "",
-    "",
-    "Février",
-    "",
-    "Helmikuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "March",
-    "März",
-    "",
-    "Marzo",
-    "",
-    "",
-    "Mars",
-    "",
-    "Maaliskuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "April",
-    "April",
-    "",
-    "Aprile",
-    "",
-    "",
-    "Avril",
-    "",
-    "Huhtikuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "May",
-    "Mai",
-    "",
-    "Maggio",
-    "",
-    "",
-    "Mai",
-    "",
-    "Toukokuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "June",
-    "Juni",
-    "",
-    "Giugno",
-    "",
-    "",
-    "Juin",
-    "",
-    "Kesäkuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "July",
-    "Juli",
-    "",
-    "Luglio",
-    "",
-    "",
-    "Juillet",
-    "",
-    "Heinäkuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "August",
-    "August",
-    "",
-    "Agosto",
-    "",
-    "",
-    "Août",
-    "",
-    "Elokuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "September",
-    "September",
-    "",
-    "Settembre",
-    "",
-    "",
-    "Septembre",
-    "",
-    "Syyskuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "October",
-    "Oktober",
-    "",
-    "Ottobre",
-    "",
-    "",
-    "Octobre",
-    "",
-    "Lokakuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "November",
-    "November",
-    "",
-    "Novembre",
-    "",
-    "",
-    "Novembre",
-    "",
-    "Marraskuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "December",
-    "Dezember",
-    "",
-    "Dicembre",
-    "",
-    "",
-    "Décembre",
-    "",
-    "Joulukuu",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "retrieving status ...",
-    "Hole Status ...",
-    "",
-    "Rilevamento stato ...",
-    "",
-    "",
-    "mise à jours de l'état",
-    "",
-    "Haetaan tietoja ...",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Toggle updates on/off.",
-    "Statusabfrage ein- oder ausschalten.",
-    "",
-    "Attiva/disattiva aggiornamenti.",
-    "",
-    "",
-    "Activer/Désactiver l'update du status",
-    "",
-    "Aseta tilannekysely päälle/pois",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "stop playback",
-    "Anhalten",
-    "",
-    "Ferma",
-    "",
-    "",
-    "arrêter la lecture",
-    "",
-    "Lopeta toisto",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "resume playback",
-    "Fortsetzen",
-    "",
-    "Continua",
-    "",
-    "",
-    "continuer",
-    "",
-    "Jatka toistoa",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "pause playback",
-    "Pause",
-    "",
-    "Pausa",
-    "",
-    "",
-    "pause",
-    "",
-    "Pysäytä toisto",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "fast rewind",
-    "Suchlauf rückwärts",
-    "",
-    "Riavvolgi",
-    "",
-    "",
-    "retour rapide",
-    "",
-    "Pikakelaus taaksepäin",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "fast forward",
-    "Suchlauf vorwärts",
-    "",
-    "Avanzamento",
-    "",
-    "",
-    "avance rapide",
-    "",
-    "Pikakelaus eteenpäin",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "previous channel",
-    "Sender zurück",
-    "",
-    "Canale precedente",
-    "",
-    "",
-    "chaîne précédent",
-    "",
-    "Edellinen kanava",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "next channel",
-    "Sender vor",
-    "",
-    "Canale successivo",
-    "",
-    "",
-    "Chaîne suivante",
-    "",
-    "Seuraava kanava",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "No server response!",
-    "Der Server antwortet nicht!",
-    "",
-    "Nessuna risposta dal server!",
-    "",
-    "",
-    "Pas de réponse du serveur!",
-    "",
-    "Palvelin ei vastaa!",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Failed to update infobox!",
-    "Kann Infobox nicht aktualisieren!",
-    "",
-    "Aggiornamento casella info fallita!",
-    "",
-    "",
-    "Échec de la mise à jour infobox!",
-    "",
-    "Infolaatikon päivitys epäonnistui!",
-    "",
-    "",
+    "Ajankohta",
+    "Czas",
+    "Hora",
     "",
     "",
     "",
@@ -6069,14 +6104,14 @@ const tI18nPhrase Phrases[] = {
   { "Switch to this channel.",
     "Zu diesem Kanal umschalten.",
     "",
-    "Sintonizza questo canale.",
+    "Sintonizza questo canale",
     "",
     "",
     "Changer vers cette chaîne. ",
     "",
     "Vaihda kanavalle",
-    "",
-    "",
+    "Prze³±cz na ten kana³",
+    "Cambiar a este canal",
     "",
     "",
     "",
@@ -6095,7 +6130,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™epnout",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6104,14 +6139,14 @@ const tI18nPhrase Phrases[] = {
   { "Search for repeats.",
     "Nach Wiederholungen suchen.",
     "",
-    "Ricerca repliche.",
+    "Cerca repliche",
     "",
     "",
     "Recherche de répétitions.",
     "",
     "Etsi toistuvat",
-    "",
-    "",
+    "Szukaj powtórek",
+    "Buscar repeticiones",
     "",
     "",
     "",
@@ -6130,7 +6165,1197 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
+    "Vyhledat reprÃ­zy",
+#endif
+#if VDRVERSNUM >= 10502
     "",
+#endif
+  },
+  { "Click to view details.",
+    "FÃ¼r Details klicken.",
+    "",
+    "Fai click per vedere i dettagli",
+    "",
+    "",
+    "Clic pour voire les détails.",
+    "",
+    "Napsauta katsoaksesi lisÃ¤tietoja.",
+    "Kliknij aby zobaczyæ szczegó³y",
+    "Pulsar para ver detalles",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Detaily",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "more",
+    "mehr",
+    "",
+    "Altro",
+    "",
+    "",
+    "plus",
+    "",
+    "lisÃ¤tietoja",
+    "wiêcej",
+    "más",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "vÃ­ce",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Channel",
+    "Kanal",
+    "",
+    "Canale",
+    "",
+    "",
+    "Chaîne",
+    "",
+    "Kanava",
+    "Kana³",
+    "Canal",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "KanÃ¡l",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Find more at the Internet Movie Database.",
+    "Weitere Informationen in der Internet Movie Database.",
+    "",
+    "Cerca ulteriori informazioni nel database internet (IMDB)",
+    "",
+    "",
+    "Trouver plus d'information du film dans la base de données film IMDB.",
+    "",
+    "Hae IMDB:stÃ¤",
+    "Szukaj w IMDb.com",
+    "Encontrar más en la Base de Datos de Películas de Internet",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Vyhledej vÃ­ce na Internet Movie Database.",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Stream this channel into browser.",
+    "Sendung im Browser anzeigen.",
+    "",
+    "Trasmetti questo canale nel browser",
+    "",
+    "",
+    "Diffusez cette chaîne vers le navigateur.",
+    "",
+    "Aloita kanavan suoratoisto",
+    "Ogl±daj kana³ w przegl±darce",
+    "Reproduce este canal en el navegador",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "PÅ™ehrÃ¡vej v prohlÃ­Å¾eÄi",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Stream this recording into browser.",
+    "Aufnahme im Browser anzeigen.",
+    "",
+    "Trasmetti questa registrazione nel browser",
+    "",
+    "",
+    "Diffusez cette chaîne vers le navigateur.",
+    "",
+    "Aloita tallenteen suoratoisto",
+    "Ogl±daj nagranie w przegl±darce",
+    "Reproduce esta grabación en el navegador",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "PÅ™ehrÃ¡vej tuto nahrÃ¡vku v prohlÃ­Å¾eÄi.",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Record this",
+    "Diese Sendung aufnehmen",
+    "",
+    "Registra questa trasmissione",
+    "",
+    "",
+    "Enregistrer cette émission",
+    "",
+    "Tallenna ohjelma",
+    "Nagraj",
+    "Grabar esto",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "NahrÃ¡t",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "loading data",
+    "Daten nachladen",
+    "",
+    "caricamento dati",
+    "",
+    "",
+    "Chargement des données",
+    "",
+    "ladataan tietoja",
+    "³adujê ...",
+    "cargando datos",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "aktualizace ÃºdajÅ¯",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "an error occured!",
+    "Es ist ein Fehler aufgetreten!",
+    "",
+    "Errore rilevato!",
+    "",
+    "",
+    "Une erreur s'est produite!",
+    "",
+    "virhe havaittu!",
+    "wyst±pi³ b³±d!",
+    "¡ha ocurrido un error!",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "problÃ©m!",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Request succeeded!",
+    "Aktion durchgefÃ¼hrt!",
+    "",
+    "Richiesta completata!",
+    "",
+    "",
+    "Demande réussi!",
+    "",
+    "PyyntÃ¶ onnistui!",
+    "Zakoñczono powodzeniem!",
+    "¡Búsqueda completada!",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "PoÅ¾adevek ÃºspÄ›Å¡nÃ½.",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Request failed!",
+    "Aktion fehlgeschlagen!",
+    "",
+    "Richiesta fallita!",
+    "",
+    "",
+    "Échec de la requête!",
+    "",
+    "PyyntÃ¶ epÃ¤onnistui!",
+    "Zakoñczono niepowodzeniem!",
+    "¡La búsqueda ha fallado!",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "PoÅ¾adavek selhal!",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "January",
+    "Januar",
+    "",
+    "Gennaio",
+    "",
+    "",
+    "Janvier",
+    "",
+    "Tammikuu",
+    "Styczeñ",
+    "Enero",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "leden",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "February",
+    "Februar",
+    "",
+    "Febbraio",
+    "",
+    "",
+    "Février",
+    "",
+    "Helmikuu",
+    "Luty",
+    "Febrero",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Ãºnor",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "March",
+    "MÃ¤rz",
+    "",
+    "Marzo",
+    "",
+    "",
+    "Mars",
+    "",
+    "Maaliskuu",
+    "Marzec",
+    "Marzo",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "bÅ™ezen",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "April",
+    "April",
+    "",
+    "Aprile",
+    "",
+    "",
+    "Avril",
+    "",
+    "Huhtikuu",
+    "Kwiecieñ",
+    "Abril",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "duben",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "May",
+    "Mai",
+    "",
+    "Maggio",
+    "",
+    "",
+    "Mai",
+    "",
+    "Toukokuu",
+    "Maj",
+    "Mayo",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "kvÄ›ten",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "June",
+    "Juni",
+    "",
+    "Giugno",
+    "",
+    "",
+    "Juin",
+    "",
+    "KesÃ¤kuu",
+    "Czerwiec",
+    "Junio",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Äerven",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "July",
+    "Juli",
+    "",
+    "Luglio",
+    "",
+    "",
+    "Juillet",
+    "",
+    "HeinÃ¤kuu",
+    "Lipiec",
+    "Julio",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Äervenec",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "August",
+    "August",
+    "",
+    "Agosto",
+    "",
+    "",
+    "Août",
+    "",
+    "Elokuu",
+    "Sierpieñ",
+    "Agosto",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "srpen",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "September",
+    "September",
+    "",
+    "Settembre",
+    "",
+    "",
+    "Septembre",
+    "",
+    "Syyskuu",
+    "Wrzesieñ",
+    "Septiembre",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "zÃ¡Å™Ã­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "October",
+    "Oktober",
+    "",
+    "Ottobre",
+    "",
+    "",
+    "Octobre",
+    "",
+    "Lokakuu",
+    "Pa¼dziernik",
+    "Octubre",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Å™Ã­jen",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "November",
+    "November",
+    "",
+    "Novembre",
+    "",
+    "",
+    "Novembre",
+    "",
+    "Marraskuu",
+    "Listopad",
+    "Noviembre",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "listopad",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "December",
+    "Dezember",
+    "",
+    "Dicembre",
+    "",
+    "",
+    "Décembre",
+    "",
+    "Joulukuu",
+    "Grudzieñ",
+    "Diciembre",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "prosinec",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "retrieving status ...",
+    "Hole Status ...",
+    "",
+    "Rilevamento stato ...",
+    "",
+    "",
+    "mise à jours de l'état",
+    "",
+    "Haetaan tietoja ...",
+    "odczytywanie stanu ...",
+    "recibiendo estado ...",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "zjiÅ¡Å¥ovÃ¡nÃ­ stavu...",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Toggle updates on/off.",
+    "Statusabfrage ein- oder ausschalten.",
+    "",
+    "Attiva/disattiva aggiornamenti",
+    "",
+    "",
+    "Activer/Désactiver l'update du status",
+    "",
+    "Aseta tilannekysely pÃ¤Ã¤lle/pois",
+    "W³±cz/wy³±cz aktualizacjê stanu.",
+    "Activar actualizaciones activado/desactivado",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "aktualizovat zmÄ›ny ano/ne.",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "stop playback",
+    "Anhalten",
+    "",
+    "Ferma",
+    "",
+    "",
+    "arrêter la lecture",
+    "",
+    "Lopeta toisto",
+    "zatrzymaj odtwarzanie",
+    "detener reproducción",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "ukonÄit pÅ™ehrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "resume playback",
+    "Fortsetzen",
+    "",
+    "Continua",
+    "",
+    "",
+    "continuer",
+    "",
+    "Jatka toistoa",
+    "wznów odtwarzanie",
+    "continuar reproducción",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "pokraÄovat v pÅ™ehrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "pause playback",
+    "Pause",
+    "",
+    "Pausa",
+    "",
+    "",
+    "pause",
+    "",
+    "PysÃ¤ytÃ¤ toisto",
+    "pauzuj odtwarzanie",
+    "pausar reproducción",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "pÅ™eruÅ¡it pÅ™ehrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "fast rewind",
+    "Suchlauf rÃ¼ckwÃ¤rts",
+    "",
+    "Riavvolgi",
+    "",
+    "",
+    "retour rapide",
+    "",
+    "Pikakelaus taaksepÃ¤in",
+    "przewiñ do ty³u",
+    "rebobinado rápido",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "rychle zpÄ›t",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "fast forward",
+    "Suchlauf vorwÃ¤rts",
+    "",
+    "Avanza",
+    "",
+    "",
+    "avance rapide",
+    "",
+    "Pikakelaus eteenpÃ¤in",
+    "przewiñ do przodu",
+    "avance rápido",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "rychle vpÅ™ed",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "previous channel",
+    "Sender zurÃ¼ck",
+    "",
+    "Canale precedente",
+    "",
+    "",
+    "chaîne précédent",
+    "",
+    "Edellinen kanava",
+    "poprzeni kana³",
+    "canal previo",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "pÅ™edchozÃ­ kanÃ¡l",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "next channel",
+    "Sender vor",
+    "",
+    "Canale successivo",
+    "",
+    "",
+    "Chaîne suivante",
+    "",
+    "Seuraava kanava",
+    "nastêpny kana³",
+    "canal siguiente",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "dalÅ¡Ã­ kanÃ¡l",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "No server response!",
+    "Der Server antwortet nicht!",
+    "",
+    "Nessuna risposta dal server!",
+    "",
+    "",
+    "Pas de réponse du serveur!",
+    "",
+    "Palvelin ei vastaa!",
+    "Serwer nie odpowiada!",
+    "¡El servidor no responde!",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Server neodpovÃ­dÃ¡!",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Failed to update infobox!",
+    "Kann Infobox nicht aktualisieren!",
+    "",
+    "Aggiornamento tabella info fallita!",
+    "",
+    "",
+    "Échec de la mise à jour infobox!",
+    "",
+    "Infolaatikon pÃ¤ivitys epÃ¤onnistui!",
+    "B³±d poczas aktualizacji panela!",
+    "¡La actualización de infobox ha fallado!",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Aktualizace infookna selhala!",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6144,9 +7369,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Auteur",
     "",
-    "Tekijät",
-    "",
-    "",
+    "TekijÃ¤t",
+    "Autorzy",
+    "Autores",
     "",
     "",
     "",
@@ -6165,7 +7390,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "AutoÅ™i",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6174,14 +7399,14 @@ const tI18nPhrase Phrases[] = {
   { "Project Idea",
     "Projekt Idee",
     "",
-    "Capo progetto",
+    "Idea progetto",
     "",
     "",
     "Chef de projet",
     "",
     "Projektin idea",
     "",
-    "",
+    "Idea del proyecto",
     "",
     "",
     "",
@@ -6200,7 +7425,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "nÃ¡pad",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6216,7 +7441,7 @@ const tI18nPhrase Phrases[] = {
     "",
     "HTTP-palvelin",
     "",
-    "",
+    "Servidor Web",
     "",
     "",
     "",
@@ -6235,7 +7460,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "web server",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6249,9 +7474,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Chef de projet",
     "",
-    "Projektipäällikkö",
+    "ProjektipÃ¤Ã¤llikkÃ¶",
     "",
-    "",
+    "Jefe del proyecto",
     "",
     "",
     "",
@@ -6270,7 +7495,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "vedoucÃ­ tÃ½mu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6284,9 +7509,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Contenu",
     "",
-    "Sisältö",
+    "SisÃ¤ltÃ¶",
     "",
-    "",
+    "Contenido",
     "",
     "",
     "",
@@ -6305,7 +7530,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "obsah",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6321,7 +7546,7 @@ const tI18nPhrase Phrases[] = {
     "",
     "Grafiikka",
     "",
-    "",
+    "Gráficos",
     "",
     "",
     "",
@@ -6340,7 +7565,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "grafika",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6355,8 +7580,8 @@ const tI18nPhrase Phrases[] = {
     "Information",
     "",
     "Tietoja",
-    "",
-    "",
+    "Informacje",
+    "Información",
     "",
     "",
     "",
@@ -6375,7 +7600,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Informace",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6384,14 +7609,14 @@ const tI18nPhrase Phrases[] = {
   { "LIVE version",
     "LIVE Version",
     "",
-    "Informazione su LIVE",
+    "Versione LIVE",
     "",
     "",
     "Version LIVE",
     "",
     "LIVE-versio",
-    "",
-    "",
+    "Wersja LIVE",
+    "Versión LIVE",
     "",
     "",
     "",
@@ -6410,7 +7635,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "LIVE verze",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6425,8 +7650,8 @@ const tI18nPhrase Phrases[] = {
     "Version VDR",
     "",
     "VDR-versio",
-    "",
-    "",
+    "Wersja VDR",
+    "Versión VDR",
     "",
     "",
     "",
@@ -6445,14 +7670,14 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VDR verze",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Features",
-    "Unterstütze Plugins",
+    "UnterstÃ¼tze Plugins",
     "",
     "Funzioni",
     "",
@@ -6460,8 +7685,8 @@ const tI18nPhrase Phrases[] = {
     "Soutien des plugins",
     "",
     "Tuetut laajennokset",
-    "",
-    "",
+    "Dodatki",
+    "Características",
     "",
     "",
     "",
@@ -6480,7 +7705,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Moduly",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6494,9 +7719,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "actif",
     "",
-    "käytössä",
-    "",
-    "",
+    "kÃ¤ytÃ¶ssÃ¤",
+    "aktywny",
+    "activo",
     "",
     "",
     "",
@@ -6515,7 +7740,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "aktivnÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6530,8 +7755,8 @@ const tI18nPhrase Phrases[] = {
     "requis",
     "",
     "vaadittava",
-    "",
-    "",
+    "wymagany",
+    "requerido",
     "",
     "",
     "",
@@ -6550,7 +7775,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "vyÅ¼adovÃ¡no",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6565,8 +7790,8 @@ const tI18nPhrase Phrases[] = {
     "Page d'accueil",
     "",
     "Kotisivu",
-    "",
-    "",
+    "Strona domowa",
+    "Página principal",
     "",
     "",
     "",
@@ -6585,14 +7810,14 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "DomovskÃ¡ strÃ¡nka",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Bugs and suggestions",
-    "Fehlerberichte und Vorschläge",
+    "Fehlerberichte und VorschlÃ¤ge",
     "",
     "Rapporto errori e proposte",
     "",
@@ -6600,8 +7825,8 @@ const tI18nPhrase Phrases[] = {
     "Bogues et suggestions",
     "",
     "Virheraportoinnit ja parannusehdotukset",
-    "",
-    "",
+    "B³êdy i sugestie",
+    "Sugerencias y bugs",
     "",
     "",
     "",
@@ -6620,23 +7845,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Chyby a pÅ™ipomÃ­nky",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "If you encounter any bugs or would like to suggest new features, please use our bugtracker",
-    "Für Fehler oder Verbesserungsvorschläge steht unser Bugtracker bereit",
+    "FÃ¼r Fehler oder VerbesserungsvorschlÃ¤ge steht unser Bugtracker bereit",
     "",
     "Se riscontri degli errori o vuoi chiedere nuove funzioni utilizza il nostro bugtracker",
     "",
     "",
     "Si vous rencontrez n'importe quels bogue ou voudriez suggérer de nouveaux dispositifs, employer notre bugtracker svp",
     "",
-    "Voit raportoida sekä virheet että parannusehdotukset suoraan havaintotietokantaan",
-    "",
-    "",
+    "Voit raportoida sekÃ¤ virheet ettÃ¤ parannusehdotukset suoraan havaintotietokantaan",
+    "Je¶li znajdziesz jakie¶ b³êdy lub chcia³by¶ zasugerowaæ nowe funkcje, skorzystaj z naszego bugtrackera",
+    "Si encuentra algún bug o le gustaría sugerir nuevas características, por favor use nuestro bugtracker",
     "",
     "",
     "",
@@ -6655,7 +7880,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Pokud odhalÃ­te nÄ›jakÃ© chyby, pÅ™Ã­p. si pÅ™ejete novÃ© vlastnosti, pouÅ¾ijte prosÃ­m bugtracker",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6664,14 +7889,14 @@ const tI18nPhrase Phrases[] = {
   { "ERROR:",
     "FEHLER:",
     "",
-    "",
+    "ERRORE:",
     "",
     "",
     "ERREUR:",
     "",
     "VIRHE:",
-    "",
-    "",
+    "B£¡D:",
+    "ERROR",
     "",
     "",
     "",
@@ -6690,23 +7915,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "CHYBA:",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Deleted recording:",
-    "Gelöschte Aufnahme:",
+    "GelÃ¶schte Aufnahme:",
     "",
-    "Registrazione serie",
+    "Registrazione eliminata:",
     "Serie's opnemen",
     "",
     "",
     "",
     "Poistettu tallenne:",
-    "",
-    "",
+    "Usuniêto nagranie:",
+    "Grabación borrada:",
     "",
     "",
     "",
@@ -6725,7 +7950,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "SmazanÃ¡ nahrÃ¡vka:",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6734,14 +7959,14 @@ const tI18nPhrase Phrases[] = {
   { "List of recordings",
     "Liste der Aufnahmen",
     "",
-    "Lista registrazioni",
+    "Elenco registrazioni",
     "",
     "",
     "Liste des enregistrements",
     "",
     "Tallennelistaus",
-    "",
-    "",
+    "Lista nagrañ",
+    "Lista de grabaciones",
     "",
     "",
     "",
@@ -6760,7 +7985,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Seznam nahrÃ¡vek",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6769,12 +7994,117 @@ const tI18nPhrase Phrases[] = {
   { "No recordings found",
     "Keine Aufnahmen vorhanden",
     "",
-    "Nessuna registrazione",
+    "Nessuna registrazione trovata",
     "",
     "",
     "Pas d'enregistrement",
     "",
-    "Tallenteita ei löydy",
+    "Tallenteita ei lÃ¶ydy",
+    "Nie znaleziono nagrañ",
+    "No se han encontrado grabaciones",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Å¾Ã¡dnÃ© nahrÃ¡vky",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Delete selected",
+    "LÃ¶schen",
+    "",
+    "Elimina selezionati",
+    "",
+    "",
+    "",
+    "",
+    "Poista valitut",
+    "Usuñ zaznaczone",
+    "Borrar selección",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Smazat automatickÃ© nahrÃ¡vÃ¡nÃ­?",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "%a,",
+    "%a,",
+    "",
+    "%a,",
+    "",
+    "",
+    "%a,",
+    "",
+    "%a",
+    "",
+    "%a,",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "%a, %x",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "(%d:%02d)",
+    "(%d:%02d)",
+    "",
+    "(%d:%02d)",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -6801,15 +8131,190 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
   },
-  { "Click to view details.",
-    "Für Details klicken.",
+  { "Sort by name",
+    "Sortiere nach Name",
     "",
-    "Clicca per vedere i dettagli.",
+    "Ordina per nome",
     "",
     "",
-    "Clic pour voire les détails.",
     "",
-    "Napsauta katsoaksesi lisätietoja.",
+    "",
+    "JÃ¤rjestÃ¤ nimen mukaan",
+    "Sortuj wed³ug nazwy",
+    "Ordenar por nombre",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Sort by date",
+    "Sortiere nach Datum",
+    "",
+    "Ordina per data",
+    "",
+    "",
+    "",
+    "",
+    "JÃ¤rjestÃ¤ pÃ¤ivÃ¤mÃ¤Ã¤rÃ¤n mukaan",
+    "Sortuj wed³ug daty",
+    "Ordenar por fecha",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "do data",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Filter",
+    "Filter",
+    "",
+    "Filtro",
+    "",
+    "",
+    "",
+    "",
+    "Suodata",
+    "Filtr",
+    "Filtrar",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Look in recordings titles and subtitles for the given string and display only the matching ones. You may also use perl compatible regular expressions (PCRE).",
+    "Suche in Aufnahme-Titel und Untertitel nach dem angegebenen Wort und zeige nur die zutreffenden an. Es sind auch Perl kompatible regulÃ¤re AusdrÃ¼cke (PCRE) erlaubt.",
+    "",
+    "Cerca nei titoli e sottotitoli delle registrazioni determinati valori e mostra solo quelli attinenti. Puoi anche usare espressioni regolari compatibili perl (PCRE)",
+    "",
+    "",
+    "",
+    "",
+    "Suodata tallenteet nimi- ja kuvauskentistÃ¤ hakusanan avulla. Voit kÃ¤yttÃ¤Ã¤ myÃ¶s Perl-yhteensopivia sÃ¤Ã¤nnÃ¶llisiÃ¤ lausekkeita (PCRE).",
+    "Poka¿ nagrania zgodne z wpisanym wyra¿eniem (mo¿na u¿ywaæ tak¿e wyra¿eñ regularnych typu PERL).",
+    "Buscar en grabaciones títulos y subtítulos la cadena indicada y mostrar únicamente las que coincidan. Puede también usar expresiones regulares tipo perl (PCRE).",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Expand all folders",
+    "Alle Ordner aufklappen",
+    "",
+    "Espandi tutte le cartelle",
+    "",
+    "",
+    "",
+    "",
+    "Avaa kaikki kansiot",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Collapse all folders",
+    "Alle Ordner einklappen",
+    "",
+    "Comprimi tutte le cartelle",
+    "",
+    "",
+    "",
+    "",
+    "Sulje kaikki kansiot",
     "",
     "",
     "",
@@ -6837,16 +8342,16 @@ const tI18nPhrase Phrases[] = {
 #endif
   },
   { "Delete this recording from hard disc!",
-    "Diese Aufnahme von der Festplatte löschen!",
+    "Diese Aufnahme von der Festplatte lÃ¶schen!",
     "",
-    "Cancella registrazione dopo ... giorni",
-    "",
-    "",
+    "Elimina questa registrazione dal disco fisso!",
     "",
     "",
-    "Poista tallenne kovalevyltä!",
     "",
     "",
+    "Poista tallenne kovalevyltÃ¤!",
+    "Usuñ to nagranie z twardego dysku!",
+    "¡Borrar esta grabación del disco duro!",
     "",
     "",
     "",
@@ -6865,7 +8370,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Smazat nahrÃ¡vku!",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -6874,49 +8379,14 @@ const tI18nPhrase Phrases[] = {
   { "play this recording.",
     "Diese Aufnahme abspielen.",
     "",
-    "Riproduci questa registrazione.",
+    "Riproduci questa registrazione",
     "",
     "",
     "lire cette enregistrement.",
     "",
     "Toista tallenne",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Interval",
-    "Intervall",
-    "",
-    "intervallo",
-    "",
-    "",
-    "Intervalle",
-    "",
-    "Päivitysväli",
-    "",
-    "",
+    "Odtwórz nagranie",
+    "reproducir esta grabación",
     "",
     "",
     "",
@@ -6935,23 +8405,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™ehrÃ¡t nahrÃ¡vku",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Couldn't find channel or no channels available. Maybe you mistyped your request?",
-    "Konnte Kanal nicht finden oder keine Kanäle verfügbar. Ist die Anfrage korrekt?",
+    "Konnte Kanal nicht finden oder keine KanÃ¤le verfÃ¼gbar. Ist die Anfrage korrekt?",
     "",
-    "Impossibile trovare canale o canali disponibili. Hai digitato correttamente la richiesta?",
+    "Impossibile trovare il canale o i canali disponibili. Hai digitato correttamente la richiesta?",
     "",
     "",
     "N'a pas pu trouver la chaîne. Votre requête est t'elle corrête? ",
     "",
-    "Kanavaa ei löydy. Kirjoititko varmasti oikein?",
-    "",
-    "",
+    "Kanavaa ei lÃ¶ydy. Kirjoititko varmasti oikein?",
+    "Nie mo¿na odnale¶æ kana³u lub kana³y nie s± dostêpne.",
+    "No se puede encontrar el canal o no hay canales disponibles. ¿Puede que lo haya escrito de forma errónea?",
     "",
     "",
     "",
@@ -6970,58 +8440,58 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
+    "KanÃ¡l je nedostupnÃ½, nebo neexistuje. Zkontrolujte zadÃ¡nÃ­.",
+#endif
+#if VDRVERSNUM >= 10502
     "",
+#endif
+  },
+  { "Snapshot interval",
+    "Snapshot-Intervall",
+    "",
+    "Intervallo schermata",
+    "interval",
+    "",
+    "intervalle",
+    "",
+    "Kuvien pÃ¤ivitysvÃ¤li",
+    "Okres pomiêdzy migawkami",
+    "Intervalo de visionado",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Interval snÃ­mkÅ¯ obrazovky",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "No schedules available for this channel",
-    "Für diesen Kanal liegen keine EPG-Informationen vor",
+    "FÃ¼r diesen Kanal liegen keine EPG-Informationen vor",
     "",
     "Nessun programma disponibile per questo canale",
     "",
     "",
     "Aucune programmation disponible pour cette chaîne",
     "",
-    "Tälle kanavalle ei ole saatavilla ohjelmistoa",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "%A, %b %d %Y",
-    "%A, %d.%m.%Y",
-    "",
-    "%A, %b %d %Y",
-    "",
-    "",
-    "%A, %d.%m.%Y",
-    "",
-    "%A, %d.%m.%Y",
-    "",
-    "",
+    "TÃ¤lle kanavalle ei ole saatavilla ohjelmistoa",
+    "Brak listy audycji dla tego kana³u",
+    "No hay programaciones disponibles para este canal",
     "",
     "",
     "",
@@ -7040,77 +8510,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Show schedule of channel",
-    "Zeige Programm dieses Kanals",
-    "",
-    "Visualizza scheda programmi canale",
-    "",
-    "",
-    "Montrer le programme de la chaîne",
-    "",
-    "Näytä kanavan ohjelmisto",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Stream into browser",
-    "Im Browser anzeigen",
-    "",
-    "Trasmetti questo canale nel browser.",
-    "",
-    "",
-    "Diffusez cette chaîne vers le navigateur.",
-    "",
-    "Suoratoisto selaimeen",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
+    "Pro kanÃ¡l nenÃ­ dostupnÃ½ program",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7125,8 +8525,8 @@ const tI18nPhrase Phrases[] = {
     "Règlages de recherche",
     "",
     "Hakuasetukset",
-    "",
-    "",
+    "Ustawienia wyszukiwania",
+    "Configuración de búsquedas",
     "",
     "",
     "",
@@ -7145,7 +8545,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NastavenÃ­ hledÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7160,8 +8560,8 @@ const tI18nPhrase Phrases[] = {
     "Recherche étendue",
     "",
     "Laajennettu haku",
-    "",
-    "",
+    "Wyszukiwanie zaawansowane",
+    "Búsqueda extendida",
     "",
     "",
     "",
@@ -7180,7 +8580,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "RozÅ¡Ã­Å™enÃ© hledÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7195,8 +8595,8 @@ const tI18nPhrase Phrases[] = {
     "non",
     "",
     "ei",
-    "",
-    "",
+    "nie",
+    "no",
     "",
     "",
     "",
@@ -7215,7 +8615,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ne",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7230,8 +8630,8 @@ const tI18nPhrase Phrases[] = {
     "Résultats",
     "",
     "Hakutulokset",
-    "",
-    "",
+    "Wyniki wyszykiwania",
+    "Resultados de la búsqueda",
     "",
     "",
     "",
@@ -7250,7 +8650,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VÃ½sledky vyhledÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7265,8 +8665,8 @@ const tI18nPhrase Phrases[] = {
     "pas de résultat de recherche",
     "",
     "Ei hakutuloksia",
-    "",
-    "",
+    "Nic nie znaleziono",
+    "Búsqueda sin resultados",
     "",
     "",
     "",
@@ -7285,7 +8685,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Å¾Ã¡dnÃ© vÃ½sledky vyhledÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7300,43 +8700,8 @@ const tI18nPhrase Phrases[] = {
     "Expression de recherche",
     "",
     "Hakutermi",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "Channel",
-    "Kanal",
-    "",
-    "Canale",
-    "",
-    "",
-    "Chaîne",
-    "",
-    "Kanava",
-    "",
-    "",
+    "Wyra¿enie",
+    "Expresión",
     "",
     "",
     "",
@@ -7355,7 +8720,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VÃ½raz",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7369,9 +8734,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Départ entre",
     "",
-    "Alkaa välillä",
-    "",
-    "",
+    "Alkaa vÃ¤lillÃ¤",
+    "Pocz±tek miêdzy",
+    "Iniciar entre",
     "",
     "",
     "",
@@ -7390,7 +8755,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ZaÄÃ­nÃ¡ mezi",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7404,9 +8769,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Actions de la programmation de recherche (in)actives",
     "",
-    "Aseta hakuajastin päälle/pois",
-    "",
-    "",
+    "Aseta hakuajastin pÃ¤Ã¤lle/pois",
+    "Aktywuj/deaktywuj timer wyszukiwania",
+    "Cambiar acciones de la programación de búsqueda (in)activo",
     "",
     "",
     "",
@@ -7425,7 +8790,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "(De)Aktivace automatickÃ©ho nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7440,8 +8805,8 @@ const tI18nPhrase Phrases[] = {
     "Passer en revue les résultats de programmation de recherche",
     "",
     "Selaa hakutuloksia",
-    "",
-    "",
+    "Przegl±daj wyniki timera wyszukiwania",
+    "Navegar por los resultados de la búsqueda",
     "",
     "",
     "",
@@ -7460,23 +8825,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ListovÃ¡nÃ­ vÃ½sledky vyhledÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Delete this search timer?",
-    "Diesen Suchtimer löschen?",
+    "Diesen Suchtimer lÃ¶schen?",
     "",
-    "Cancellare questa ricerca timer?",
+    "Eliminare questo timer di ricerca?",
     "",
     "",
     "Effacer cette programmation de recherche?",
     "",
-    "Poistetaanko tämä hakuajastin?",
-    "",
-    "",
+    "Poistetaanko tÃ¤mÃ¤ hakuajastin?",
+    "Usun±æ ten timer wyszukiwania?",
+    "Borrar este programador de búsqueda",
     "",
     "",
     "",
@@ -7495,23 +8860,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Smazat automatickÃ© nahrÃ¡vÃ¡nÃ­?",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Delete search timer",
-    "Suchtimer löschen",
+    "Suchtimer lÃ¶schen",
     "",
-    "Cancella ricerca timer",
+    "Elimina timer di ricerca",
     "",
     "",
     "Effacer la programmation de recherche",
     "",
     "Poista hakuajastin",
-    "",
-    "",
+    "Usuñ timer wyszukiwania",
+    "Borrar programador de búsqueda",
     "",
     "",
     "",
@@ -7530,7 +8895,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Smazat automatickÃ© nahrÃ¡vÃ¡nÃ­?",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7539,14 +8904,14 @@ const tI18nPhrase Phrases[] = {
   { "Trigger search timer update",
     "Suchtimer-Update starten",
     "",
-    "Avvia aggiornamento timer ricerca",
+    "Avvia aggiornamento timer di ricerca",
     "",
     "",
     "Mise à jour des recherches de programmation maintenant",
     "",
-    "Päivitä hakuajastimet",
-    "",
-    "",
+    "PÃ¤ivitÃ¤ hakuajastimet",
+    "Zaprogramuj aktywne timery wyszukiwania",
+    "Actualizar las programaciones",
     "",
     "",
     "",
@@ -7565,7 +8930,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Aktualizovat poloÅ¾ky nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7574,14 +8939,14 @@ const tI18nPhrase Phrases[] = {
   { "Please set login and password!",
     "Bitte Login und Passwort angeben!",
     "",
-    "Per favore digita nome utente e password!",
+    "Digita un nome utente e password!",
     "",
     "",
     "Entrée le nom d'utilisateur et le mot de passe svp!",
     "",
-    "Aseta käyttäjätunnus sekä salasana!",
-    "",
-    "",
+    "Aseta kÃ¤yttÃ¤jÃ¤tunnus sekÃ¤ salasana!",
+    "Proszê wpisaæ login i has³o!",
+    "Por favor introduzca nombre de usuario y contraseña",
     "",
     "",
     "",
@@ -7600,7 +8965,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Nastavte uÅ¾ivatele a heslo!",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7615,8 +8980,8 @@ const tI18nPhrase Phrases[] = {
     "Paramètre sauvegardé",
     "",
     "Asetukset tallennettu.",
-    "",
-    "",
+    "Zapisano ustawienia.",
+    "Configuración guardada",
     "",
     "",
     "",
@@ -7635,7 +9000,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NastavenÃ­ uloÅ¾eno.",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7650,8 +9015,43 @@ const tI18nPhrase Phrases[] = {
     "Configuration",
     "",
     "Asetukset",
+    "Ustawienia",
+    "Configuración",
     "",
     "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "NastavenÃ­",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "User management",
+    "Benutzerverwaltung",
+    "",
+    "Gestione utenti",
+    "",
+    "",
+    "",
+    "",
+    "KÃ¤yttÃ¤jÃ¤hallinta",
+    "Zarz±dzanie u¿ytkownikami",
+    "Administración de usuarios",
     "",
     "",
     "",
@@ -7679,14 +9079,14 @@ const tI18nPhrase Phrases[] = {
   { "Local net (no login required)",
     "Lokales Netz (keine Anmeldung notwendig)",
     "",
-    "Rete locale (nessun login richiesto)",
+    "Rete locale (nessun accesso richiesto)",
     "",
     "",
     "Réseau local (non requis)",
     "",
     "Paikallinen verkko (ei autentikointia)",
-    "",
-    "",
+    "Sieæ lokalna (logowanie nie wymagane)",
+    "Red local (sin autentificación requerida)",
     "",
     "",
     "",
@@ -7705,7 +9105,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "LokÃ¡lnÃ­ sÃ­Å¥ (bez pÅ™ilÃ¡Å¡enÃ­)",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7719,9 +9119,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Afficher l'image du logo de live",
     "",
-    "Näytä Live-logo",
-    "",
-    "",
+    "NÃ¤ytÃ¤ Live-logo",
+    "Pokazuj logo VDR-Live",
+    "Muestra la imagen del logo Live",
     "",
     "",
     "",
@@ -7740,7 +9140,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Zobrazit logo",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7754,9 +9154,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Utilisez la technologie Ajax",
     "",
-    "Käytä AJAX-tekniikkaa",
-    "",
-    "",
+    "KÃ¤ytÃ¤ AJAX-tekniikkaa",
+    "U¿ywaj technologii ajax",
+    "Usar tecnología ajax",
     "",
     "",
     "",
@@ -7775,7 +9175,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾Ã­vat dynamickÃ© strÃ¡nky (ajax)",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7784,14 +9184,14 @@ const tI18nPhrase Phrases[] = {
   { "Show dynamic VDR information box",
     "Zeige dynamische VDR Status Box",
     "",
-    "Mostra casella informazione dinamica VDR",
+    "Mostra tabella informazione dinamica VDR",
     "",
     "",
     "Voir la boîte d'information dynamique VDR",
     "",
-    "Näytä dynaaminen VDR:n infolaatikko",
-    "",
-    "",
+    "NÃ¤ytÃ¤ dynaaminen VDR:n infolaatikko",
+    "Pokazuj panel informacyjny",
+    "Mostrar información dinámica de VDR box",
     "",
     "",
     "",
@@ -7810,7 +9210,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PouÅ¾Ã­t dynamickÃ½ blok informacÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7824,9 +9224,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Permettez-streaming vidéo",
     "",
-    "Salli lähetyksen suoratoisto",
-    "",
-    "",
+    "Salli lÃ¤hetyksen suoratoisto",
+    "Zezwól na streamowanie strumienia video",
+    "Permitir streaming de vídeo",
     "",
     "",
     "",
@@ -7845,7 +9245,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Povolit streamovÃ¡nÃ­ videa",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7860,8 +9260,8 @@ const tI18nPhrase Phrases[] = {
     "Port du serveur streamdev",
     "",
     "Streamdev-palvelimen portti",
-    "",
-    "",
+    "Port serwera Streamdev",
+    "Puerto del servidor streamdev",
     "",
     "",
     "",
@@ -7889,14 +9289,14 @@ const tI18nPhrase Phrases[] = {
   { "Streamdev stream type",
     "Streamdev Stream Typ",
     "",
-    "Tipo flusso Streamdev",
+    "Tipo trasmissione Streamdev",
     "",
     "",
     "Type du serveur streamdev",
     "",
-    "Streamdev-lähetteen tyyppi",
-    "",
-    "",
+    "Streamdev-lÃ¤hetteen tyyppi",
+    "Typ strumienia Streamdev",
+    "Tipo de stream de streamdev",
     "",
     "",
     "",
@@ -7915,23 +9315,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Streamdev typ streamu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Add links to IMDb",
-    "Füge Links zur IMDb hinzu",
+    "FÃ¼ge Links zur IMDb hinzu",
     "",
-    "Aggiungi collegamenti a IMDb",
+    "Aggiungi collegamenti a IMDB",
     "",
     "",
     "Ajouter des liens vers IMDb",
     "",
-    "Lisää linkit IMDb:hen",
-    "",
-    "",
+    "LisÃ¤Ã¤ linkit IMDb:hen",
+    "Pokazuj odno¶niki do IMDb",
+    "Añadir enlaces a IMDb",
     "",
     "",
     "",
@@ -7950,23 +9350,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™idat odkazy k IMDb",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
-  { "additional fixed times in 'What's on?'",
-    "zusätzliche Zeitpunkte in 'Was läuft?'",
+  { "Additional fixed times in 'What's on?'",
+    "ZusÃ¤tzliche Zeitpunkte in 'Was lÃ¤uft?'",
     "",
-    "Volte addizionali fisse in 'Cosa c'è adesso?'",
+    "Ore aggiuntive fisse menu \"In programmazione\"",
     "",
     "",
     "périodes fixes additionnelles dans 'actuellement?'",
     "",
-    "Lisäajankohdat 'Menossa?'-sivulle",
-    "",
-    "",
+    "LisÃ¤ajankohdat 'Menossa?'-sivulle",
+    "Lista wyboru godzin w zak³adce 'Teraz w TV'",
+    "Horas fijas adicionales en '¿Qué se emite ahora?'",
     "",
     "",
     "",
@@ -7985,7 +9385,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™idat Äasy pro zobrazenÃ­ v \"PrÃ¡vÄ› se vysÃ­lÃ¡\"",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -7994,14 +9394,154 @@ const tI18nPhrase Phrases[] = {
   { "Format is HH:MM. Separate multiple times with a semicolon",
     "Format ist HH:MM. Mehrere Zeiten durch Semikolon trennen",
     "",
-    "Il formato è HH:MM. separa ore multiple con punto e virgola",
+    "Il formato Ã¨ HH:MM. Separa le ore multiple con un punto e virgola",
     "",
     "",
     "Le format est HH:MM . Plusieurs périodes séparées avec un point-virgule",
     "",
-    "Käytä HH:MM formaattia ja erota ajankohdat puolipisteellä",
+    "KÃ¤ytÃ¤ HH:MM formaattia ja erota ajankohdat puolipisteellÃ¤",
+    "Wpisz czasy, które maj± byæ wy¶wietlane na li¶cie wyboru w formacie GG:MM. Oddzielaj poszczególne wpisy ¶rednikiem.",
+    "El formato es HH:MM. Separado múltiples veces con un punto y coma",
     "",
     "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "FormÃ¡t je HH:MM. OddÄ›lte vÃ­ce ÄasÅ¯ stÅ™ednÃ­kem",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Channel groups for MultiSchedule",
+    "Kanalgruppen fÃ¼r die Zeitleiste",
+    "",
+    "Gruppi canali per Multi Programmazione",
+    "",
+    "",
+    "La chaîne n'a pas de programmation",
+    "",
+    "KanavaryhmÃ¤t 'Ohjelmaopas'-sivulle",
+    "Grypy kana³ów w 'Multipzewodniku'",
+    "Grupos de canales para multi programación",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "KanÃ¡l nemÃ¡ Å¾Ã¡dnÃ½ program",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Separate channels with a comma ',', separate groups with a semi-colon ';'",
+    "Trenne KanÃ¤le mit Komma ',', trenne Kanalgruppen mit Semikolon ';'",
+    "",
+    "Separa canali con una virgola ',', separa gruppi con un punto e virgola ';'",
+    "",
+    "",
+    "",
+    "",
+    "KÃ¤ytÃ¤ pilkkua erottimena kanaville ja puolipistettÃ¤ kanavaryhmille",
+    "Kana³y oddzielaj przecinkiem, grypu kana³ów oddzielaj ¶rednikiem (np. 1,2,7,3,11;4,5,6;21,22,23,40",
+    "Canales separados con una coma ',', grupos separados con un punto y coma ';'",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Duration of MultiSchedule in hours",
+    "Dauer der Zeitleiste in Stunden",
+    "",
+    "Durata Multi Programmazione (in ore)",
+    "",
+    "",
+    "",
+    "",
+    "'Ohjelmaopas'-sivun kesto tunteina",
+    "Czas jaki ma obejmowaæ Multiprzewodnik (w godzinach) ",
+    "Duración de la multi programación en horas",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Show channels without EPG",
+    "Zeige KanÃ¤le ohne EPG",
+    "",
+    "Mostra canali senza EPG",
+    "",
+    "",
+    "",
+    "",
+    "NÃ¤ytÃ¤ ohjelmaoppaattomat kanavat",
+    "Pokazuj kana³y bez EPG",
+    "Mostrar canales sin EPG",
     "",
     "",
     "",
@@ -8035,8 +9575,8 @@ const tI18nPhrase Phrases[] = {
     "Page de départ",
     "",
     "Aloitussivu",
-    "",
-    "",
+    "Strona startowa",
+    "Página de inicio",
     "",
     "",
     "",
@@ -8055,7 +9595,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "StartovacÃ­ strÃ¡nka",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8070,8 +9610,8 @@ const tI18nPhrase Phrases[] = {
     "Thème",
     "",
     "Ulkoasu",
-    "",
-    "",
+    "Skórka",
+    "Tema",
     "",
     "",
     "",
@@ -8090,7 +9630,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "TÃ©ma",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8099,14 +9639,14 @@ const tI18nPhrase Phrases[] = {
   { "Timer conflicts",
     "Timer-Konflikte",
     "",
-    "Timer attivo.",
+    "Conflitti timer",
     "Serie's opnemen",
     "",
     "Programmation est active.",
     "",
-    "Päällekkäiset ajastimet",
-    "",
-    "",
+    "PÃ¤Ã¤llekkÃ¤iset ajastimet",
+    "Kolizje timerów",
+    "Conflictos de programaciones",
     "",
     "",
     "",
@@ -8125,7 +9665,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vÃ¡nÃ­ bez kolize",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8134,14 +9674,14 @@ const tI18nPhrase Phrases[] = {
   { "No timer conflicts",
     "Keine Timer-Konflikte",
     "",
-    "Timer attivo.",
+    "Nessun timer in conflitto",
     "Serie's opnemen",
     "",
     "Programmation est active.",
     "",
-    "Ei päällekkäisiä ajastimia",
-    "",
-    "",
+    "Ei pÃ¤Ã¤llekkÃ¤isiÃ¤ ajastimia",
+    "Brak kolizji timerów",
+    "No hay conflictos de programaciones",
     "",
     "",
     "",
@@ -8160,7 +9700,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vÃ¡nÃ­ bez kolize",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8169,14 +9709,14 @@ const tI18nPhrase Phrases[] = {
   { "Timer has a conflict.",
     "Timer hat einen Konflikt.",
     "",
-    "Timer attivo.",
+    "Il timer ha un conflitto.",
     "Serie's opnemen",
     "",
     "Programmation est active.",
     "",
-    "Päällekkäinen ajastin",
-    "",
-    "",
+    "PÃ¤Ã¤llekkÃ¤inen ajastin",
+    "Timer jest w kolizji.",
+    "La programación tiene un conflicto",
     "",
     "",
     "",
@@ -8195,7 +9735,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Kolize v nastavenÃ­ nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8210,8 +9750,8 @@ const tI18nPhrase Phrases[] = {
     "Programmation est active.",
     "",
     "Aktiivinen ajastin",
-    "",
-    "",
+    "Timer jest aktywny.",
+    "La programación está activa",
     "",
     "",
     "",
@@ -8230,7 +9770,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vanÃ­ povoleno",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8244,9 +9784,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Programmation basculer actif/inactif",
     "",
-    "Aseta ajastin päälle/pois",
-    "",
-    "",
+    "Aseta ajastin pÃ¤Ã¤lle/pois",
+    "Aktywuj/deaktywuj timer.",
+    "Cambiar programación activa/inactiva",
     "",
     "",
     "",
@@ -8265,23 +9805,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Povolit/zruÅ¡it nahrÃ¡vÃ¡nÃ­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Delete timer",
-    "Timer löschen",
+    "Timer lÃ¶schen",
     "",
-    "Cancella timer",
+    "Elimina timer",
     "",
     "",
     "Effacer la programmation",
     "",
     "Poista ajastin",
-    "",
-    "",
+    "Usuñ timer",
+    "Borrar programación",
     "",
     "",
     "",
@@ -8300,7 +9840,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ZruÅ¡it nahrÃ¡vÃ¡nÃ­!",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8314,9 +9854,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Aucune programmation définie",
     "",
-    "Ajastinta ei ole määritelty",
-    "",
-    "",
+    "Ajastinta ei ole mÃ¤Ã¤ritelty",
+    "Brak zdefiniowanych timerów.",
+    "No hay definida programación",
     "",
     "",
     "",
@@ -8335,7 +9875,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "NahrÃ¡vÃ¡nÃ­ nenÃ­ nastaveno",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8350,8 +9890,8 @@ const tI18nPhrase Phrases[] = {
     "Enregistrement de série",
     "",
     "Ajastinta tallennetaan",
-    "",
-    "",
+    "Trwa nagranie timera.",
+    "La programación se está grabando.",
     "",
     "",
     "",
@@ -8370,7 +9910,77 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
+    "ProbÃ­hÃ¡ nahrÃ¡vÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
     "",
+#endif
+  },
+  { "Users",
+    "Benutzer",
+    "",
+    "Utenti",
+    "",
+    "",
+    "Utilisateur",
+    "",
+    "KÃ¤yttÃ¤jÃ¤t",
+    "U¿ytkownicy",
+    "Usuarios",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "UÅ¾ivatelÃ©",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Delete user",
+    "Benutzer lÃ¶schen",
+    "",
+    "Elimina utente",
+    "Serie's opnemen",
+    "",
+    "Effacer la programmation",
+    "",
+    "Poista kÃ¤yttÃ¤jÃ¤",
+    "Usuñ u¿ytkownika",
+    "Borrar usuario",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Smazat uÅ¾ivatele",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8384,9 +9994,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "VLC: live vidéo stream",
     "",
-    "VLC: live-lähetyksen suoratoisto",
-    "",
-    "",
+    "VLC: live-lÃ¤hetyksen suoratoisto",
+    "VLC: streamuj video",
+    "VLC: reproducción de vídeo en vivo",
     "",
     "",
     "",
@@ -8405,7 +10015,42 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
+    "VLC: stream bÄ›Å¾Ã­cÃ­ho vysÃ­lÃ¡nÃ­",
+#endif
+#if VDRVERSNUM >= 10502
     "",
+#endif
+  },
+  { "VLC: play recording",
+    "VLC: Aufnahme abspielen",
+    "",
+    "VLC: riproduci registrazione",
+    "",
+    "",
+    "Lire l'enregistrement",
+    "",
+    "VLC: toista tallenne",
+    "VLC: odtwarzaj nagranie",
+    "VLC: reproducir grabación",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "VLC: streamovÃ¡nÃ­ nahrÃ¡vky",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8419,9 +10064,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Stop",
     "",
-    "Pysäytä",
-    "",
-    "",
+    "PysÃ¤ytÃ¤",
+    "Stop",
+    "Detener",
     "",
     "",
     "",
@@ -8455,8 +10100,8 @@ const tI18nPhrase Phrases[] = {
     "Lecture",
     "",
     "Toista",
-    "",
-    "",
+    "Play",
+    "Reproducir",
     "",
     "",
     "",
@@ -8475,7 +10120,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "PÅ™ehrÃ¡vat",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8484,14 +10129,14 @@ const tI18nPhrase Phrases[] = {
   { "Sound on",
     "Ton an",
     "",
-    "Suono attivo",
+    "Volume",
     "",
     "",
     "Son",
     "",
     "Poista mykistys",
-    "",
-    "",
+    "W³±cz g³os",
+    "Sonido activado",
     "",
     "",
     "",
@@ -8510,7 +10155,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Se zvukem",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8519,14 +10164,14 @@ const tI18nPhrase Phrases[] = {
   { "Sound off",
     "Ton aus",
     "",
-    "Suono disattivo",
+    "Muto",
     "",
     "",
     "Coupure du son",
     "",
-    "Mykistä",
-    "",
-    "",
+    "MykistÃ¤",
+    "Wycisz g³os",
+    "Sonido desactivado",
     "",
     "",
     "",
@@ -8545,7 +10190,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Bez zvuku",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8554,14 +10199,14 @@ const tI18nPhrase Phrases[] = {
   { "Fullscreen",
     "Vollbild",
     "",
-    "Schermo interno",
+    "Ingrandisci",
     "",
     "",
     "Plein écran",
     "",
-    "Kokonäyttö",
-    "",
-    "",
+    "KokonÃ¤yttÃ¶",
+    "Pe³ny ekran",
+    "Pantalla completa",
     "",
     "",
     "",
@@ -8580,14 +10225,14 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "CelÃ¡ obrazovka",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Close",
-    "Schließen",
+    "SchlieÃŸen",
     "",
     "Chiudi",
     "",
@@ -8595,8 +10240,8 @@ const tI18nPhrase Phrases[] = {
     "fermer",
     "",
     "Sulje",
-    "",
-    "",
+    "Zamknij",
+    "Cerrar",
     "",
     "",
     "",
@@ -8615,7 +10260,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "ZavÅ™Ã­t",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8624,14 +10269,14 @@ const tI18nPhrase Phrases[] = {
   { "VLC media URL",
     "VLC Medien URL",
     "",
-    "URL media di VLC",
+    "Collegamento multimediale di VLC",
     "",
     "",
     "VLC lien média ",
     "",
     "VLC:n URL",
     "",
-    "",
+    "medios URL VLC",
     "",
     "",
     "",
@@ -8650,23 +10295,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "VLC adresa",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
-  { "What's running at",
-    "Was läuft um",
+  { "%a, %x",
+    "%a, %x",
     "",
-    "Cosa c'è alle",
-    "",
-    "",
-    "Qu'y a t'il au programme vers",
-    "",
-    "Menossa kello",
+    "%a, %x",
     "",
     "",
+    "%A, %x",
+    "",
+    "%a %x",
+    "",
+    "%a, %x",
     "",
     "",
     "",
@@ -8685,58 +10330,93 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
+    "%a, %x",
+#endif
+#if VDRVERSNUM >= 10502
     "",
+#endif
+  },
+  { "What's running on",
+    "Was lÃ¤uft am",
+    "",
+    "In programmazione alle",
+    "",
+    "",
+    "Qu'y a t'il au programme vers",
+    "",
+    "Menossa",
+    "Teraz w TV:",
+    "¿Qué se está reproduciendo?",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "Co prÃ¡vÄ› bÄ›zÃ­ v ",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "at",
+    "um",
+    "",
+    "alle",
+    "",
+    "",
+    "à",
+    "",
+    "kello",
+    "o godz.",
+    "a las",
+    "",
+    "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    " ",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "What's on next?",
-    "Was läuft als nächstes?",
+    "Was lÃ¤uft als nÃ¤chstes?",
     "",
-    "Cosa c'è dopo?",
+    "In programmazione dopo",
     "",
     "",
     "Quoi faire ensuite?",
     "",
     "Tulossa seuraavaksi?",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "%a, %b %d",
-    "%a, %d.%m.",
-    "",
-    "%a, %b %d",
-    "",
-    "",
-    "%a, %d.%m.",
-    "",
-    "%a, %d.%m.",
-    "",
-    "",
+    "Nastepnie",
+    "¿Qué hay a continuación?",
     "",
     "",
     "",
@@ -8755,7 +10435,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Co bÄ›Å¾Ã­ potom?",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8764,14 +10444,14 @@ const tI18nPhrase Phrases[] = {
   { "Favorites",
     "Favoriten",
     "",
-    "",
+    "Preferiti",
     "",
     "",
     "Favoris",
     "",
     "Suosikit",
-    "",
-    "",
+    "Ulubione",
+    "Favoritos",
     "",
     "",
     "",
@@ -8790,7 +10470,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "OblÃ­benÃ©",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -8804,44 +10484,9 @@ const tI18nPhrase Phrases[] = {
     "",
     "Regarder le programme de cette chaîne",
     "",
-    "Näytä ohjelmisto kanavalta",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "more",
-    "mehr",
-    "",
-    "altro",
-    "",
-    "",
-    "plus",
-    "",
-    "lisätietoja",
-    "",
-    "",
+    "NÃ¤ytÃ¤ ohjelmisto kanavalta",
+    "Wy¶wietl program dla tego kana³u",
+    "Ver la programación de este canal",
     "",
     "",
     "",
@@ -8860,23 +10505,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Zobraz program kanÃ¡lu",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
-  { "Now",
-    "Jetzt",
+  { " - ",
+    " - ",
     "",
-    "Adesso",
-    "",
-    "",
-    "maintenant",
-    "",
-    "Nyt",
+    " - ",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
+    " - ",
     "",
     "",
     "",
@@ -8902,16 +10547,16 @@ const tI18nPhrase Phrases[] = {
 #endif
   },
   { "Next",
-    "als Nächstes",
+    "als NÃ¤chstes",
     "",
-    "Dopo",
+    "Prossimi",
     "",
     "",
     "prochainement",
     "",
     "Seuraavaksi",
-    "",
-    "",
+    "Nastêpnie",
+    "Siguiente",
     "",
     "",
     "",
@@ -8930,58 +10575,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "DalÅ¡Ã­",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "What's on",
-    "Was läuft",
+    "Was lÃ¤uft",
     "",
-    "Cosa c'è adesso?",
+    "In programmazione",
     "",
     "",
     "Actuellement",
     "",
     "Menossa",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-#if VDRVERSNUM >= 10302
-    "",
-#endif
-#if VDRVERSNUM >= 10307
-    "",
-#endif
-#if VDRVERSNUM >= 10313
-    "",
-#endif
-#if VDRVERSNUM >= 10316
-    "",
-#endif
-#if VDRVERSNUM >= 10342
-    "",
-#endif
-#if VDRVERSNUM >= 10502
-    "",
-#endif
-  },
-  { "at",
-    "um",
-    "",
-    "alle",
-    "",
-    "",
-    "à",
-    "",
-    "kello",
-    "",
-    "",
+    "Audycje",
+    "¿Qué hay ahora?",
     "",
     "",
     "",
@@ -9000,23 +10610,23 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Co pobÄ›Å¾Ã­ v",
 #endif
 #if VDRVERSNUM >= 10502
     "",
 #endif
   },
   { "Details view",
-    "Ausführliche Ansicht",
+    "AusfÃ¼hrliche Ansicht",
     "",
     "Vedi come dettagli",
     "",
     "",
     "Vue détailée",
     "",
-    "Ruudukkonäkymä",
-    "",
-    "",
+    "RuudukkonÃ¤kymÃ¤",
+    "Widek szczegó³owy",
+    "Ver detalles",
     "",
     "",
     "",
@@ -9035,7 +10645,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "DetailnÃ­ pohled",
 #endif
 #if VDRVERSNUM >= 10502
     "",
@@ -9049,9 +10659,44 @@ const tI18nPhrase Phrases[] = {
     "",
     "Vue en liste",
     "",
-    "Listanäkymä",
+    "ListanÃ¤kymÃ¤",
+    "Widok listy",
+    "Ver lista",
     "",
     "",
+    "",
+    "",
+    "",
+#if VDRVERSNUM >= 10302
+    "",
+#endif
+#if VDRVERSNUM >= 10307
+    "",
+#endif
+#if VDRVERSNUM >= 10313
+    "",
+#endif
+#if VDRVERSNUM >= 10316
+    "",
+#endif
+#if VDRVERSNUM >= 10342
+    "SouhrnÃ½ pohled",
+#endif
+#if VDRVERSNUM >= 10502
+    "",
+#endif
+  },
+  { "Live Interactive VDR Environment",
+    "Live Interactive VDR Environment",
+    "",
+    "Ambiente interattivo LIVE per VDR",
+    "",
+    "",
+    "",
+    "",
+    "Interaktiivinen VDR-ympÃ¤ristÃ¶",
+    "",
+    "Entorno interactivo de Live VDR",
     "",
     "",
     "",
@@ -9076,17 +10721,17 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
   },
-  { "Live Interactive VDR Environment",
+  { "No EPG information available",
+    "Keine EPG Daten vorhanden",
+    "",
+    "Nessuna informazione EPG disponibile",
     "",
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "Interaktiivinen VDR-ympäristö",
-    "",
-    "",
+    "Ohjelmatietoja ei saatavilla",
+    "Brak informacji EPG",
+    "No hay información disponible de la EPG",
     "",
     "",
     "",
@@ -9105,7 +10750,7 @@ const tI18nPhrase Phrases[] = {
     "",
 #endif
 #if VDRVERSNUM >= 10342
-    "",
+    "Nejsou dostupnÃ© informace o programu",
 #endif
 #if VDRVERSNUM >= 10502
     "",

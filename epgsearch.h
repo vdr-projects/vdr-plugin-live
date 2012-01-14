@@ -108,8 +108,8 @@ public:
 	void SetRepeatsWithinDays(int repeatsWithinDays) { m_repeatsWithinDays = repeatsWithinDays; }
 	bool CompareTitle() const { return m_compareTitle; }
 	void SetCompareTitle(bool compareTitle) { m_compareTitle = compareTitle; }
-	bool CompareSubtitle() const { return m_compareSubtitle; }
-	void SetCompareSubtitle(bool compareSubtitle) { m_compareSubtitle = compareSubtitle; }
+	int CompareSubtitle() const { return m_compareSubtitle; }
+	void SetCompareSubtitle(int compareSubtitle) { m_compareSubtitle = compareSubtitle; }
 	bool CompareSummary() const { return m_compareSummary; }
 	void SetCompareSummary(bool compareSummary) { m_compareSummary = compareSummary; }
 	unsigned long CompareCategories() const { return m_catvaluesAvoidRepeat; }
@@ -177,7 +177,7 @@ private:
 	bool m_avoidrepeats;
 	int m_allowedrepeats;
 	bool m_compareTitle;
-	bool m_compareSubtitle;
+	int m_compareSubtitle;
 	bool m_compareSummary;
 	int m_repeatsWithinDays;
 	int m_blacklistmode;
@@ -393,7 +393,7 @@ public:
 	typedef recordingdirs::iterator iterator;
 	typedef recordingdirs::const_iterator const_iterator;
 	
-	RecordingDirs();
+	RecordingDirs(bool shortList=false);
 
 	iterator begin() { return m_set.begin(); }
 	const_iterator begin() const { return m_set.begin(); }
@@ -409,6 +409,12 @@ class EPGSearchSetupValues
 public:
 	static std::string ReadValue(const std::string& entry);	
 	static bool WriteValue(const std::string& entry, const std::string& value);	
+};
+
+class EPGSearchExpr
+{
+public:
+  static std::string EvaluateExpr(const std::string& expr, const cEvent* event);
 };
 
 }

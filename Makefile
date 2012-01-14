@@ -17,6 +17,7 @@ VERSION = $(shell grep '\#define LIVEVERSION ' setup.h | awk '{ print $$3 }' | s
 ### The C++ compiler and options:
 
 CXX	 ?= g++
+ECPPC	 ?= ecppc
 
 ### This variable is overriden in pages/Makefile because we don't want the
 ### extra warnings in the tntnet generated files. So if you change here
@@ -24,16 +25,18 @@ CXX	 ?= g++
 CXXFLAGS ?= -fPIC -O2 -Wall
 LDFLAGS	 ?= -fPIC -g
 
-ECPPC	 ?= ecppc
-CXXFLAGS += `tntnet-config --cxxflags`
-
-LIBS	 += $(shell tntnet-config --libs)
+### Check for libpcre c++ wrapper
+HAVE_LIBPCRECPP = $(shell pcre-config --libs-cpp)
 
 ### The directory environment:
 
 VDRDIR	 ?= ../../..
 LIBDIR	 ?= ../../lib
 TMPDIR	 ?= /tmp
+
+### Make sure that necessary options are included:
+
+-include $(VDRDIR)/Make.global
 
 ### Allow user defined options to overwrite defaults:
 
@@ -43,7 +46,19 @@ TMPDIR	 ?= /tmp
 
 APIVERSION = $(shell sed -ne '/define APIVERSION/s/^.*"\(.*\)".*$$/\1/p' $(VDRDIR)/config.h)
 I18NTARG   = $(shell if [ `echo $(APIVERSION) | tr [.] [0]` -ge "10507" ]; then echo "i18n"; fi)
-TNTVERS7   = $(shell ver=`tntnet-config --version | sed -e's/\.//g' | awk '/^..$$/ { print $$1."00"} /^...$$/ { print $$1."0"} /^....$$/ { print $$1 }'`; if [ $$ver -ge "1606" ]; then echo "yes"; fi)
+TNTVERSION = $(shell tntnet-config --version | sed -e's/\.//g' | sed -e's/pre.*//g' | awk '/^..$$/ { print $$1."000"} /^...$$/ { print $$1."00"} /^....$$/ { print $$1."0" } /^.....$$/ { print $$1 }')
+TNTVERS7   = $(shell ver=$(TNTVERSION); if [ $$ver -ge "1606" ]; then echo "yes"; fi)
+
+CXXFLAGS  += $(shell tntnet-config --cxxflags)
+LIBS      += $(shell tntnet-config --libs)
+
+### Optional configuration features
+PLUGINFEATURES =
+ifneq ($(HAVE_LIBPCRECPP),)
+	PLUGINFEATURES += -DHAVE_LIBPCRECPP
+	CXXFLAGS       += $(shell pcre-config --cflags)
+	LIBS           += $(HAVE_LIBPCRECPP)
+endif
 
 ### The name of the distribution archive:
 
@@ -58,11 +73,7 @@ ifneq ($(TNTVERS7),yes)
 	LIBS	 += httpd/libhttpd.a
 endif
 
-DEFINES	 += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
-ifeq ($(TNTVERS7),yes)
-	DEFINES += -DTNTVERS7
-endif
-export DEFINES
+DEFINES	 += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"' -DTNTVERSION=$(TNTVERSION)
 
 SUBDIRS	  = pages css javascript
 ifneq ($(TNTVERS7),yes)
@@ -75,7 +86,8 @@ VERSIONSUFFIX = gen_version_suffix.h
 
 PLUGINOBJS = $(PLUGIN).o thread.o tntconfig.o setup.o i18n.o timers.o \
 	     tools.o recman.o tasks.o status.o epg_events.o epgsearch.o \
-	     grab.o md5.o filecache.o livefeatures.o preload.o timerconflict.o
+	     grab.o md5.o filecache.o livefeatures.o preload.o timerconflict.o \
+	     users.o
 
 WEBLIBS	   = pages/libpages.a css/libcss.a javascript/libjavascript.a
 
@@ -87,16 +99,15 @@ all: libvdr-$(PLUGIN).so $(I18NTARG)
 
 ### Implicit rules:
 
-### all source compiled here shall warn about overloaded virtuals
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -Woverloaded-virtual -c $(DEFINES) $(INCLUDES) $<
+	$(CXX) $(CXXFLAGS) -c $(DEFINES) $(PLUGINFEATURES) $(INCLUDES) $<
 
 # Dependencies:
 
 MAKEDEP = $(CXX) -MM -MG
 DEPFILE = .dependencies
 $(DEPFILE): Makefile
-	@$(MAKEDEP) $(DEFINES) $(INCLUDES) $(PLUGINOBJS:%.o=%.cpp) > $@
+	@$(MAKEDEP) $(DEFINES) $(PLUGINFEATURES) $(INCLUDES) $(PLUGINOBJS:%.o=%.cpp) > $@
 
 ifneq ($(MAKECMDGOALS),clean)
 -include $(DEPFILE)
@@ -119,7 +130,7 @@ endif
 	msgfmt -c -o $@ $<
 
 $(I18Npot): PAGES $(PLUGINOBJS:%.o=%.cpp)
-	xgettext -C -cTRANSLATORS --no-wrap --no-location -k -ktr -ktrNOOP --omit-header -o $@ $(PLUGINOBJS:%.o=%.cpp) pages/*.cpp setup.h
+	xgettext -C -cTRANSLATORS --no-wrap --no-location -k -ktr -ktrNOOP --omit-header -o $@ $(PLUGINOBJS:%.o=%.cpp) pages/*.cpp setup.h epg_events.h
 
 $(I18Npo): $(I18Npot)
 	msgmerge -U --no-wrap --no-location --backup=none -q $@ $<
@@ -139,10 +150,10 @@ generate-i18n: i18n-template.h $(I18Npot) $(I18Npo) buildutil/pot2i18n.pl
 subdirs: $(SUBDIRS)
 
 $(SUBDIRS):
-	$(MAKE) -C $@ CXX="$(CXX)" CXXFLAGS="$(CXXFLAGS)" $(MAKECMDGOALS)
+	@$(MAKE) -C $@ $(MAKECMDGOALS) PLUGINFEATURES="$(PLUGINFEATURES)"
 
 PAGES:
-	$(MAKE) -C pages CXX="$(CXX)" CXXFLAGS="$(CXXFLAGS)" .dependencies
+	@$(MAKE) -C pages PLUGINFEATURES="$(PLUGINFEATURES)" .dependencies
 
 $(VERSIONSUFFIX): FORCE
 	./buildutil/version-util $(VERSIONSUFFIX) || ./buildutil/version-util -F $(VERSIONSUFFIX)
@@ -150,6 +161,7 @@ $(VERSIONSUFFIX): FORCE
 libvdr-$(PLUGIN).so: $(VERSIONSUFFIX) $(SUBDIRS) $(PLUGINOBJS)
 	$(CXX) $(LDFLAGS) -shared -o $@	 $(PLUGINOBJS) -Wl,--whole-archive $(WEBLIBS) -Wl,--no-whole-archive $(LIBS)
 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
+
 ifneq ($(TNTVERS7),yes)
 	@echo ""
 	@echo "If LIVE was built successfully and you can try to use it!"

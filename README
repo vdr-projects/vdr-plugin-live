@@ -2,6 +2,7 @@ This is a "plugin" for the Video Disk Recorder (VDR).
 
 Written by:                  Thomas Keil <tkeil@datacrystal.de>
                              Sascha Volkenandt <sascha@akv-soft.de>
+Currently maintained by:
                              Dieter Hametner <dh+vdr@gekrumbel.de>
                              Christian Wieninger <cwieninger@gmx.de>
 
@@ -29,7 +30,7 @@ Future versions of LIVE will start to use the new Tntnet
 features. This means that backwards compatibility can not be
 maintained from that point in time onwards.
 
-We therefor strongly suggest you upgrade to Tntnet with at least
+We therefore strongly suggest you upgrade to Tntnet with at least
 version 1.6.0.6. This new Tntnet version is supported by the current
 version of LIVE. Just update Tntnet and recompile LIVE from scratch.
 
@@ -54,13 +55,20 @@ VDR >= 1.4.0-2
 gcc >= 3.1
 if gcc < 4.0:
 boost >= 1.32.0		- http://www.boost.org
-
+PCRE >= 8.0.2     	- http://www.pcre.org/
 Tntnet >= 1.5.3		- http://www.tntnet.org/download.hms
 Cxxtools >= 1.4.3	- http://www.tntnet.org/download.hms
 
 Tntnet provides basic webserver functions for live and needs cxxtools.
 Boost provides some data structures we need. While currently relying on the
 full blown package we might provide a stripped down version in the future.
+
+PCRE provides filtering for recordings. Some older versions pcre-config tool
+doesn't contain C++ wrapper option, but filtering support can be forced via
+commandline:
+
+make HAVE_LIBPCRECPP="-lpcrecpp -lpcre"
+
 
 If you optionaly want to regenerate the i18n-generated.h header file
 for backward compatible i18n (VDR version prior to 1.5.7) you also
@@ -160,8 +168,10 @@ SSL Commandline options
 
   -s PORT,  --sslport=PORT     use PORT to listen for incoming ssl connections
                                (default: 8443)
-  -c CERT,  --cert=CERT        path to a custom ssl certificate
+  -c CERT,  --cert=CERT        path to a custom ssl certificate file
   			       (default: $CONFIGDIR/live.pem)
+  -k KEY,   --cert=CERT        path to a custom ssl certificate key file
+  			       (default: $CONFIGDIR/live-key.pem)
 
 
 Creating a self-signed SSL server certificate
@@ -171,7 +181,7 @@ To create a self-signed certificate file you`ll have to run this litte
 command.
 
   $> cd /put/your/path/here/vdr/plugins/live
-  $> openssl req -new -x509 -keyout server.pem -out live.pem -days 365 -nodes
+  $> openssl req -new -x509 -keyout live-key.pem -out live.pem -days 365 -nodes
 
 While generating the certifcate you`ll be asked to answer a couple of
 questions.  When it prompts to enter the "Common Name" you`ll have to
