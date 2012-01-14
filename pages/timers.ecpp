@@ -8,6 +8,7 @@
 #include "epg_events.h"
 #include "timerconflict.h"
 #include "livefeatures.h"
+#include "users.h"
 
 using namespace std;
 using namespace vdrlive;
@@ -44,6 +45,8 @@ static const size_t maximumDescriptionLength = 300;
 		if ( timer == 0 )
 			throw HtmlError( tr("Couldn't find timer. Maybe you mistyped your request?") );
 		if (action == "delete") {
+			if (!cUser::CurrentUserHasRightTo(UR_DELTIMERS))
+				throw HtmlError( tr("Sorry, no permission. Please contact your administrator!") );
 			LiveTimerManager().DelTimer(timer);
 			timerNotifier.SetTimerModification();
 		}
@@ -71,7 +74,6 @@ static const size_t maximumDescriptionLength = 300;
 %			} else {
 			<table class="listing" cellspacing="0" cellpadding="0">
 <%cpp>
-				EpgEvents epgEvents;
 				// output of the timer list:
 				for (SortedTimers::iterator timer = timers.begin(); timer != timers.end(); ++timer) {
 				    EpgInfoPtr epgEvent;
@@ -111,14 +113,14 @@ static const size_t maximumDescriptionLength = 300;
 					</td>
 				</tr>
 				<tr class="description">
-					<td class="leftcol"><img src="/img/transparent.png" alt="" width="16px" height="16px" /></td>
+					<td class="leftcol"><img src="img/transparent.png" alt="" width="16px" height="16px" /></td>
 					<td><div class="withmargin"><$ trVDR("Channel") $></div></td>
 					<td><div class="withmargin"><$ trVDR("Start") $></div></td>
 					<td><div class="withmargin"><$ trVDR("Stop") $></div></td>
 					<td><div class="withmargin"><$ trVDR("File") $></div></td>
-					<td class="action"><img src="/img/transparent.png" alt="" width="16px" height="16px" /></td>
-					<td class="action"><img src="/img/transparent.png" alt="" width="16px" height="16px" /></td>
-					<td class="action rightcol"><img src="/img/transparent.png" alt="" width="16px" height="16px" /></td>
+					<td class="action"><img src="img/transparent.png" alt="" width="16px" height="16px" /></td>
+					<td class="action"><img src="img/transparent.png" alt="" width="16px" height="16px" /></td>
+					<td class="action rightcol"><img src="img/transparent.png" alt="" width="16px" height="16px" /></td>
 				</tr>
 <%cpp>
 					}
@@ -137,8 +139,8 @@ static const size_t maximumDescriptionLength = 300;
 
 				<td class="leftcol <? bottom ? "bottomrow" ?>"><img src="<$ LiveSetup().GetThemedLink("img", timerStateImg) $>" alt="" <%cpp> if (!timerStateHint.empty()) { </%cpp><& tooltip.hint text=(timerStateHint) &><%cpp> } </%cpp>></img></td>
 					<td class="<? bottom ? "bottomrow" ?>"><div class="withmargin"><a href="schedule.html?channel=<$ timer->Channel()->Number()$>"><$ timer->Channel()->Name() $></a></div></td>
-					<td class="<? bottom ? "bottomrow" ?>"><div class="withmargin"><$ FormatDateTime(tr("%I:%M %p"), timer->StartTime()) $></div></td>
-					<td class="<? bottom ? "bottomrow" ?>"><div class="withmargin"><$ FormatDateTime(tr("%I:%M %p"), timer->StopTime()) $></div></td>
+					<td class="<? bottom ? "bottomrow" ?>"><div class="withmargin nowrap"><$ FormatDateTime(tr("%I:%M %p"), timer->StartTime()) $></div></td>
+					<td class="<? bottom ? "bottomrow" ?>"><div class="withmargin nowrap"><$ FormatDateTime(tr("%I:%M %p"), timer->StopTime()) $></div></td>
 					<td class="<? bottom ? "bottomrow" ?>"><div class="withmargin"><a
 %						if (!longDescription.empty()) {
 						<& tooltip.hint text=(longDescription) &><& tooltip.display domId=(epgEvent->Id()) &>
@@ -146,7 +148,7 @@ static const size_t maximumDescriptionLength = 300;
 						><$ timer->File() $></a></div>
 					</td>
 					<td class="action <? bottom ? "bottomrow" ?>"><a href="timers.html?timerid=<$ SortedTimers::EncodeDomId(timers.GetTimerId(*timer)) $>&action=toggle"><img src="<$ LiveSetup().GetThemedLink("img", (timer->Flags() & tfActive) ? "active.png" : "inactive.png") $>" alt="" <& tooltip.hint text=(tr("Toggle timer active/inactive")) &>></img></a></td>
-					<td class="action <? bottom ? "bottomrow" ?>"><a href="edit_timer.html?timerid=<$ SortedTimers::EncodeDomId(timers.GetTimerId(*timer)) $>"><img src="<$ LiveSetup().GetThemedLink("img", "edit.png") $>" alt="" <& tooltip.hint text=(tr("Edit timer")) &>></img></a></td>
+					<td class="action <? bottom ? "bottomrow" ?>"><& pageelems.edit_timer timerId=(timers.GetTimerId(*timer)) &></td>
 					<td class="action rightcol <? bottom ? "bottomrow" ?>"><a href="timers.html?timerid=<$ SortedTimers::EncodeDomId(timers.GetTimerId(*timer)) $>&action=delete"><img src="<$ LiveSetup().GetThemedLink("img", "del.png") $>" alt="" <& tooltip.hint text=(tr("Delete timer")) &>></img></a></td>
 				</tr>
 <%cpp>

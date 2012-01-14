@@ -109,6 +109,10 @@ a:active {
 	display: none;
 }
 
+.nowrap {
+	white-space: nowrap;
+}
+
 /* ######################
    # Tooltip style for hints
    ######################
@@ -764,8 +768,18 @@ div.short {
 }
 
 div.info {
-	text-align: right;
-	padding: 5px;
+	padding: 5px 5px 5px 0px;
+        overflow: hidden;
+}
+
+div.info div.time {
+	float: right;
+        padding: 0px;
+}
+
+div.info div.date {
+	float: left;
+        padding: 0px;
 }
 
 div.progress {
@@ -784,6 +798,13 @@ div.__progress {
 	width: 100px;
 	height: 8px;
 	border: 1px solid #C0C1DA;
+}
+
+div.__progress_invisible {
+	overflow: hidden;
+	width: 100px;
+	height: 10px;
+	border: 0px none transparent;
 }
 
 div.__progress div.__elapsed {
@@ -842,6 +863,80 @@ table.listing tr.spacer td {
 }
 
 table.listing a {
+	color: black;
+	font-weight: bold;
+}
+
+/* ##################################
+   # table schedule
+   # (this is used for the MultiSchedule)
+   ##################################
+*/
+
+table.mschedule {
+	padding: 0px;
+	margin: 0px;
+}
+
+table.mschedule tr {
+        height: 12px;
+}
+
+table.mschedule tr td.event {
+	background: transparent url(img/bg_line.png) bottom repeat-x;
+	border-bottom: 1px solid #C0C1DA;
+}
+
+table.mschedule tr td.has_timer {
+        background-color: #FFE0E0;
+}
+
+table.mschedule tr td.odd {
+        background-color: #D0D0ff;
+}
+
+table.mschedule tr td.even {
+        background-color: #ffffff;
+}
+
+table.mschedule tr td.current_row {
+        background-color: #ffB0B0;
+}
+
+table.mschedule tr td.leftcol {
+	padding-left: 7px;
+	padding-right: 5px;
+}
+
+table.mschedule div.content1 {
+        min-width: 10em;
+        max-width: 30em;
+}
+
+table.mschedule div.tools1 {
+        float: right;
+}
+
+table.mschedule div.start {
+        float: left;
+}
+
+table.mschedule tr td div.title {
+        padding: 3px;
+        clear: both;
+}
+
+table.mschedule tr td div.short {
+        clear: both;
+        overflow: hidden;
+}
+
+table.mschedule tr td div.description {
+        overflow: hidden;
+        clear: both;
+}
+
+table.mschedule a {
 	color: black;
 	font-weight: bold;
 }
@@ -912,6 +1007,7 @@ div.recording_item {
 }
 
 .recording_item div.recording_day {
+	width: 13em;
 }
 
 .recording_item div.recording_date {
@@ -923,7 +1019,7 @@ div.recording_item {
 }
 
 .recording_item div.recording_duration {
-	width: 2.5em;
+	width: 4em;
 }
 
 .recording_item div.recording_name {
@@ -957,16 +1053,16 @@ div.recording_item {
 div.screenshot {
 	background-image: url(img/tv.jpg);
 	background-repeat: no-repeat;
-	height: 240px;
-	width: 320px;
+	height: 320px;
+	width: 569px;
 	float: left;
 	padding: 20px 20px 98px 21px;
 	margin-right: 20px;
 }
 
 div.screenshot img {
-	width: 320px;
-	height: 240px;
+	width: 569px;
+	height: 320px;
 }
 
 /*

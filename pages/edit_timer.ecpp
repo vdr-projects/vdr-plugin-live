@@ -11,6 +11,9 @@
 #include "epg_events.h"
 #include "timerconflict.h"
 #include "i18n.h"
+#include "livefeatures.h"
+#include "epgsearch.h"
+#include "users.h"
 
 using namespace std;
 using namespace vdrlive;
@@ -41,6 +44,7 @@ using namespace vdrlive;
 	int priority = 0;
 	int lifetime = 0;
 	string aux = "";
+        string directory = "";
 </%args>
 <%session scope="global">
 bool logged_in(false);
@@ -53,6 +57,9 @@ cTimer* timer;
 <%include>page_init.eh</%include>
 <%cpp>
 	if (!logged_in && LiveSetup().UseAuth()) return reply.redirect("login.html");
+
+	if (!cUser::CurrentUserHasRightTo(UR_EDITTIMERS))
+		throw HtmlError( tr("Sorry, no permission. Please contact your administrator!") );
 
 	bool ajaxReq = !async.empty() && (lexical_cast<int>(async) != 0);
 
@@ -80,10 +87,14 @@ cTimer* timer;
 		int start = start_h * 100 + start_m;
 		int stop = end_h * 100 + end_m;
 
+		if (!directory.empty())
+		   title = directory + "~" + title;
+
 		if (title.empty())
 			message = tr("Please set a title for the timer!");
 		else
 		{
+			// TRANSLATORS: only adjust the ordering and separators, don't translate the m's, d's and y's
 			time_t tdate = GetDateFromDatePicker(date, tr("mm/dd/yyyy"));
 			string sdate = DatePickerToC(tdate, "yyyy-mm-dd");
 			LiveTimerManager().UpdateTimer( timer, flags, channel, weekdays, sdate, start, stop, priority, lifetime, title, aux );
@@ -112,11 +123,25 @@ cTimer* timer;
 		}
 		timer = eventTimer.get();
 	}
+	if (timer == 0)
+	{
+	   timer = new cTimer();
+	   timer->SetFlags(tfActive);
+	}
 
 	if ( timer != 0 ) {
 		active = timer->Flags() & tfActive;
 		channel = timer->Channel()->GetChannelID();
 		title = timer->File() ? timer->File() : "";
+		if ( LiveFeatures< features::epgsearch >().Recent() ) {
+		   vector< string > directories = StringSplit( title, '~' );
+		   if (directories.size() > 1)
+		   {
+		      directory = directories[0];
+		      title = title.substr(directory.size()+1);
+		   }
+		}
+		// TRANSLATORS: only adjust the ordering and separators, don't translate the m's, d's and y's	 
 		date = timer->Day() ? DatePickerToC(timer->Day(), tr("mm/dd/yyyy")) : "";
 		wday_mon = timer->WeekDays() & 0x01;
 		wday_tue = timer->WeekDays() & 0x02;
@@ -189,6 +214,30 @@ cTimer* timer;
 						<td class="label leftcol"><div class="withmargin"><$ tr("Title" ) $>:</div></td>
 						<td class="rightcol"><input type="text" name="title" value="<$ title $>" size="80" /></td>
 					</tr>
+<%cpp>
+					if ( LiveFeatures< features::epgsearch >().Recent() ) {
+					        RecordingDirs recordingdirs(true);
+</%cpp>
+					<tr>
+						<td class="label leftcol"><div class="withmargin"><$ tr("Directory" ) $>:</div></td>
+						<td class="rightcol"><select name="directory" size="1" id="directory" style="margin-top: 5px">
+						     <option/>
+<%cpp>
+					             for (RecordingDirs::iterator rdir = recordingdirs.begin(); rdir != recordingdirs.end(); ++rdir) {
+						        std::string dir = *rdir;
+</%cpp>
+		    					<option value="<$ dir $>" 
+%							if (*rdir == directory) {
+							selected="selected"
+%							}
+							><$ dir $></option>
+%						}
+						   </select>
+						</td>
+					</tr>
+<%cpp>
+					}
+</%cpp>
 
 					<tr>
 						<td class="label leftcol"><div class="withmargin"><$ trVDR("Day") $>:</div></td>

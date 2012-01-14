@@ -21,12 +21,6 @@ set -e
 case "$1" in
     configure)
         chown -R vdr:vdr /var/lib/vdr/plugins/live
-
-        CFGDIR="/var/lib/vdr/plugins/live"
-        for DIR in css img js themes; do
-                [ ! -L $CFGDIR/$DIR ] && \
-                        ln -s /usr/share/vdr-plugin-live/$DIR $CFGDIR/$DIR
-        done
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

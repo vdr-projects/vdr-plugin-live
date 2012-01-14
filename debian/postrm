@@ -23,11 +23,6 @@ case "$1" in
     purge)
         rm -f /var/lib/vdr/plugins/live/httpd.config
         rm -f /var/lib/vdr/plugins/live/httpd.properties
-
-        CFGDIR="/var/lib/vdr/plugins/live"
-        for DIR in css img js themes; do
-                [ -L $CFGDIR/$DIR ] && rm -f $CFGDIR/$DIR
-        done
     ;;
 
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

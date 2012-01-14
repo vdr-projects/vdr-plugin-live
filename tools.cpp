@@ -5,6 +5,7 @@
 #include <tnt/htmlescostream.h>
 #include <tnt/httprequest.h>
 #include <tnt/httpreply.h>
+#include <vdr/recording.h>
 #include "exception.h"
 #include "live.h"
 #include "setup.h"
@@ -19,7 +20,7 @@ istream& operator>>( istream& is, tChannelID& ret )
 {
   /* alternativ implementation
   string line;
-  if ( !getline( is, line ) ) {    
+  if ( !getline( is, line ) ) {
     if ( !is.eof() )
       is.setstate( ios::badbit );
     else
@@ -42,13 +43,24 @@ istream& operator>>( istream& is, tChannelID& ret )
       return is;
     }
   }
-  
+
   if ( !line.empty() && !( ret = tChannelID::FromString( line.c_str() ) ).Valid() )
     is.setstate( ios::badbit );
   return is;
 }
 
 namespace vdrlive {
+
+	string FormatDuration( char const* format, int hours, int minutes )
+	{
+		char result[ 32 ];
+		if ( snprintf(result, sizeof(result), format, hours, minutes) < 0 ) {
+			ostringstream builder;
+			builder << "cannot represent duration " << hours << ":" << minutes << " as requested";
+			throw runtime_error( builder.str() );
+		}
+		return result;
+	}
 
 	string FormatDateTime( char const* format, time_t time )
 	{
@@ -114,6 +126,7 @@ namespace vdrlive {
 	{
 		if (input.length() <= maxLen)
 		{
+                        truncated = false;
 			return input;
 		}
 		truncated = true;
@@ -311,5 +324,175 @@ namespace vdrlive {
 		return decoded;
 	}
 
+	std::string FileSystemExchangeChars(std::string const & s, bool ToFileSystem)
+	{
+		char *str = strdup(s.c_str());
+		str = ExchangeChars(str, ToFileSystem);
+		std::string data = str;
+		if (str) {
+			free(str);
+		}
+		return data;
+	}
+
+	bool MoveDirectory(std::string const & sourceDir, std::string const & targetDir, bool copy)
+	{
+		const char* delim = "/";
+		std::string source = sourceDir;
+		std::string target = targetDir;
+
+		// add missing directory delimiters
+		if (source.compare(source.size() - 1, 1, delim) != 0) {
+			source += "/";
+		}
+		if (target.compare(target.size() - 1, 1, delim) != 0) {
+			target += "/";
+		}
+
+		if (source != target) {
+			// validate target directory
+			if (target.find(source) != std::string::npos) {
+				esyslog("[LIVE]: cannot move under sub-directory\n");
+				return false;
+			}
+			RemoveFileOrDir(target.c_str());
+			if (!MakeDirs(target.c_str(), true)) {
+				esyslog("[LIVE]: cannot create directory %s", target.c_str());
+				return false;
+			}
+
+			struct stat st1, st2;
+			stat(source.c_str(), &st1);
+			stat(target.c_str(),&st2);
+			if (!copy && (st1.st_dev == st2.st_dev)) {
+				if (!RenameVideoFile(source.c_str(), target.c_str())) {
+					esyslog("[LIVE]: rename failed from %s to %s", source.c_str(), target.c_str());
+					return false;
+				}
+			}
+			else {
+				int required = DirSizeMB(source.c_str());
+				int available = FreeDiskSpaceMB(target.c_str());
+
+				// validate free space
+				if (required < available) {
+					cReadDir d(source.c_str());
+					struct dirent *e;
+					bool success = true;
+
+					// allocate copying buffer
+					const int len = 1024 * 1024;
+					char *buffer = MALLOC(char, len);
+					if (!buffer) {
+						esyslog("[LIVE]: cannot allocate renaming buffer");
+						return false;
+					}
+
+					// loop through all files, but skip all subdirectories
+					while ((e = d.Next()) != NULL) {
+						// skip generic entries
+						if (strcmp(e->d_name, ".") && strcmp(e->d_name, "..") && strcmp(e->d_name, "lost+found")) {
+							string sourceFile = source + e->d_name;
+							string targetFile = target + e->d_name;
+
+							// copy only regular files
+							if (!stat(sourceFile.c_str(), &st1) && S_ISREG(st1.st_mode)) {
+								int r = -1, w = -1;
+								cUnbufferedFile *inputFile = cUnbufferedFile::Create(sourceFile.c_str(), O_RDONLY | O_LARGEFILE);
+								cUnbufferedFile *outputFile = cUnbufferedFile::Create(targetFile.c_str(), O_RDWR | O_CREAT | O_LARGEFILE);
+
+								// validate files
+								if (!inputFile || !outputFile) {
+									esyslog("[LIVE]: cannot open file %s or %s", sourceFile.c_str(), targetFile.c_str());
+									success = false;
+									break;
+								}
+
+								// do actual copy
+								dsyslog("[LIVE]: copying %s to %s", sourceFile.c_str(), targetFile.c_str());
+								do {
+									r = inputFile->Read(buffer, len);
+									if (r > 0)
+										w = outputFile->Write(buffer, r);
+									else
+										w = 0;
+								} while (r > 0 && w > 0);
+								DELETENULL(inputFile);
+								DELETENULL(outputFile);
+
+								// validate result
+								if (r < 0 || w < 0) {
+									success = false;
+									break;
+								}
+							}
+						}
+					}
+
+					// release allocated buffer
+					free(buffer);
+
+					// delete all created target files and directories
+					if (!success) {
+						size_t found = target.find_last_of(delim);
+						if (found != std::string::npos) {
+							target = target.substr(0, found);
+						}
+						if (!RemoveFileOrDir(target.c_str(), true)) {
+							esyslog("[LIVE]: cannot remove target %s", target.c_str());
+						}
+						found = target.find_last_of(delim);
+						if (found != std::string::npos) {
+							target = target.substr(0, found);
+						}
+						if (!RemoveEmptyDirectories(target.c_str(), true)) {
+							esyslog("[LIVE]: cannot remove target directory %s", target.c_str());
+						}
+						esyslog("[LIVE]: copying failed");
+						return false;
+					}
+					else if (!copy && !RemoveFileOrDir(source.c_str(), true)) { // delete source files
+						esyslog("[LIVE]: cannot remove source directory %s", source.c_str());
+						return false;
+					}
+
+					// delete all empty source directories
+					if (!copy) {
+						size_t found = source.find_last_of(delim);
+						if (found != std::string::npos) {
+							source = source.substr(0, found);
+							while (source != VideoDirectory) {
+								found = source.find_last_of(delim);
+								if (found == std::string::npos)
+									break;
+								source = source.substr(0, found);
+								if (!RemoveEmptyDirectories(source.c_str(), true))
+									break;
+							}
+						}
+					}
+				}
+				else {
+					esyslog("[LIVE]: %s requires %dMB - only %dMB available", copy ? "moving" : "copying", required, available);
+					// delete all created empty target directories
+					size_t found = target.find_last_of(delim);
+					if (found != std::string::npos) {
+						target = target.substr(0, found);
+						while (target != VideoDirectory) {
+							found = target.find_last_of(delim);
+							if (found == std::string::npos)
+								break;
+							target = target.substr(0, found);
+							if (!RemoveEmptyDirectories(target.c_str(), true))
+								break;
+						}
+					}
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
 
 } // namespace vdrlive

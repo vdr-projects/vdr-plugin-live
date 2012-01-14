@@ -1,9 +1,7 @@
 /*
- * httpd.c: A plugin for the Video Disk Recorder
+ * live.cpp: A plugin for the Video Disk Recorder
  *
  * See the README file for copyright information and how to reach the author.
- *
- * $Id: live.cpp,v 1.17 2007/09/17 22:23:40 tadi Exp $
  */
 
 #include <vdr/plugin.h>
@@ -15,6 +13,7 @@
 #include "thread.h"
 #include "timers.h"
 #include "preload.h"
+#include "users.h"
 
 namespace vdrlive {
 
@@ -24,6 +23,8 @@ const char *Plugin::VERSION        = LIVEVERSION;
 const char *Plugin::DESCRIPTION    = LIVESUMMARY;
 
 std::string Plugin::m_configDirectory;
+
+cUsers Users;
 
 Plugin::Plugin(void)
 {
@@ -41,7 +42,7 @@ bool Plugin::ProcessArgs(int argc, char *argv[])
 
 bool Plugin::Start(void)
 {
-	m_configDirectory = cPlugin::ConfigDirectory( PLUGIN_NAME_I18N );
+	m_configDirectory = canonicalize_file_name(cPlugin::ConfigDirectory( PLUGIN_NAME_I18N ));
 
 #if VDRVERSNUM < 10507
 	RegisterI18n( vdrlive::Phrases );
@@ -51,6 +52,9 @@ bool Plugin::Start(void)
 
 	// preload files into file Cache
 	PreLoadFileCache(m_configDirectory);
+
+	// load users
+	Users.Load(AddDirectory(m_configDirectory.c_str(), "users.conf"), true);
 
 	// XXX error handling
 	m_thread.reset( new ServerThread );

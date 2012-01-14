@@ -1,46 +1,81 @@
 <%pre>
 #include <string>
+#include <pcrecpp.h>
 
 #include <vdr/plugin.h>
 #include <vdr/config.h>
+#include <vdr/videodir.h>
 
 #include "exception.h"
-#include "tools.h"
 #include "epg_events.h"
 
 #include "setup.h"
 #include "tasks.h"
 #include "tools.h"
+#include "i18n.h"
+#include "users.h"
 
 #include "recman.h"
+
+#define MB_PER_MINUTE 25.75 // this is just an estimate!
 
 using namespace vdrlive;
 using namespace std;
 
 </%pre>
 <%args>
+	string sort;
 	string todel;
+	string diskinfo;
+	string filter;
+	string deletions[];
 </%args>
 <%session scope="global">
 	bool logged_in(false);
 </%session>
 <%request scope="page">
+	string currentSort;
 	string deleteResult;
+	string currentFilter;
 </%request>
 <%include>page_init.eh</%include>
 <%cpp>
 if (!logged_in && LiveSetup().UseAuth()) return reply.redirect("login.html");
 
+currentSort = LiveSetup().GetLastSortingMode();
+if (!sort.empty()) {
+	if (sort == "date")
+		currentSort = (currentSort == "dateasc") ? "datedesc" : "dateasc";
+	else if (sort == "name")
+		currentSort = (currentSort == "nameasc") ? "namedesc" : "nameasc";
+	LiveSetup().SetLastSortingMode(currentSort);
+}
+currentFilter = filter;
+
 pageTitle = tr("Recordings");
 
+deleteResult = "";
 if (!todel.empty()) {
-	RemoveRecordingTask task(todel);
+	if (!cUser::CurrentUserHasRightTo(UR_DELRECS))
+		throw HtmlError( tr("Sorry, no permission. Please contact your administrator!") );
+	deletions.push_back(todel);
+}
+for (deletions_type::const_iterator it = deletions.begin(); it != deletions.end(); ++it) {
+	RemoveRecordingTask task(*it);
 	LiveTaskManager().Execute(task);
 	if (!task.Result())
-		deleteResult = string() + tr("ERROR:") + " " + task.Error();
+		deleteResult += string() + tr("ERROR:") + " " + task.Error() + "<br/>";
 	else
-		deleteResult = string() + tr("Deleted recording:") + " " + StringReplace(task.RecName(), "~", "/");
+		deleteResult += string() + tr("Deleted recording:") + " " + StringReplace(task.RecName(), "~", "/") + "<br/>";
 }
+deletions.clear();
+
+int FreeMB, UsedMB;
+int Percent = VideoDiskSpace(&FreeMB, &UsedMB);
+int Minutes = int(double(FreeMB) / MB_PER_MINUTE);
+int Hours = Minutes / 60;
+Minutes %= 60;
+diskinfo = cString::sprintf("%s %d%%  -  %2d:%02d %s", trVDR("Disk"), Percent, Hours, Minutes, trVDR("free"));
 </%cpp>
 <& pageelems.doc_type &>
 <html>
@@ -49,34 +84,79 @@ if (!todel.empty()) {
 		<& pageelems.stylesheets &>
 		<& pageelems.ajax_js &>
 		<script type="text/javascript" src="treeview.js"></script>
+		<script type="text/javascript"><!--
+		function filterRecordings(filter)
+		{
+			window.location.href = "recordings.html?sort=<$ currentSort $>&filter=" + encodeURIComponent(filter.value);
+		}
+		function ExpandAll()
+		{
+			recordingNodes = window.document.getElementsBySelector("ul.recordingslist");
+			for (idx = 0; idx < recordingNodes.length; idx++) {
+				if (recordingNodes[idx].parentNode.className != 'recordings') {
+					recordingNodes[idx].style.display = 'block';
+				}
+			}
+			expandNodes = window.document.getElementsBySelector("img.recording_expander");
+			for (idx = 0; idx < expandNodes.length; idx++) {
+				expandNodes[idx].src = "img/minus.png";
+			}
+			folderNodes = window.document.getElementsBySelector("img.recording_folder");
+			for (idx = 0; idx < folderNodes.length; idx++) {
+				folderNodes[idx].src = "img/folder_open.png";
+			}
+		}
+		function CollapseAll()
+		{
+			recordingNodes = window.document.getElementsBySelector("ul.recordingslist");
+			for (idx = 0; idx < recordingNodes.length; idx++) {
+				if (recordingNodes[idx].parentNode.className != 'recordings') {
+					recordingNodes[idx].style.display = 'none';
+				}
+			}
+			expandNodes = window.document.getElementsBySelector("img.recording_expander");
+			for (idx = 0; idx < expandNodes.length; idx++) {
+				expandNodes[idx].src = "img/plus.png";
+			}
+			folderNodes = window.document.getElementsBySelector("img.recording_folder");
+			for (idx = 0; idx < folderNodes.length; idx++) {
+				folderNodes[idx].src = "img/folder_closed.png";
+			}
+		}
+		//--></script>
 	</head>
 	<body>
 		<& pageelems.logo &>
 <%cpp>
-if (! deleteResult.empty()) {
+if (!deleteResult.empty()) {
 </%cpp>
 		<& menu active=("recordings") component=("recordings.delete_error") &>
 <%cpp>
 } else {
 </%cpp>
-		<& menu active=("recordings") &>
+		<& menu active=("recordings") component=("recordings.sort_options") &>
 <%cpp>
 }
 </%cpp>
 		<div class="inhalt">
-			<div class="boxheader"><div><div><$ tr("List of recordings") $></div></div></div>
+			<div class="boxheader"><div><div><$ string(tr("List of recordings")) + " (" + diskinfo + ")" $></div></div></div>
 <%cpp>
-			if (Recordings.Count() == 0) {
+			if (Recordings.Count() == 0) { // Access VDRs global cRecordings Recordings instance.
 </%cpp>
 			<$ tr("No recordings found") $>
 <%cpp>
 			} else {
 </%cpp>
+			<form method="post" name="recordings" action="recordings.ecpp">
 			<div class="recordings">
 			<ul class="recordingslist" style="display: block;">
-<& recordings.recordings_item &>
+<& recordings.recordings_item filter=(currentFilter) &>
 			</ul>
 			</div>
+			<div class="withmargin">
+				<button class="red" type="submit"><$ tr("Delete selected") $></button>
+			</div>
+			</form>
 <%cpp>
 			}
 </%cpp>
@@ -89,6 +169,7 @@ if (! deleteResult.empty()) {
 
 <%def recordings_item>
 <%args>
+	filter;
 	path[];
 	int level = 0;
 </%args>
@@ -96,17 +177,26 @@ if (! deleteResult.empty()) {
 RecordingsTreePtr recordingsTree(LiveRecordingsManager()->GetRecordingsTree());
 RecordingsMap::iterator iter;
 RecordingsMap::iterator end = recordingsTree->end(path);
+list<RecordingsItemPtr> recItems;
+list<RecordingsItemPtr>::iterator recIter;
 
 for (iter = recordingsTree->begin(path); iter != end; ++iter) {
 	RecordingsItemPtr recItem = iter->second;
-	string folderimg("folder_closed.png");
-	string collapseimg("plus.png");
 	if (recItem->IsDir()) {
+		recItems.push_back(recItem);
+	}
+}
+if (currentSort == "namedesc")
+	recItems.sort(RecordingsItemPtrCompare::ByDescendingName);
+else
+	recItems.sort(RecordingsItemPtrCompare::ByAscendingName);
+for (recIter = recItems.begin(); recIter != recItems.end(); ++recIter) {
+	RecordingsItemPtr recItem = *recIter;
 </%cpp>
 	<li class="recording">
 		<& rec_item_dir name=(recItem->Name()) level=(level) &>
 <%cpp>
-#ifdef TNTVERS7
+#if TNT_HAS_QUERYPARAMS
 		tnt::QueryParams recItemParams(qparam, false);
 #else
 		cxxtools::QueryParams recItemParams(qparam, false);
@@ -116,32 +206,78 @@ for (iter = recordingsTree->begin(path); iter != end; ++iter) {
 		}
 		recItemParams.add("path", recItem->Name());
 		recItemParams.add("level", lexical_cast<string, int>(level + 1));
+		recItemParams.add("filter", filter);
 </%cpp>
 		<ul class="recordingslist" style="display: none;">
 <%cpp>
 		callComp("recordings.recordings_item", request, reply, recItemParams);
 </%cpp>
-    	</ul>
+		</ul>
 	</li>
 <%cpp>
-	}
 }
+recItems.clear();
 for (iter = recordingsTree->begin(path); iter != end; ++iter) {
 	RecordingsItemPtr recItem = iter->second;
-    if (!recItem->IsDir()) {
-		string day(FormatDateTime("%a,", recItem->StartTime()));
+	if (!recItem->IsDir()) {
+		recItems.push_back(recItem);
+	}
+}
+if (currentSort == "dateasc")
+	recItems.sort(RecordingsItemPtrCompare::ByAscendingDate);
+else if (currentSort == "datedesc")
+	recItems.sort(RecordingsItemPtrCompare::ByDescendingDate);
+else if (currentSort == "namedesc")
+	recItems.sort(RecordingsItemPtrCompare::ByDescendingName);
+else
+	recItems.sort(RecordingsItemPtrCompare::ByAscendingName);
+for (recIter = recItems.begin(); recIter != recItems.end(); ++recIter) {
+		RecordingsItemPtr recItem = *recIter;
+		// xgettext:no-c-format
+		string day(FormatDateTime(tr("%a,"), recItem->StartTime()));
 		string dayLen(lexical_cast<string, int>(day.length() - 1) + ".25em;");
-		string duration(lexical_cast<string, int>(recItem->Duration()) + "'");
+		// TRANSLATORS: recording duration format HH:MM
+		string duration(recItem->Duration() < 0 ? "" : FormatDuration(tr("(%d:%02d)"), recItem->Duration() / 60, recItem->Duration() % 60));
 		string shortDescr(recItem->RecInfo()->ShortText() ? recItem->RecInfo()->ShortText() : "");
-		string hint(tr("Click to view details.")); if (!shortDescr.empty()) hint = shortDescr + "<br />" + hint;
+		string description(recItem->RecInfo()->Description() ? recItem->RecInfo()->Description() : "");
+		string hint(tr("Click to view details."));
+		if (!shortDescr.empty()) hint = shortDescr + "<br />" + hint;
+		else if (!description.empty()) hint = description + "<br />" + hint;
+#ifdef HAVE_LIBPCRECPP
+		pcrecpp::RE re(filter.c_str(), pcrecpp::UTF8());
+		if (filter.empty() || re.PartialMatch(recItem->Name()) || re.PartialMatch(shortDescr) || re.PartialMatch(description))
+#endif
+		{
 </%cpp>
 	<li class="recording">
 	   <& rec_item_file name=(recItem->Name()) level=(level) id=(recItem->Id()) day=(day) dayLen=(dayLen) startTime=(recItem->StartTime()) duration=(duration) hint=(hint) shortDescr=(shortDescr) archived=(RecordingsManager::GetArchiveDescr(recItem->Recording())) &>
-    </li>
+	</li>
 <%cpp>
-	}
+		}
 }
 </%cpp>
+</%def>
+
+<# ---------------------------------------------------------------------- #>
+
+<%def sort_options>
+<%cpp> { </%cpp>
+<a href="recordings.html?sort=name&filter=<? currentFilter != "" ? currentFilter ?>" alt="" /><$ tr("Sort by name") $></a>
+<span class="sep">|</span>
+<a href="recordings.html?sort=date&filter=<? currentFilter != "" ? currentFilter ?>" alt="" /><$ tr("Sort by date") $></a>
+<%cpp>
+#ifdef HAVE_LIBPCRECPP
+</%cpp>
+<span class="sep">|</span>
+<span class="label bold"><$ tr("Filter") $>:&nbsp;<input type="text" name="filter" value="<$ currentFilter $>" id="filter" onchange="filterRecordings(this)" />&nbsp;<& tooltip.help text=(tr("Look in recordings titles and subtitles for the given string and display only the matching ones. You may also use perl compatible regular expressions (PCRE).")) &></span>
+<%cpp>
+#endif
+</%cpp>
+<span class="sep">|</span>
+<img onclick="ExpandAll()" src="<$ LiveSetup().GetThemedLink("img", "plus.png") $>" alt="" <& tooltip.hint text=(tr("Expand all folders")) &>/>
+<img onclick="CollapseAll()" src="<$ LiveSetup().GetThemedLink("img", "minus.png") $>" alt="" <& tooltip.hint text=(tr("Collapse all folders")) &>/>
+<br />
+<%cpp> } </%cpp>
 </%def>
 
 <# ---------------------------------------------------------------------- #>
@@ -155,13 +291,25 @@ for (iter = recordingsTree->begin(path); iter != end; ++iter) {
 
 <# ---------------------------------------------------------------------- #>
 
+<%def edit_rec>
+<%args>
+	string id;
+</%args>
+<%cpp> { </%cpp><a href="edit_recording.html?recid=<$ id $>"><img src="<$ LiveSetup().GetThemedLink("img", "edit.png") $>" alt="" <& tooltip.hint text=(tr("Edit recording")) &> /></a><%cpp> } </%cpp>
+</%def>
+
+<# ---------------------------------------------------------------------- #>
+
+
 <%def rec_tools>
 <%args>
 	string id;
 	string title;
 </%args>
 <& pageelems.ajax_action_href action="play_recording" param=(id) tip=(tr("play this recording.")) image="play.png" alt="" &>
+<& pageelems.vlc_stream_recording recid=(id) &>
 <& pageelems.imdb_info_href title=(title) &>
+<& recordings.edit_rec id=(id) &>
 <& recordings.del_rec id=(id) &>
 </%def>
 
@@ -186,7 +334,7 @@ for (iter = recordingsTree->begin(path); iter != end; ++iter) {
 	string folderimg = "folder_closed.png";
 </%args>
 	<div class="recording_item" onclick="Toggle(this)">
-		<div class="recording_imgs"><%cpp> reply.out() << StringRepeat(level, "<img src=\"/img/transparent.png\" alt=\"\" width=\"16px\" height=\"16px\" />"); </%cpp><img class="recording_expander" src="<$ LiveSetup().GetThemedLink("img", collapseimg) $>" alt="" /><img class="recording_folder" src="<$ LiveSetup().GetThemedLink("img", folderimg) $>" alt="" /></div>
+		<div class="recording_imgs"><%cpp> reply.out() << StringRepeat(level, "<img src=\"img/transparent.png\" alt=\"\" width=\"16px\" height=\"16px\" />"); </%cpp><img class="recording_expander" src="<$ LiveSetup().GetThemedLink("img", collapseimg) $>" alt="" /><img class="recording_folder" src="<$ LiveSetup().GetThemedLink("img", folderimg) $>" alt="" /></div>
 		<div class="recording_spec">
 			<div class="recording_name"><$ name $></div>
 	    </div>
@@ -210,11 +358,9 @@ for (iter = recordingsTree->begin(path); iter != end; ++iter) {
 	string archived;
 </%args>
 	<div class="recording_item">
-	<div class="recording_imgs"><%cpp> reply.out() << StringRepeat(level + 1, "<img src=\"/img/transparent.png\" alt=\"\" width=\"16px\" height=\"16px\" />"); </%cpp><%cpp> if (!archived.empty()) { </%cpp><img src="<$ LiveSetup().GetThemedLink("img", "on_dvd.png") $>" alt="on_dvd" <& tooltip.hint text=(archived) &> /><%cpp> } else { </%cpp><img src="<$ LiveSetup().GetThemedLink("img", "movie.png") $>" alt="movie" /><%cpp> } </%cpp></div>
+	<div class="recording_imgs"><%cpp> reply.out() << StringRepeat(level + 1, "<img src=\"img/transparent.png\" alt=\"\" width=\"16px\" height=\"16px\" />"); </%cpp><%cpp> if (!archived.empty()) { </%cpp><img src="<$ LiveSetup().GetThemedLink("img", "on_dvd.png") $>" alt="on_dvd" <& tooltip.hint text=(archived) &> /><%cpp> } else { </%cpp><input type="checkbox" name="deletions" value="<$ id $>" /><%cpp> } </%cpp></div>
 	<div class="recording_spec">
-		<div class="recording_day" style="width: <$ dayLen $>"><$ day $></div>
-		<div class="recording_date"><$ FormatDateTime(tr("%b %d %y"), startTime) $></div>
-		<div class="recording_time"><$ FormatDateTime(tr("%I:%M %p"), startTime) $></div>
+		<div class="recording_day"><$ FormatDateTime(tr("%a,"), startTime) + string(" ") + FormatDateTime(tr("%b %d %y"), startTime) + string(" ") + FormatDateTime(tr("%I:%M %p"), startTime) $></div>
 		<div class="recording_duration"><$ duration $></div>
 		<div class="recording_name"><a <& tooltip.hint text=(hint) &><& tooltip.display domId=(id) &>><$ name $><br /><%cpp>if ((name != shortDescr) && (!shortDescr.empty())) {</%cpp><span><$ shortDescr $></span><%cpp> } else { </%cpp><span>&nbsp;</span><%cpp> } </%cpp></a></div>
 	</div>
@@ -224,17 +370,14 @@ for (iter = recordingsTree->begin(path); iter != end; ++iter) {
 </%cpp>
 		<& recordings.rec_tools id=(id) title=(name)&>
 <%cpp>
-	    }
+		}
 		else {
 </%cpp>
-		<img src="/img/transparent.png" alt="" width="16px" height="16px" />
+		<img src="img/transparent.png" alt="" width="16px" height="16px" />
 		<& pageelems.imdb_info_href title=(name) &>
 <%cpp>
 		}
 </%cpp>
-		<!-- not supported yet ...
-		<img src="<$ LiveSetup().GetThemedLink("img", "edit.png") $>" alt="" />
-        -->
 	</div>
 <%cpp>
 	if (! archived.empty()) {
@@ -249,5 +392,6 @@ for (iter = recordingsTree->begin(path); iter != end; ++iter) {
 <# ---------------------------------------------------------------------- #>
 
 <%def delete_error>
-<%cpp> { </%cpp><$ deleteResult $><%cpp> } </%cpp>
+<& recordings.sort_options &>
+<%cpp> { reply.out() << deleteResult; } </%cpp>
 </%def>
