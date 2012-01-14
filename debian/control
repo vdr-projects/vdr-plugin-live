@@ -5,7 +5,7 @@ Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
 Uploaders: Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
 Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.22),
  libtntnet-dev (>= 1.6.0.1-1.1), libcxxtools-dev (>= 1.4.3.6-1.1),
- libssl-dev, libboost-dev, gettext
+ libssl-dev, libboost-dev, gettext, libpcre3-dev
 Standards-Version: 3.9.2
 Homepage: http://live.vdr-developer.org
 Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-live.git

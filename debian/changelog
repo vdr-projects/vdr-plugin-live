@@ -1,3 +1,15 @@
+vdr-plugin-live (0.2.0+git20120114-1) unstable; urgency=low
+
+  * New Upstream Snapshot (commit d2a85a6) (Closes: #654879)
+  * Dropped 02_timers_colon patch - fixed upstream
+  * Dropped 04_tntnet-2.0.patch - fixed upstream
+  * Dropped 01_ipv6.patch - fixed upstream
+  * Dropped 03_live-0.2.0-fix-INCLUDES.patch - fixed upstream
+  * Build-depend on libpcre3-dev
+  * Updated debian/copyright
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 15 Jan 2012 10:22:53 +0100
+
 vdr-plugin-live (0.2.0-17) unstable; urgency=low
 
   * Build-depend on vdr-dev (>= 1.7.22)

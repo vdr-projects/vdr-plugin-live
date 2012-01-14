@@ -14,7 +14,7 @@ Debian Maintainers:
     Thomas Schmidt <tschmidt@debian.org>
 
 Copyright:
-    (C) 2007 - 2008 Thomas Keil, Sascha Volkenandt, Dieter Hametner,
+    (C) 2007 - 2012 Thomas Keil, Sascha Volkenandt, Dieter Hametner,
                     Christian Wieninger, Michael Brueckner
     (C) 2003 - 2006 Tommi Maekitalo (Tntnet httpd)
 
@@ -29,7 +29,7 @@ Copyright (MD5 Message-Digest Algorithm / md5.cpp):
     (C) 2002 Gary McNickle
 
 Copyright (Debian packaging):
-    (C) 2007 - 2011 Tobias Grimm, Thomas Günther, Thomas Schmidt
+    (C) 2007 - 2012 Tobias Grimm, Thomas Günther, Thomas Schmidt
 
 License:
     This program is free software; you can redistribute it and/or modify
