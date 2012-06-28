@@ -1,3 +1,9 @@
+vdr-plugin-live (0.2.0+git20120428-3) unstable; urgency=low
+
+  * Now really build-depend on vdr-1.7.28
+
+ -- Tobias Grimm <etobi@debian.org>  Thu, 28 Jun 2012 23:28:24 +0200
+
 vdr-plugin-live (0.2.0+git20120428-2) unstable; urgency=low
 
   * Build-depend on vdr-dev (>= 1.7.28)
