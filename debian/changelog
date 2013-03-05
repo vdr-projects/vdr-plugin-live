@@ -1,3 +1,11 @@
+vdr-plugin-live (0.2.0+git20130305-1) unstable; urgency=low
+
+  * New Upstream Snapshot (commit 545739f)
+  * Use debhelper 9
+  * Build-depend on vdr-dev (>= 1.7.39)
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 05 Mar 2013 23:10:55 +0100
+
 vdr-plugin-live (0.2.0+git20120428-3) unstable; urgency=low
 
   * Now really build-depend on vdr-1.7.28
