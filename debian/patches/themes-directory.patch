@@ -1,0 +1,16 @@
+Index: vdr-plugin-live/pages/setup.ecpp
+===================================================================
+--- vdr-plugin-live.orig/pages/setup.ecpp	2013-03-20 23:53:23.000000000 +0100
++++ vdr-plugin-live/pages/setup.ecpp	2013-03-20 23:53:54.000000000 +0100
+@@ -265,7 +265,11 @@
+ 						<td class="rightcol"><select name="theme" size="1" id="theme">
+ <%cpp>
+ {
++#if APIVERSNUM > 1072951
++	const string dirPath(Plugin::GetResourceDirectory() + "/themes");
++#else
+ 	const string dirPath(Plugin::GetConfigDirectory() + "/themes");
++#endif
+ 	cReadDir d(dirPath.c_str());
+ 	struct dirent* e;
+ 	string parent("..");
