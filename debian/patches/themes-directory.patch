@@ -6,7 +6,7 @@ Index: vdr-plugin-live/pages/setup.ecpp
  						<td class="rightcol"><select name="theme" size="1" id="theme">
  <%cpp>
  {
-+#if APIVERSNUM > 1072951
++#if APIVERSNUM > 10729
 +	const string dirPath(Plugin::GetResourceDirectory() + "/themes");
 +#else
  	const string dirPath(Plugin::GetConfigDirectory() + "/themes");
