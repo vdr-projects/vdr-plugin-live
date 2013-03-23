@@ -1,3 +1,9 @@
+vdr-plugin-live (0.2.0+git20130305-5) unstable; urgency=low
+
+  * Build-depend on vdr-dev (>= 1.7.42)
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 23 Mar 2013 20:48:15 +0100
+
 vdr-plugin-live (0.2.0+git20130305-4) unstable; urgency=low
 
   * Load themes from resource directory
