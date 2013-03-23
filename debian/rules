@@ -4,7 +4,7 @@
 #export DH_VERBOSE=1
 
 MAKE_OPTIONS = VDRDIR=/usr/include/vdr LIBDIR=. LOCALEDIR=locale
-CXXFLAGS += -fPIC $(CPPFLAGS)
+CXXFLAGS += $(shell pkg-config vdr --variable=cxxflags)
 
 %:
 	dh $@
