@@ -1,1 +1,4 @@
 themes-directory.patch
+0001-Fix-listener-bug-triggered-by-never-versions-of-cxxt.patch
+0001-Make-LIVE-compile-and-work-with-Tntnet-and-cxxtools-.patch
+0002-With-tntnet-v2.2-use-also-the-request.getArg-name-fu.patch
