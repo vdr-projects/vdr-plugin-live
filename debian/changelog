@@ -1,3 +1,10 @@
+vdr-plugin-live (0.2.0+git20130305-7) unstable; urgency=medium
+
+  * Build-depend on vdr-dev (>= 2.0.6)
+  * Standards-Version: 3.9.5
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 26 Oct 2014 13:40:42 +0100
+
 vdr-plugin-live (0.2.0+git20130305-6.1) unstable; urgency=low
 
   * Non-maintainer upload.
