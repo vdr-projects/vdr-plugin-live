@@ -1,8 +1,8 @@
-vdr-plugin-live (0.3.0-1) unstable; urgency=medium
+vdr-plugin-live (0.3.0+git20141029-1) unstable; urgency=medium
 
-  * New upstream release (Closes: #696128)
+  * New Upstream Snapshot (commit 69f84f9) (Closes: #696128)
 
- -- Tobias Grimm <etobi@debian.org>  Wed, 29 Oct 2014 21:49:38 +0100
+ -- Tobias Grimm <etobi@debian.org>  Wed, 29 Oct 2014 22:53:35 +0100
 
 vdr-plugin-live (0.2.0+git20130305-7) unstable; urgency=medium
 
