@@ -79,7 +79,11 @@ for (deletions_type::const_iterator it = deletions.begin(); it != deletions.end(
 deletions.clear();
 
 int FreeMB, UsedMB;
+#if APIVERSNUM > 20101
+int Percent = cVideoDirectory::VideoDiskSpace(&FreeMB, &UsedMB);
+#else
 int Percent = VideoDiskSpace(&FreeMB, &UsedMB);
+#endif
 int Minutes = int(double(FreeMB) / MB_PER_MINUTE);
 int Hours = Minutes / 60;
 Minutes %= 60;
@@ -204,14 +208,10 @@ for (recIter = recItems.begin(); recIter != recItems.end(); ++recIter) {
 	<li class="recording">
 		<& rec_item_dir name=(recItem->Name()) level=(level) &>
 <%cpp>
-#if TNT_HAS_QUERYPARAMS
 #if TNT_QUERYPARAMS_NO_BOOL
 		tnt::QueryParams recItemParams(qparam);
 #else
 		tnt::QueryParams recItemParams(qparam, false);
-#endif
-#else
-		cxxtools::QueryParams recItemParams(qparam, false);
 #endif
 		for (path_type::const_iterator i = path.begin(); i != path.end(); ++i) {
 			recItemParams.add("path", *i);
