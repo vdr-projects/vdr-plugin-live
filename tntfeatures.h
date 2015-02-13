@@ -7,21 +7,8 @@
 // an other change in the structure of the version string was needed then only
 // this file needs to be adapted.
 
-// SSL-Support works from tntnet version 1.6.1 onwards.
-#define TNT_SSL_SUPPORT			(TNTVERSION >= 16100)
-
-// Configuration of tntnet from within the source code and not with a
-// dedicated config file.
-#define TNT_CONFIG_INTERNAL		(TNTVERSION >= 16060)
-
-// Query params are now in tntnet and not in cxxtools
-#define TNT_HAS_QUERYPARAMS		(TNTVERSION >= 16060)
-
 // Query params without boolean parameter
 #define TNT_QUERYPARAMS_NO_BOOL (TNTVERSION >= 22000)
-
-// One can request the host part of the request url
-#define TNT_HAS_GETHOST			(TNTVERSION >= 16060)
 
 // new version of TNTNET allow the request watchdog to be silenced.
 #define TNT_WATCHDOG_SILENCE	(TNTVERSION >= 16900)
