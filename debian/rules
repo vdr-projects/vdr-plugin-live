@@ -1,20 +1,18 @@
 #!/usr/bin/make -f
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+#DH_VERBOSE=1
 
-MAKE_OPTIONS = VDRDIR=/usr/include/vdr LIBDIR=. LOCALEDIR=locale
-CXXFLAGS += $(shell pkg-config vdr --variable=cxxflags)
+PLG_PACKAGE = $(filter-out %-dbg, $(shell dh_listpackages))
+DBG_PACKAGE = $(filter %-dbg, $(shell dh_listpackages))
 
 %:
 	dh $@
 
-override_dh_auto_build:
-	dh_auto_build -- all $(MAKE_OPTIONS)
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/$(PLG_PACKAGE)
 
-override_dh_auto_clean:
-	$(MAKE) -o .dependencies clean $(MAKE_OPTIONS)
-	rm -rf locale libvdr-*.so.*
+override_dh_strip:
+	dh_strip --dbg-package=$(DBG_PACKAGE)
 
 override_dh_gencontrol:
 	sh /usr/share/vdr-dev/dependencies.sh

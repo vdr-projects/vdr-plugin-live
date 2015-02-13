@@ -22,3 +22,19 @@ Description: Web administration plugin for VDR
  Unlike external programs, like the VDR web frontend "VDRAdmin-AM", that 
  communicate  with VDR via its SVDRP socket interface, Live has direct
  access to VDR's data structures and thus is very fast.
+
+Package: vdr-plugin-live-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-live (= ${binary:Version}), ${misc:Depends}
+Description: Web administration plugin for VDR
+ Live, the "Live Interactive VDR Environment", is a plugin providing the
+ possibility to interactively control the Linux Video Disc Recorder VDR and
+ some of it's plugins from a web interface.
+ .
+ Unlike external programs, like the VDR web frontend "VDRAdmin-AM", that 
+ communicate  with VDR via its SVDRP socket interface, Live has direct
+ access to VDR's data structures and thus is very fast.
+ .
+ This package contains the debugging symbols.

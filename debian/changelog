@@ -3,6 +3,7 @@ vdr-plugin-live (0.3.0+git20150213-1) unstable; urgency=medium
   * New Upstream Snapshot (commit 894daa8)
   * Standards-Version: 3.9.6
   * Build-depend on vdr-dev (>= 2.1.10)
+  * Build with vdr-plugin-live-dbg for debug symbols
 
  -- Tobias Grimm <etobi@debian.org>  Fri, 13 Feb 2015 19:03:55 +0100
 
