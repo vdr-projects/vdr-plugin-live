@@ -1,0 +1,15 @@
+Index: vdr-plugin-live/Makefile
+===================================================================
+--- vdr-plugin-live.orig/Makefile	2015-02-13 19:32:53.426214837 +0100
++++ vdr-plugin-live/Makefile	2015-02-13 21:23:39.462659817 +0100
+@@ -50,8 +50,8 @@
+ endif
+ 
+ ### export all vars for sub-makes, using absolute paths
+-LIBDIR := $(shell cd $(LIBDIR) >/dev/null 2>&1 && pwd)
+-LOCDIR := $(shell cd $(LOCDIR) >/dev/null 2>&1 && pwd)
++#LIBDIR := $(shell cd $(LIBDIR) >/dev/null 2>&1 && pwd)
++#LOCDIR := $(shell cd $(LOCDIR) >/dev/null 2>&1 && pwd)
+ export
+ unexport PLUGIN
+ 
