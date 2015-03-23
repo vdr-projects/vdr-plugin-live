@@ -6,17 +6,13 @@ PLG_PACKAGE = $(filter-out %-dbg, $(shell dh_listpackages))
 DBG_PACKAGE = $(filter %-dbg, $(shell dh_listpackages))
 
 %:
-	dh $@
+	dh $@ --with vdrplugin
 
 override_dh_auto_install:
 	dh_auto_install --destdir=debian/$(PLG_PACKAGE)
 
 override_dh_strip:
 	dh_strip --dbg-package=$(DBG_PACKAGE)
-
-override_dh_gencontrol:
-	sh /usr/share/vdr-dev/dependencies.sh
-	dh_gencontrol
 
 get-vcs-snapshot:
 	sh debian/get-vcs-snapshot.sh

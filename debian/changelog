@@ -1,3 +1,9 @@
+vdr-plugin-live (0.3.0+git20150213-3) unstable; urgency=medium
+
+  * Now supporting the /etc/vdr/conf.d mechanism
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 23 Mar 2015 22:53:36 +0100
+
 vdr-plugin-live (0.3.0+git20150213-2) unstable; urgency=medium
 
   * Build-depend on vdr-dev (>= 2.2.0)
