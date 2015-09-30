@@ -1,6 +1,7 @@
 #include <time.h>
 #include <glob.h>
 #include <algorithm>
+#include <vdr/player.h>
 
 #include "tools.h"
 #include "recman.h"
@@ -182,20 +183,37 @@ namespace vdrlive
 
 	time_t EpgRecording::GetStartTime() const
 	{
-#if VDRVERSNUM < 10726
-		return m_recording ? m_recording->start : 0;
-#else
 		return m_recording ? m_recording->Start() : 0;
-#endif
 	}
 
 	time_t EpgRecording::GetEndTime() const
 	{
-#if VDRVERSNUM < 10726
-		return m_recording ? m_recording->start : 0;
-#else
-		return m_recording ? m_recording->Start() : 0;
-#endif
+		time_t endTime = 0;
+		if (m_recording)
+		{
+			time_t startTime = m_recording->Start();
+			int length = m_recording->LengthInSeconds();
+
+			endTime = (length < 0) ? startTime : startTime + length;
+		}
+		return endTime;
+	}
+
+	int EpgRecording::Elapsed() const
+	{
+		cControl* pControl = cControl::Control();
+		if (pControl)
+		{
+			int current, total;
+			if (pControl->GetIndex(current,total))
+			{
+				if (total)
+				{
+					return (100 * current) / total;
+				}
+			}
+		}
+		return 0;
 	}
 
 	const string EpgRecording::Name() const
