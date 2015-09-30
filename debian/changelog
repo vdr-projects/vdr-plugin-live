@@ -1,3 +1,9 @@
+vdr-plugin-live (0.3.0+git20150930-1) unstable; urgency=medium
+
+  * New Upstream Snapshot (commit 6ea279a)
+
+ -- Tobias Grimm <etobi@debian.org>  Wed, 30 Sep 2015 21:46:50 +0200
+
 vdr-plugin-live (0.3.0+git20150213-3) unstable; urgency=medium
 
   * Now supporting the /etc/vdr/conf.d mechanism
