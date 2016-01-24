@@ -1,8 +1,10 @@
-vdr-plugin-live (0.3.0+git20160123-1) UNRELEASED; urgency=medium
+vdr-plugin-live (0.3.0+git20160123-1) unstable; urgency=medium
 
   * New Upstream Snapshot (commit 869ac69)
+  * Removed build dependency to libboost - this is not required for GCC >= 4
+  * Added fixes for GCC6 (Closes: #811803)
 
- -- Tobias Grimm <etobi@debian.org>  Sat, 23 Jan 2016 22:56:47 +0100
+ -- Tobias Grimm <etobi@debian.org>  Sun, 24 Jan 2016 20:04:39 +0100
 
 vdr-plugin-live (0.3.0+git20150930-1) unstable; urgency=medium
 
