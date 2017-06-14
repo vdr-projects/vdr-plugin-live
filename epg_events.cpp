@@ -380,7 +380,9 @@ namespace vdrlive
 
 						char cmdBuff[500];
 						sprintf(cmdBuff,"ln -s \"%s\" \"%s\"",imagefile.c_str(),tmpfile.c_str());
-						system(cmdBuff);
+						int s = system(cmdBuff);
+						if (s < 0)
+							esyslog("[live] ERROR: Couldn't execute command %s", cmdBuff);
 						found = true;
 					}
 					globfree(&globbuf);
