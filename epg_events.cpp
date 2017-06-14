@@ -182,10 +182,10 @@ namespace vdrlive
 		}
 		return m_archived;
 	}
-	
+
 	const string EpgRecording::FileName() const
 	{
-	    return m_recording->FileName();
+		return m_recording->FileName();
 	}
 
 	time_t EpgRecording::GetStartTime() const
@@ -363,28 +363,28 @@ namespace vdrlive
 
 			for (int j = 0;j < size;j++)
 			{
-			    const string filemask(recfolder + "/*." + filetypes[j]);
-			    glob_t globbuf;
-			    globbuf.gl_offs = 0;
-			    if (glob(filemask.c_str(), GLOB_DOOFFS, NULL, &globbuf) == 0) {
-				for(size_t i = 0; i < globbuf.gl_pathc; i++) {
-					const string imagefile(globbuf.gl_pathv[i]);
-					const string imagecopy(imagefile);
-					
-					size_t delimPos = imagefile.find_last_of('/');
-					images.push_back(imagefile.substr(delimPos+1));
-					
-					//create a temporary symlink of the image im tmp
-					const string imagename(imagefile.substr(delimPos+1));
-					const string tmpfile("/tmp/" + imageId + "_" + imagename);
-					
-					char cmdBuff[500];
-					sprintf(cmdBuff,"ln -s \"%s\" \"%s\"",imagefile.c_str(),tmpfile.c_str());
-					system(cmdBuff);
-					found = true;
+				const string filemask(recfolder + "/*." + filetypes[j]);
+				glob_t globbuf;
+				globbuf.gl_offs = 0;
+				if (glob(filemask.c_str(), GLOB_DOOFFS, NULL, &globbuf) == 0) {
+					for(size_t i = 0; i < globbuf.gl_pathc; i++) {
+						const string imagefile(globbuf.gl_pathv[i]);
+						const string imagecopy(imagefile);
+
+						size_t delimPos = imagefile.find_last_of('/');
+						images.push_back(imagefile.substr(delimPos+1));
+
+						// create a temporary symlink of the image in /tmp
+						const string imagename(imagefile.substr(delimPos+1));
+						const string tmpfile("/tmp/" + imageId + "_" + imagename);
+
+						char cmdBuff[500];
+						sprintf(cmdBuff,"ln -s \"%s\" \"%s\"",imagefile.c_str(),tmpfile.c_str());
+						system(cmdBuff);
+						found = true;
+					}
+					globfree(&globbuf);
 				}
-				globfree(&globbuf);
-			    }
 			}
 			return found;
 		}
@@ -437,7 +437,7 @@ namespace vdrlive
 			string imageId = epgid.substr(delimPos+1);
 
 			list<string> images;
-			//Scan for all images in recording diretory (png and jpg)
+			// Scan for all images in recording directory
 			ScanForRecImages(imageId, recfolder, images);
 			return images;
 		}

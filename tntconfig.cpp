@@ -151,11 +151,11 @@ namespace vdrlive {
 				   "image/$2");
 		}
 
-                // rec images
+		// rec images
 		MapUrl(app,
-                           "^/recimages/([^/]*)/([^/]*)\\.([^./]+)",
-                           "content",
-                           "",
+			   "^/recimages/([^/]*)/([^/]*)\\.([^./]+)",
+			   "content",
+			   "",
 			   "/tmp/$1_$2.$3",
 			   "image/$3");
 

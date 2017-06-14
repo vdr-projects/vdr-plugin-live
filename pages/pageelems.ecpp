@@ -359,7 +359,7 @@ int update_status(1);
 
 	list<string> images1 = EpgEvents::RecImages(boxId, filename);
 	size_t delimPos = boxId.find_last_of('_');
-        string recId = (delimPos)?boxId.substr(delimPos+1):boxId;
+	string recId = (delimPos)?boxId.substr(delimPos+1):boxId;
 
 	for(std::list<std::string>::iterator it = images1.begin(); it != images1.end(); ++it ) {
 </%cpp>
