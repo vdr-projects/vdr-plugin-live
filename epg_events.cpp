@@ -361,6 +361,11 @@ namespace vdrlive
 			const string filetypes[] = {"png", "jpg", "PNG", "JPG"};
 			int size = sizeof(filetypes)/sizeof(filetypes[0]);
 
+			if (recfolder.empty()) {
+				// dsyslog( "LIVE: ScanForRecImages: recFolder empty for %s", imageId.c_str());
+				return found;
+			}
+
 			for (int j = 0;j < size;j++)
 			{
 				const string filemask(recfolder + "/*." + filetypes[j]);
