@@ -146,7 +146,7 @@ namespace vdrlive {
 		return info.str();
 	}
 
-	string SortedTimers::SearchTimerName(cTimer const& timer)
+	string SortedTimers::SearchTimerInfo(cTimer const& timer, std::string const& value)
 	{
 		ostringstream info;
 		if (timer.Aux())
@@ -154,9 +154,9 @@ namespace vdrlive {
 			string epgsearchinfo = GetXMLValue(timer.Aux(), "epgsearch");
 			if (!epgsearchinfo.empty())
 			{
-				string searchtimer = GetXMLValue(epgsearchinfo, "searchtimer");
-				if (!searchtimer.empty())
-					info << searchtimer;
+				string data = GetXMLValue(epgsearchinfo, value);
+				if (!data.empty())
+					info << data;
 			}
 		}
 		return info.str();

@@ -343,32 +343,58 @@ namespace vdrlive {
 
 	bool RecordingsItemPtrCompare::ByAscendingName(RecordingsItemPtr & first, RecordingsItemPtr & second)
 	{
+		unsigned int flen = first->Name().length();
+		unsigned int fstart = 0;
+		while( flen > 0 && ispunct( (first->Name())[ fstart ] ) ) {
+			fstart++;
+			flen--;
+		}
+		// eliminate starting punctuation characters of second string
+		unsigned int slen = second->Name().length();
+		unsigned int sstart = 0;
+		while( slen > 0 && ispunct( (second->Name())[ sstart ] ) ) {
+			sstart++;
+			slen--;
+		}
+		// check whether strings are ascending
 		unsigned int i = 0;
-		while (i < first->Name().length() && i < second->Name().length()) {
-			if (tolower((first->Name())[i]) < tolower((second->Name())[i]))
+		while( fstart + i < first->Name().length() && sstart + i < second->Name().length() ) {
+			if( tolower( (first->Name())[ fstart + i ] ) < tolower( (second->Name())[ sstart + i] ) ) {
 				return true;
-			else if (tolower((first->Name())[i]) > tolower((second->Name())[i]))
+			} else if( tolower( (first->Name())[ fstart + i] ) > tolower( (second->Name())[ sstart + i ] ) ) {
 				return false;
+			}
 			++i;
 		}
-		if (first->Name().length() < second->Name().length())
-			return true;
-		return false;
+		return( flen < slen );
 	}
 
 	bool RecordingsItemPtrCompare::ByDescendingName(RecordingsItemPtr & first, RecordingsItemPtr & second)
 	{
+		unsigned int flen = first->Name().length();
+		unsigned int fstart = 0;
+		while( flen > 0 && ispunct( (first->Name())[ fstart ] ) ) {
+			fstart++;
+			flen--;
+		}
+		// eliminate starting punctuation characters of second string
+		unsigned int slen = second->Name().length();
+		unsigned int sstart = 0;
+		while( slen > 0 && ispunct( (second->Name())[ sstart ] ) ) {
+			sstart++;
+			slen--;
+		}
+		// check whether strings are decending
 		unsigned int i = 0;
-		while (i < first->Name().length() && i < second->Name().length()) {
-			if (tolower((second->Name())[i]) < tolower((first->Name())[i]))
+		while( fstart + i < first->Name().length() && sstart + i < second->Name().length() ) {
+			if( tolower( (first->Name())[ fstart + i ] ) > tolower( (second->Name())[ sstart + i] ) ) {
 				return true;
-			else if (tolower((second->Name())[i]) > tolower((first->Name())[i]))
+			} else if( tolower( (first->Name())[ fstart + i] ) < tolower( (second->Name())[ sstart + i ] ) ) {
 				return false;
+			}
 			++i;
 		}
-		if (second->Name().length() < first->Name().length())
-			return true;
-		return false;
+		return( flen > slen );
 	}
 
 

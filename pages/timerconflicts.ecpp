@@ -108,7 +108,7 @@ if (!logged_in && LiveSetup().UseAuth()) return reply.redirect("login.html");
 								longDescription = StringEscapeAndBreak(SortedTimers::GetTimerInfo(*timer)) + "<hr>"
 													+ StringEscapeAndBreak(StringWordTruncate(epgEvent->LongDescr(), maximumDescriptionLength))
 													+ "<br/><br/>" + tr("Click to view details.");
-								searchTimName = SortedTimers::SearchTimerName(*timer);
+								searchTimName = SortedTimers::SearchTimerInfo(*timer, "searchtimer");
 								title = epgEvent->Title();
 							}
 </%cpp>
