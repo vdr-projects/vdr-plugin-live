@@ -43,7 +43,10 @@ Setup::Setup():
 		m_useStreamdev(1),
 		m_streamdevPort(3000),
 		m_streamdevType(),
-		m_streamPacketizer(),
+		m_streamPacketizer("ffmpeg -loglevel warning"),
+		m_streamVopt0("copy"),
+		m_streamVopt1("libx264 -preset ultrafast -crf 23 -tune zerolatency -g 25 -r 25"),
+		m_streamVopt2("libx264 -preset ultrafast -crf 23 -tune zerolatency -g 25 -r 25 -s hd720"),
 		m_showIMDb(1),
 		m_showChannelsWithoutEPG(0)
 {
@@ -125,6 +128,9 @@ bool Setup::ParseSetupEntry( char const* name, char const* value )
 	else if ( strcmp( name, "StreamdevPort" ) == 0 ) { m_streamdevPort = atoi(value); }
 	else if ( strcmp( name, "StreamdevType" ) == 0 ) { m_streamdevType = value; }
 	else if ( strcmp( name, "StreamPacketizer" ) == 0 ) { m_streamPacketizer = value; }
+	else if ( strcmp( name, "StreamVideoOpt0" ) == 0 ) { m_streamVopt0 = value; }
+	else if ( strcmp( name, "StreamVideoOpt1" ) == 0 ) { m_streamVopt1 = value; }
+	else if ( strcmp( name, "StreamVideoOpt2" ) == 0 ) { m_streamVopt2 = value; }
 	else if ( strcmp( name, "ScreenShotInterval" ) == 0 ) { m_screenshotInterval = atoi(value); }
 	else if ( strcmp( name, "ShowIMDb" ) == 0 ) { m_showIMDb = atoi(value); }
 	else if ( strcmp( name, "ShowChannelsWithoutEPG" ) == 0 ) { m_showChannelsWithoutEPG = atoi(value); }
@@ -313,6 +319,9 @@ bool Setup::SaveSetup()
 	liveplugin->SetupStore("StreamdevPort", m_streamdevPort);
 	liveplugin->SetupStore("StreamdevType", m_streamdevType.c_str());
 	liveplugin->SetupStore("StreamPacketizer", m_streamPacketizer.c_str());
+	liveplugin->SetupStore("StreamVideoOpt0", m_streamVopt0.c_str());
+	liveplugin->SetupStore("StreamVideoOpt1", m_streamVopt1.c_str());
+	liveplugin->SetupStore("StreamVideoOpt2", m_streamVopt2.c_str());
 	liveplugin->SetupStore("ScreenShotInterval", m_screenshotInterval);
 	liveplugin->SetupStore("ShowIMDb", m_showIMDb);
 	liveplugin->SetupStore("ShowChannelsWithoutEPG", m_showChannelsWithoutEPG);
