@@ -67,7 +67,7 @@ namespace vdrlive {
 	class TimerConflictNotifier
 	{
 		public:
-			typedef std::tr1::shared_ptr<TimerConflicts> TimerConflictsPtr;
+			typedef stdext::shared_ptr<TimerConflicts> TimerConflictsPtr;
 
 			TimerConflictNotifier();
 			virtual ~TimerConflictNotifier();

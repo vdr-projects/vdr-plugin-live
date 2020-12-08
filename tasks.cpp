@@ -16,8 +16,8 @@
 namespace vdrlive {
 
 using std::for_each;
-using std::tr1::bind;
-using namespace std::tr1::placeholders;
+using stdext::bind;
+using namespace stdext::placeholders;
 
 const char* NowReplaying()
 {
